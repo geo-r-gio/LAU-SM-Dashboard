@@ -1,0 +1,22 @@
+CREATE DATABASE LAUSMDB;
+
+USE LAUSMDB;
+
+CREATE TABLE DELEGATE
+(
+  dlgID CHAR(5), 
+  dlgName VARCHAR(100) NOT NULL,
+  dlgEmail VARCHAR(100) NOT NULL,
+  dlgPhoneNb CHAR(8) NOT NULL,
+  dlgSchool VARCHAR(500) NOT NULL,
+  dlgPin VARCHAR(6) NOT NULL,
+  dlgClass VARCHAR(7) NOT NULL,
+  dlgCampus VARCHAR(6) NOT NULL,
+  dlgAdvisor VARCHAR(20) NOT NULL,
+  dlgPgm CHAR(3),
+  dlgLang CHAR(2),
+  pgmLevel CHAR(2),
+  PRIMARY KEY(dlgID)
+);
+
+INSERT INTO DELEGATE VALUES('D2004', 'Hiba El Baalbaki', 'none@gmail.com', '76850885', 'Antonine', 'cd456', 'grade12', 'Byblos', 'Geo', 'MUN','EN','HS');

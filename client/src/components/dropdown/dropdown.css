@@ -1,0 +1,21 @@
+.dropdown {
+    position: relative;
+    z-index: 99;
+}
+
+.dropdown__toggle {
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    position: relative;
+}
+
+.dropdown__toggle > i {
+    font-size: 2.4rem;
+    color: var(--txt-color);
+}
+
+.dropdown__toggle:hover > i {
+    color: var(--main-color);
+    transition: 0.8s ease 0s;
+}

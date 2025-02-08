@@ -1,0 +1,32 @@
+[
+    {
+        "display_name": "Dashboard",
+        "route": "/",
+        "icon": "bx bx-category-alt"
+    },
+    {
+        "display_name": "Delegates",
+        "route": "/delegates",
+        "icon": "bx bx-user-pin"
+    },
+    {
+        "display_name": "Advisors",
+        "route": "/advisors",
+        "icon": "bx bx-user"
+    },
+    {
+        "display_name": "Attendance",
+        "route": "/attendance",
+        "icon": "bx bxs-contact"
+    },    
+    {
+        "display_name": "Delegates Form",
+        "route": "/delegates-form",
+        "icon": "bx bx-id-card"
+    },
+    {
+        "display_name": "Advisors Form",
+        "route": "/advisors-form",
+        "icon": "bx bxs-id-card"
+    }
+]

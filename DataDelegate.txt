@@ -1,0 +1,297 @@
+
+  ('D3041', 'Ethan', 'Johnson', 44556677, 'ethan.johnson@gmail.com', 'Cedar Valley School', 'MUN', 'HS', 'EN', 'Beirut', 'A143'),
+  ('D3042', 'Sophie', 'Miller', 55667788, 'sophie.miller@gmail.com', 'Cedar Valley School', 'MUN', 'MS', 'EN', 'Beirut', 'A143'),
+  ('D3043', 'Mia', 'Henderson', 66778899, 'mia.henderson@gmail.com', 'Cedar Valley School', 'MUN', 'MS', 'EN', 'Beirut', 'A143'),
+  ('D3044', 'Noah', 'Brown', 77889900, 'noah.brown@gmail.com', 'Cedar Valley School', 'MAL', 'HS', 'EN', 'Beirut', 'A143'),
+  ('D3045', 'Isabella', 'Taylor', 88990011, 'isabella.taylor@gmail.com', 'Cedar Valley School', 'MAL', 'MS', 'EN', 'Beirut', 'A143'),
+  ('D3046', 'Lucas', 'Smith', 99001122, 'lucas.smith@gmail.com', 'Cedar Valley School', 'MAL', 'HS', 'EN', 'Beirut', 'A143'),
+  ('D3047', 'Ava', 'Webster', 11223344, 'ava.webster@gmail.com', 'Cedar Valley School', 'MAL', 'MS', 'EN', 'Beirut', 'A143'),
+  ('D3048', 'Liam', 'Fisher', 22334455, 'liam.fisher@gmail.com', 'Cedar Valley School', 'MAL', 'HS', 'AR', 'Beirut', 'A143'),
+  ('D3049', 'Mia', 'Clark', 33445566, 'mia.clark@gmail.com', 'Cedar Valley School', 'MAL', 'HS', 'AR', 'Beirut', 'A143'),
+  ('D3050', 'Noah', 'Perry', 44556677, 'noah.perry@gmail.com', 'Cedar Valley School', 'MGG', 'HS', 'EN', 'Beirut', 'A143'),
+  ('D3051', 'Isabella', 'Nelson', 55667788, 'isabella.nelson@gmail.com', 'Cedar Valley School', 'MGG', 'HS', 'EN', 'Beirut', 'A143'),
+  ('D3052', 'Lucas', 'Harrison', 66778899, 'lucas.harrison@gmail.com', 'Cedar Valley School', 'MEU', 'HS', 'FR', 'Beirut', 'A143'),
+  ('D3053', 'Sophia', 'Coleman', 77889900, 'sophia.coleman@gmail.com', 'Cedar Valley School', 'MEU', 'HS', 'FR', 'Beirut', 'A143'),
+  ('D3054', 'Mason', 'Wells', 88990011, 'mason.wells@gmail.com', 'Cedar Valley School', 'MEU', 'HS', 'FR', 'Beirut', 'A143'),
+  ('D3055', 'Ava', 'Hudson', 99001122, 'ava.hudson@gmail.com', 'Cedar Valley School', 'MEU', 'HS', 'FR', 'Beirut', 'A143')
+
+INSERT INTO ADVISOR VALUES
+  ('A147', 'Sophie', 'Williams', 12345678, 'sophie.williams@gmail.com', 'Diamond Ridge Academy', 'A109'),
+  ('A148', 'Matthew', 'Davis', 23456789, 'matthew.davis@gmail.com', 'Diamond Ridge Academy', 'A109');
+
+INSERT INTO DELEGATE (dlgID, fName, lName, dlgNB, dlgEmail, dlgSchool, dlgPGM, level, lang, dlgCampus, dlgAdv)
+VALUES
+  ('D3056', 'Liam', 'Carter', 55667788, 'liam.carter@gmail.com', 'Diamond Ridge Academy', 'MUN', 'HS', 'EN', 'Byblos', 'A147'),
+  ('D3057', 'Olivia', 'Hawkins', 66778899, 'olivia.hawkins@gmail.com', 'Diamond Ridge Academy', 'MUN', 'MS', 'EN', 'Byblos', 'A147'),
+  ('D3058', 'Noah', 'Fletcher', 77889900, 'noah.fletcher@gmail.com', 'Diamond Ridge Academy', 'MUN', 'MS', 'EN', 'Byblos', 'A147'),
+  ('D3059', 'Isabella', 'Wells', 88990011, 'isabella.wells@gmail.com', 'Diamond Ridge Academy', 'MAL', 'HS', 'EN', 'Byblos', 'A147'),
+  ('D3060', 'Lucas', 'Clark', 99001122, 'lucas.clark@gmail.com', 'Diamond Ridge Academy', 'MAL', 'MS', 'EN', 'Byblos', 'A147'),
+  ('D3061', 'Sophie', 'Nelson', 11223344, 'sophie.nelson@gmail.com', 'Diamond Ridge Academy', 'MAL', 'HS', 'EN', 'Byblos', 'A147'),
+  ('D3062', 'Mia', 'Perry', 22334455, 'mia.perry@gmail.com', 'Diamond Ridge Academy', 'MAL', 'MS', 'EN', 'Byblos', 'A147'),
+  ('D3063', 'Noah', 'Webster', 33445566, 'noah.webster@gmail.com', 'Diamond Ridge Academy', 'MAL', 'HS', 'EN', 'Byblos', 'A148'),
+  ('D3064', 'Ava', 'Harrison', 44556677, 'ava.harrison@gmail.com', 'Diamond Ridge Academy', 'MAL', 'MS', 'EN', 'Byblos', 'A148'),
+  ('D3065', 'Liam', 'Fisher', 55667788, 'liam.fisher@gmail.com', 'Diamond Ridge Academy', 'MGG', 'HS', 'EN', 'Byblos', 'A148'),
+  ('D3066', 'Olivia', 'Coleman', 66778899, 'olivia.coleman@gmail.com', 'Diamond Ridge Academy', 'MGG', 'HS', 'EN', 'Byblos', 'A148'),
+  ('D3067', 'Noah', 'Hudson', 77889900, 'noah.hudson@gmail.com', 'Diamond Ridge Academy', 'MEU', 'HS', 'EN', 'Byblos', 'A148'),
+  ('D3068', 'Isabella', 'Gibson', 88990011, 'isabella.gibson@gmail.com', 'Diamond Ridge Academy', 'MEU', 'HS', 'EN', 'Byblos', 'A147'),
+  ('D3069', 'Lucas', 'Norton', 99001122, 'lucas.norton@gmail.com', 'Diamond Ridge Academy', 'MEU', 'HS', 'FR', 'Byblos', 'A147'),
+  ('D3070', 'Sophia', 'Wells', 11223344, 'sophia.wells@gmail.com', 'Diamond Ridge Academy', 'MEU', 'HS', 'FR', 'Byblos', 'A147');
+
+INSERT INTO ADVISOR VALUES
+('A222', 'Emma', 'Miller', 34567890, 'emma.miller@gmail.com', 'Elite Academy', 'A222'),
+  ('A223', 'David', 'Johnson', 45678901, 'david.johnson@gmail.com', 'Elite Academy', 'A222');
+
+
+INSERT INTO DELEGATE (dlgID, fName, lName, dlgNB, dlgEmail, dlgSchool, dlgPGM, level, lang, dlgCampus, dlgAdv)
+VALUES
+  ('D3071', 'Emma', 'Ward', 66778899, 'emma.ward@gmail.com', 'Elite Academy', 'MUN', 'HS', 'EN', 'Byblos', 'A222'),
+  ('D3072', 'Jackson', 'Murray', 77889900, 'jackson.murray@gmail.com', 'Elite Academy', 'MUN', 'MS', 'EN', 'Byblos', 'A222'),
+  ('D3073', 'Sophia', 'Dixon', 88990011, 'sophia.dixon@gmail.com', 'Elite Academy', 'MUN', 'MS', 'EN', 'Byblos', 'A222'),
+  ('D3074', 'Oliver', 'Hill', 99001122, 'oliver.hill@gmail.com', 'Elite Academy', 'MAL', 'HS', 'EN', 'Byblos', 'A222'),
+  ('D3075', 'Lily', 'Mitchell', 11223344, 'lily.mitchell@gmail.com', 'Elite Academy', 'MAL', 'MS', 'EN', 'Byblos', 'A222'),
+  ('D3076', 'Jack', 'Clark', 22334455, 'jack.clark@gmail.com', 'Elite Academy', 'MAL', 'HS', 'EN', 'Byblos', 'A222'),
+  ('D3077', 'Sophia', 'Fletcher', 33445566, 'sophia.fletcher@gmail.com', 'Elite Academy', 'MAL', 'MS', 'EN', 'Byblos', 'A223'),
+  ('D3078', 'Mason', 'Dixon', 44556677, 'mason.dixon@gmail.com', 'Elite Academy', 'MAL', 'HS', 'EN', 'Byblos', 'A223'),
+  ('D3079', 'Ava', 'Hill', 55667788, 'ava.hill@gmail.com', 'Elite Academy', 'MAL', 'MS', 'EN', 'Byblos', 'A223'),
+  ('D3080', 'Liam', 'Ward', 66778899, 'liam.ward@gmail.com', 'Elite Academy', 'MGG', 'HS', 'EN', 'Byblos', 'A223'),
+  ('D3081', 'Olivia', 'Murray', 77889900, 'olivia.murray@gmail.com', 'Elite Academy', 'MGG', 'HS', 'EN', 'Byblos', 'A223'),
+  ('D3082', 'Noah', 'Dixon', 88990011, 'noah.dixon@gmail.com', 'Elite Academy', 'MEU', 'HS', 'EN', 'Byblos', 'A223'),
+  ('D3083', 'Emma', 'Hill', 99001122, 'emma.hill@gmail.com', 'Elite Academy', 'MEU', 'HS', 'EN', 'Byblos', 'A223'),
+  ('D3084', 'William', 'Mitchell', 11223344, 'william.mitchell@gmail.com', 'Elite Academy', 'MEU', 'HS', 'FR', 'Byblos', 'A223'),
+  ('D3085', 'Grace', 'Clark', 22334455, 'grace.clark@gmail.com', 'Elite Academy', 'MEU', 'HS', 'FR', 'Byblos', 'A223');
+
+
+
+
+
+
+
+
+
+
+
+INSERT INTO ADVISOR VALUES
+
+  ('D3086', 'Liam', 'Fletcher', 33445566, 'liam.fletcher@gmail.com', 'Evergreen International School', 'MUN', 'HS', 'EN', 'Byblos', 'A149'),
+  ('D3087', 'Olivia', 'Wells', 44556677, 'olivia.wells@gmail.com', 'Evergreen International School', 'MUN', 'MS', 'EN', 'Byblos', 'A149'),
+  ('D3088', 'Noah', 'Clark', 55667788, 'noah.clark@gmail.com', 'Evergreen International School', 'MUN', 'MS', 'EN', 'Byblos', 'A149'),
+  ('D3089', 'Isabella', 'Norton', 66778899, 'isabella.norton@gmail.com', 'Evergreen International School', 'MAL', 'HS', 'EN', 'Byblos', 'A149'),
+  ('D3090', 'Lucas', 'Perry', 77889900, 'lucas.perry@gmail.com', 'Evergreen International School', 'MAL', 'MS', 'EN', 'Byblos', 'A149'),
+  ('D3091', 'Sophia', 'Fletcher', 88990011, 'sophia.fletcher@gmail.com', 'Evergreen International School', 'MAL', 'HS', 'EN', 'Byblos', 'A149'),
+  ('D3092', 'Mia', 'Webster', 99001122, 'mia.webster@gmail.com', 'Evergreen International School', 'MAL', 'MS', 'EN', 'Byblos', 'A149'),
+  ('D3093', 'Noah', 'Harrison', 11223344, 'noah.harrison@gmail.com', 'Evergreen International School', 'MAL', 'HS', 'EN', 'Byblos', 'A149'),
+  ('D3094', 'Ava', 'Fisher', 22334455, 'ava.fisher@gmail.com', 'Evergreen International School', 'MAL', 'MS', 'EN', 'Byblos', 'A149'),
+  ('D3095', 'Liam', 'Coleman', 33445566, 'liam.coleman@gmail.com', 'Evergreen International School', 'MGG', 'HS', 'EN', 'Byblos', 'A149'),
+  ('D3096', 'Olivia', 'Hudson', 44556677, 'olivia.hudson@gmail.com', 'Evergreen International School', 'MGG', 'HS', 'EN', 'Byblos', 'A149'),
+  ('D3097', 'Noah', 'Gibson', 55667788, 'noah.gibson@gmail.com', 'Evergreen International School', 'MEU', 'HS', 'EN', 'Byblos', 'A149'),
+  ('D3098', 'Isabella', 'Nelson', 66778899, 'isabella.nelson@gmail.com', 'Evergreen International School', 'MEU', 'HS', 'EN', 'Byblos', 'A149'),
+  ('D3099', 'Lucas', 'Wells', 77889900, 'lucas.wells@gmail.com', 'Evergreen International School', 'MEU', 'HS', 'FR', 'Byblos', 'A149'),
+  ('D3100', 'Sophia', 'Dixon', 88990011, 'sophia.dixon@gmail.com', 'Evergreen International School', 'MEU', 'HS', 'FR', 'Byblos', 'A149'),
+
+  ('D3101', 'Emma', 'Nelson', 44556677, 'emma.nelson@gmail.com', 'Golden Gate Academy', 'MUN', 'HS', 'EN', 'Byblos', 'A151'),
+  ('D3102', 'Jackson', 'Clark', 55667788, 'jackson.clark@gmail.com', 'Golden Gate Academy', 'MUN', 'MS', 'EN', 'Byblos', 'A151'),
+  ('D3103', 'Sophia', 'Harrison', 66778899, 'sophia.harrison@gmail.com', 'Golden Gate Academy', 'MUN', 'MS', 'EN', 'Byblos', 'A151'),
+  ('D3104', 'Oliver', 'Coleman', 77889900, 'oliver.coleman@gmail.com', 'Golden Gate Academy', 'MAL', 'HS', 'AR', 'Byblos', 'A151'),
+  ('D3105', 'Lily', 'Fisher', 88990011, 'lily.fisher@gmail.com', 'Golden Gate Academy', 'MAL', 'MS', 'EN', 'Byblos', 'A151'),
+  ('D3106', 'Jack', 'Hudson', 99001122, 'jack.hudson@gmail.com', 'Golden Gate Academy', 'MGG', 'HS', 'EN', 'Byblos', 'A151'),
+  ('D3107', 'Sophia', 'Norton', 11223344, 'sophia.norton@gmail.com', 'Golden Gate Academy', 'MAL', 'MS', 'EN', 'Byblos', 'A151'),
+  ('D3108', 'Mason', 'Webster', 22334455, 'mason.webster@gmail.com', 'Golden Gate Academy', 'MAL', 'HS', 'EN', 'Byblos', 'A151'),
+  ('D3109', 'Ava', 'Harrison', 33445566, 'ava.harrison@gmail.com', 'Golden Gate Academy', 'MAL', 'MS', 'EN', 'Byblos', 'A151'),
+  ('D3110', 'Liam', 'Fletcher', 44556677, 'liam.fletcher@gmail.com', 'Golden Gate Academy', 'MAL', 'HS', 'EN', 'Byblos', 'A151'),
+  ('D3111', 'Olivia', 'Wells', 55667788, 'olivia.wells@gmail.com', 'Golden Gate Academy', 'MGG', 'HS', 'EN', 'Byblos', 'A151'),
+  ('D3112', 'Noah', 'Coleman', 66778899, 'noah.coleman@gmail.com', 'Golden Gate Academy', 'MEU', 'HS', 'EN', 'Byblos', 'A151'),
+  ('D3113', 'Emma', 'Hudson', 77889900, 'emma.hudson@gmail.com', 'Golden Gate Academy', 'MEU', 'HS', 'EN', 'Byblos', 'A151'),
+  ('D3114', 'William', 'Gibson', 88990011, 'william.gibson@gmail.com', 'Golden Gate Academy', 'MEU', 'HS', 'FR', 'Byblos', 'A151'),
+
+  ('D3115', 'Ella', 'Ward', 88990011, 'ella.ward@gmail.com', 'Hope Christian School', 'MUN', 'HS', 'EN', 'Beirut', 'A153'),
+  ('D3116', 'Leo', 'Mitchell', 99001122, 'leo.mitchell@gmail.com', 'Hope Christian School', 'MUN', 'MS', 'EN', 'Beirut', 'A153'),
+  ('D3117', 'Aria', 'Dixon', 11223344, 'aria.dixon@gmail.com', 'Hope Christian School', 'MUN', 'MS', 'EN', 'Beirut', 'A153'),
+  ('D3118', 'Henry', 'Hill', 22334455, 'henry.hill@gmail.com', 'Hope Christian School', 'MGG', 'HS', 'EN', 'Beirut', 'A153'),
+  ('D3119', 'Lily', 'Mitchell', 33445566, 'lily.mitchell@gmail.com', 'Hope Christian School', 'MAL', 'MS', 'EN', 'Beirut', 'A153'),
+  ('D3120', 'Jack', 'Clark', 44556677, 'jack.clark@gmail.com', 'Hope Christian School', 'MAL', 'HS', 'EN', 'Beirut', 'A153'),
+  ('D3121', 'Sophia', 'Fletcher', 55667788, 'sophia.fletcher@gmail.com', 'Hope Christian School', 'MAL', 'MS', 'EN', 'Beirut', 'A153'),
+  ('D3122', 'Mason', 'Dixon', 66778899, 'mason.dixon@gmail.com', 'Hope Christian School', 'MEU', 'HS', 'EN', 'Beirut', 'A153'),
+  ('D3123', 'Ava', 'Hill', 77889900, 'ava.hill@gmail.com', 'Hope Christian School', 'MEU', 'HS', 'EN', 'Beirut', 'A153'),
+  ('D3124', 'Liam', 'Ward', 88990011, 'liam.ward@gmail.com', 'Hope Christian School', 'MEU', 'HS', 'EN', 'Beirut', 'A153'),
+  ('D3125', 'Olivia', 'Mitchell', 99001122, 'olivia.mitchell@gmail.com', 'Hope Christian School', 'MEU', 'HS', 'EN', 'Beirut', 'A153'),
+  ('D3126', 'Noah', 'Dixon', 11223344, 'noah.dixon@gmail.com', 'Hope Christian School', 'MEU', 'HS', 'EN', 'Beirut', 'A153'),
+  ('D3127', 'Emma', 'Hill', 22334455, 'emma.hill@gmail.com', 'Hope Christian School', 'MGG', 'HS', 'EN', 'Beirut', 'A153'),
+  ('D3128', 'William', 'Mitchell', 33445566, 'william.mitchell@gmail.com', 'Hope Christian School', 'MEU', 'HS', 'EN', 'Beirut', 'A153'),
+
+
+
+  ('D3129', 'Ethan', 'Fletcher', 44556677, 'ethan.fletcher@gmail.com', 'Horizon Elementary', 'MUN', 'HS', 'EN', 'Beirut', 'A155'),
+  ('D3130', 'Sophie', 'Wells', 55667788, 'sophie.wells@gmail.com', 'Horizon Elementary', 'MUN', 'MS', 'EN', 'Beirut', 'A155'),
+  ('D3131', 'Mia', 'Clark', 66778899, 'mia.clark@gmail.com', 'Horizon Elementary', 'MUN', 'MS', 'EN', 'Beirut', 'A155'),
+  ('D3132', 'Noah', 'Perry', 77889900, 'noah.perry@gmail.com', 'Horizon Elementary', 'MAL', 'HS', 'EN', 'Beirut', 'A155'),
+  ('D3133', 'Isabella', 'Taylor', 88990011, 'isabella.taylor@gmail.com', 'Horizon Elementary', 'MAL', 'MS', 'EN', 'Beirut', 'A155'),
+  ('D3134', 'Lucas', 'Smith', 99001122, 'lucas.smith@gmail.com', 'Horizon Elementary', 'MGG', 'HS', 'EN', 'Beirut', 'A155'),
+  ('D3135', 'Ava', 'Webster', 11223344, 'ava.webster@gmail.com', 'Horizon Elementary', 'MAL', 'MS', 'EN', 'Beirut', 'A155'),
+  ('D3136', 'Liam', 'Fisher', 22334455, 'liam.fisher@gmail.com', 'Horizon Elementary', 'MAL', 'HS', 'EN', 'Beirut', 'A155'),
+  ('D3137', 'Olivia', 'Coleman', 33445566, 'olivia.coleman@gmail.com', 'Horizon Elementary', 'MEU', 'HS', 'EN', 'Beirut', 'A155'),
+  ('D3138', 'Noah', 'Hudson', 44556677, 'noah.hudson@gmail.com', 'Horizon Elementary', 'MGG', 'HS', 'EN', 'Beirut', 'A155'),
+  ('D3139', 'Emma', 'Gibson', 55667788, 'emma.gibson@gmail.com', 'Horizon Elementary', 'MAL', 'HS', 'AR', 'Beirut', 'A155'),
+  ('D3140', 'William', 'Nelson', 66778899, 'william.nelson@gmail.com', 'Horizon Elementary', 'MEU', 'HS', 'EN', 'Beirut', 'A155'),
+  ('D3141', 'Grace', 'Wells', 77889900, 'grace.wells@gmail.com', 'Horizon Elementary', 'MEU', 'HS', 'EN', 'Beirut', 'A155'),
+  ('D3142', 'Mason', 'Dixon', 88990011, 'mason.dixon@gmail.com', 'Horizon Elementary', 'MEU', 'HS', 'EN', 'Beirut', 'A155'),
+
+# Eighth set
+data_set_8 = [
+  ('D3143', 'Oliver', 'Harrison', 55667788, 'oliver.harrison@gmail.com', 'International School of Choueifat', 'MEU', 'HS', 'EN', 'Byblos', 'A112'),
+  ('D3144', 'Lily', 'Fisher', 66778899, 'lily.fisher@gmail.com', 'International School of Choueifat', 'MAL', 'HS', 'EN', 'Byblos', 'A112'),
+  ('D3145', 'Jack', 'Hudson', 77889900, 'jack.hudson@gmail.com', 'International School of Choueifat', 'MGG', 'HS', 'EN', 'Byblos', 'A112'),
+  ('D3146', 'Sophia', 'Gibson', 88990011, 'sophia.gibson@gmail.com', 'International School of Choueifat', 'MUN', 'HS', 'EN', 'Byblos', 'A112'),
+  ('D3147', 'Mason', 'Norton', 99001122, 'mason.norton@gmail.com', 'International School of Choueifat', 'MAL', 'HS', 'AR', 'Byblos', 'A112'),
+  ('D3148', 'Ava', 'Coleman', 11223344, 'ava.coleman@gmail.com', 'International School of Choueifat', 'MUN', 'MS', 'EN', 'Byblos', 'A112'),
+  ('D3149', 'Leo', 'Ward', 22334455, 'leo.ward@gmail.com', 'International School of Choueifat', 'MUN', 'HS', 'EN', 'Byblos', 'A112'),
+  ('D3150', 'Emma', 'Dixon', 33445566, 'emma.dixon@gmail.com', 'International School of Choueifat', 'MGG', 'HS', 'EN', 'Byblos', 'A112'),
+  ('D3151', 'William', 'Mitchell', 44556677, 'william.mitchell@gmail.com', 'International School of Choueifat', 'MUN', 'HS', 'EN', 'Byblos', 'A112'),
+  ('D3152', 'Grace', 'Clark', 55667788, 'grace.clark@gmail.com', 'International School of Choueifat', 'MUN', 'MS', 'EN', 'Byblos', 'A112'),
+  ('D3153', 'Liam', 'Fletcher', 66778899, 'liam.fletcher@gmail.com', 'International School of Choueifat', 'MEU', 'HS', 'EN', 'Byblos', 'A112'),
+  ('D3154', 'Olivia', 'Wells', 77889900, 'olivia.wells@gmail.com', 'International School of Choueifat', 'MAL', 'HS', 'AR', 'Byblos', 'A112'),
+  ('D3155', 'Noah', 'Hudson', 88990011, 'noah.hudson@gmail.com', 'International School of Choueifat', 'MEU', 'HS', 'FR', 'Byblos', 'A112'),
+  ('D3156', 'Isabella', 'Gibson', 99001122, 'isabella.gibson@gmail.com', 'International School of Choueifat', 'MUN', 'HS', 'EN', 'Byblos', 'A112'),
+]
+
+# Ninth set
+data_set_9 = [
+  ('D3157', 'Ella', 'Clark', 66778899, 'ella.clark@gmail.com', 'International School of Jounieh', 'MUN', 'HS', 'EN', 'Beirut', 'A157'),
+  ('D3158', 'Leo', 'Fletcher', 77889900, 'leo.fletcher@gmail.com', 'International School of Jounieh', 'MUN', 'MS', 'EN', 'Beirut', 'A157'),
+  ('D3159', 'Aria', 'Hudson', 88990011, 'aria.hudson@gmail.com', 'International School of Jounieh', 'MUN', 'MS', 'EN', 'Beirut', 'A157'),
+  ('D3160', 'Henry', 'Gibson', 99001122, 'henry.gibson@gmail.com', 'International School of Jounieh', 'MAL', 'MS', 'EN', 'Beirut', 'A157'),
+  ('D3161', 'Lily', 'Harrison', 11223344, 'lily.harrison@gmail.com', 'International School of Jounieh', 'MAL', 'HS', 'EN', 'Beirut', 'A157'),
+  ('D3162', 'Jack', 'Webster', 22334455, 'jack.webster@gmail.com', 'International School of Jounieh', 'MUN', 'HS', 'EN', 'Beirut', 'A157'),
+  ('D3163', 'Sophia', 'Fisher', 33445566, 'sophia.fisher@gmail.com', 'International School of Jounieh', 'MAL', 'HS', 'EN', 'Beirut', 'A157'),
+  ('D3164', 'Mason', 'Norton', 44556677, 'mason.norton@gmail.com', 'International School of Jounieh', 'MGG', 'HS', 'EN', 'Beirut', 'A157'),
+  ('D3165', 'Ava', 'Wells', 55667788, 'ava.wells@gmail.com', 'International School of Jounieh', 'MGG', 'HS', 'EN', 'Beirut', 'A157'),
+  ('D3166', 'Liam', 'Dixon', 66778899, 'liam.dixon@gmail.com', 'International School of Jounieh', 'MAL', 'HS', 'AR', 'Beirut', 'A157'),
+  ('D3167', 'Olivia', 'Hill', 77889900, 'olivia.hill@gmail.com', 'International School of Jounieh', 'MUN', 'HS', 'EN', 'Beirut', 'A157'),
+  ('D3168', 'Noah', 'Ward', 88990011, 'noah.ward@gmail.com', 'International School of Jounieh', 'MEU', 'HS', 'FR', 'Beirut', 'A157'),
+  ('D3169', 'Emma', 'Mitchell', 99001122, 'emma.mitchell@gmail.com', 'International School of Jounieh', 'MAL', 'MS', 'EN', 'Beirut', 'A157'),
+  ('D3170', 'William', 'Dixon', 11223344, 'william.dixon@gmail.com', 'International School of Jounieh', 'MEU', 'HS', 'FR', 'Beirut', 'A157'),
+]
+
+# Tenth set
+data_set_10 = [
+  ('D3171', 'Ethan', 'Hudson', 22334455, 'ethan.hudson@gmail.com', 'Lebanon Central School', 'MGG', 'HS', 'EN', 'Byblos', 'A159'),
+  ('D3172', 'Sophie', 'Gibson', 33445566, 'sophie.gibson@gmail.com', 'Lebanon Central School', 'MAL', 'MS', 'EN', 'Byblos', 'A159'),
+  ('D3173', 'Mia', 'Nelson', 44556677, 'mia.nelson@gmail.com', 'Lebanon Central School', 'MGG', 'HS', 'EN', 'Byblos', 'A159'),
+  ('D3174', 'Noah', 'Clark', 55667788, 'noah.clark@gmail.com', 'Lebanon Central School', 'MAL', 'HS', 'AR', 'Byblos', 'A159'),
+  ('D3175', 'Isabella', 'Perry', 66778899, 'isabella.perry@gmail.com', 'Lebanon Central School', 'MAL', 'HS', 'AR', 'Byblos', 'A159'),
+  ('D3176', 'Lucas', 'Taylor', 77889900, 'lucas.taylor@gmail.com', 'Lebanon Central School', 'MAL', 'HS', 'AR', 'Byblos', 'A159'),
+  ('D3177', 'Ava', 'Webster', 88990011, 'ava.webster@gmail.com', 'Lebanon Central School', 'MAL', 'HS', 'AR', 'Byblos', 'A159'),
+  ('D3178', 'Liam', 'Fisher', 99001122, 'liam.fisher@gmail.com', 'Lebanon Central School', 'MAL', 'HS', 'AR', 'Byblos', 'A159'),
+  ('D3179', 'Olivia', 'Coleman', 11223344, 'olivia.coleman@gmail.com', 'Lebanon Central School', 'MAL', 'HS', 'AR', 'Byblos', 'A159'),
+  ('D3180', 'Noah', 'Hudson', 22334455, 'noah.hudson@gmail.com', 'Lebanon Central School', 'MUN', 'HS', 'EN', 'Byblos', 'A159'),
+  ('D3181', 'Emma', 'Gibson', 33445566, 'emma.gibson@gmail.com', 'Lebanon Central School', 'MUN', 'HS', 'EN', 'Byblos', 'A159'),
+  ('D3182', 'William', 'Nelson', 44556677, 'william.nelson@gmail.com', 'Lebanon Central School', 'MUN', 'HS', 'EN', 'Byblos', 'A159'),
+  ('D3183', 'Grace', 'Webster', 55667788, 'grace.webster@gmail.com', 'Lebanon Central School', 'MAL', 'HS', 'EN', 'Byblos', 'A159'),
+  ('D3184', 'Mason', 'Dixon', 66778899, 'mason.dixon@gmail.com', 'Lebanon Central School', 'MAL', 'HS', 'EN', 'Byblos', 'A159'),
+]
+# Eleventh set
+data_set_11 = [
+  ('D3185', 'Ella', 'Hudson', 77889900, 'ella.hudson@gmail.com', 'Liberty Academy', 'MGG', 'HS', 'EN', 'Beirut', 'A161'),
+  ('D3186', 'Leo', 'Gibson', 88990011, 'leo.gibson@gmail.com', 'Liberty Academy', 'MGG', 'HS', 'EN', 'Beirut', 'A161'),
+  ('D3187', 'Aria', 'Nelson', 99001122, 'aria.nelson@gmail.com', 'Liberty Academy', 'MGG', 'HS', 'EN', 'Beirut', 'A161'),
+  ('D3188', 'Henry', 'Clark', 11223344, 'henry.clark@gmail.com', 'Liberty Academy', 'MAL', 'MS', 'EN', 'Beirut', 'A161'),
+  ('D3189', 'Lily', 'Perry', 22334455, 'lily.perry@gmail.com', 'Liberty Academy', 'MAL', 'MS', 'EN', 'Beirut', 'A161'),
+  ('D3190', 'Jack', 'Taylor', 33445566, 'jack.taylor@gmail.com', 'Liberty Academy', 'MAL', 'MS', 'EN', 'Beirut', 'A161'),
+  ('D3191', 'Sophia', 'Webster', 44556677, 'sophia.webster@gmail.com', 'Liberty Academy', 'MGG', 'HS', 'EN', 'Beirut', 'A161'),
+  ('D3192', 'Mason', 'Fisher', 55667788, 'mason.fisher@gmail.com', 'Liberty Academy', 'MUN', 'HS', 'EN', 'Beirut', 'A161'),
+  ('D3193', 'Ava', 'Coleman', 66778899, 'ava.coleman@gmail.com', 'Liberty Academy', 'MUN', 'HS', 'EN', 'Beirut', 'A161'),
+  ('D3194', 'Liam', 'Hudson', 77889900, 'liam.hudson@gmail.com', 'Liberty Academy', 'MAL', 'HS', 'AR', 'Beirut', 'A161'),
+  ('D3195', 'Olivia', 'Gibson', 88990011, 'olivia.gibson@gmail.com', 'Liberty Academy', 'MUN', 'HS', 'EN', 'Beirut', 'A161'),
+  ('D3196', 'Noah', 'Nelson', 99001122, 'noah.nelson@gmail.com', 'Liberty Academy', 'MUN', 'HS', 'EN', 'Beirut', 'A161'),
+  ('D3197', 'Emma', 'Clark', 11223344, 'emma.clark@gmail.com', 'Liberty Academy', 'MAL', 'MS', 'EN', 'Beirut', 'A161'),
+  ('D3198', 'William', 'Perry', 22334455, 'william.perry@gmail.com', 'Liberty Academy', 'MAL', 'MS', 'EN', 'Beirut', 'A161'),
+]
+
+# Twelfth set
+data_set_12 = [
+  ('D3199', 'Ella', 'Dixon', 33445566, 'ella.dixon@gmail.com', 'Maple Grove Academy', 'MEU', 'HS', 'FR', 'Beirut', 'A163'),
+  ('D3200', 'Leo', 'Hill', 44556677, 'leo.hill@gmail.com', 'Maple Grove Academy', 'MEU', 'HS', 'FR', 'Beirut', 'A163'),
+  ('D3201', 'Aria', 'Webster', 55667788, 'aria.webster@gmail.com', 'Maple Grove Academy', 'MEU', 'HS', 'FR', 'Beirut', 'A163'),
+  ('D3202', 'Henry', 'Fisher', 66778899, 'henry.fisher@gmail.com', 'Maple Grove Academy', 'MEU', 'HS', 'FR', 'Beirut', 'A163'),
+  ('D3203', 'Lily', 'Norton', 77889900, 'lily.norton@gmail.com', 'Maple Grove Academy', 'MGG', 'HS', 'EN', 'Beirut', 'A163'),
+  ('D3204', 'Jack', 'Clark', 88990011, 'jack.clark@gmail.com', 'Maple Grove Academy', 'MGG', 'HS', 'EN', 'Beirut', 'A163'),
+  ('D3205', 'Sophia', 'Fletcher', 99001122, 'sophia.fletcher@gmail.com', 'Maple Grove Academy', 'MGG', 'HS', 'EN', 'Beirut', 'A163'),
+  ('D3206', 'Mason', 'Dixon', 11223344, 'mason.dixon@gmail.com', 'Maple Grove Academy', 'MGG', 'HS', 'EN', 'Beirut', 'A163'),
+  ('D3207', 'Ava', 'Hill', 22334455, 'ava.hill@gmail.com', 'Maple Grove Academy', 'MUN', 'HS', 'EN', 'Beirut', 'A163'),
+  ('D3208', 'Liam', 'Webster', 33445566, 'liam.webster@gmail.com', 'Maple Grove Academy', 'MUN', 'HS', 'EN', 'Beirut', 'A163'),
+  ('D3209', 'Olivia', 'Fisher', 44556677, 'olivia.fisher@gmail.com', 'Maple Grove Academy', 'MUN', 'HS', 'EN', 'Beirut', 'A163'),
+  ('D3210', 'Noah', 'Norton', 55667788, 'noah.norton@gmail.com', 'Maple Grove Academy', 'MUN', 'HS', 'EN', 'Beirut', 'A163'),
+  ('D3211', 'Emma', 'Clark', 66778899, 'emma.clark@gmail.com', 'Maple Grove Academy', 'MAL', 'HS', 'AR', 'Beirut', 'A163'),
+  ('D3212', 'William', 'Fletcher', 77889900, 'william.fletcher@gmail.com', 'Maple Grove Academy', 'MAL', 'HS', 'AR', 'Beirut', 'A163'),
+  ('D3213', 'Grace', 'Dixon', 88990011, 'grace.dixon@gmail.com', 'Maple Grove Academy', 'MAL', 'HS', 'AR', 'Beirut', 'A163'),
+]
+
+# Thirteenth set
+data_set_13 = [
+  ('D3214', 'Ethan', 'Ward', 44556677, 'ethan.ward@gmail.com', 'Mediterranean Heights High', 'MUN', 'HS', 'EN', 'Byblos', 'A165'),
+  ('D3215', 'Sophie', 'Mitchell', 55667788, 'sophie.mitchell@gmail.com', 'Mediterranean Heights High', 'MUN', 'HS', 'EN', 'Byblos', 'A165'),
+  ('D3216', 'Mia', 'Dixon', 66778899, 'mia.dixon@gmail.com', 'Mediterranean Heights High', 'MUN', 'HS', 'EN', 'Byblos', 'A165'),
+  ('D3217', 'Noah', 'Hill', 77889900, 'noah.hill@gmail.com', 'Mediterranean Heights High', 'MUN', 'HS', 'EN', 'Byblos', 'A165'),
+  ('D3218', 'Isabella', 'Ward', 88990011, 'isabella.ward@gmail.com', 'Mediterranean Heights High', 'MEU', 'HS', 'EN', 'Byblos', 'A165'),
+  ('D3219', 'Lucas', 'Mitchell', 99001122, 'lucas.mitchell@gmail.com', 'Mediterranean Heights High', 'MEU', 'HS', 'EN', 'Byblos', 'A165'),
+  ('D3220', 'Ava', 'Dixon', 11223344, 'ava.dixon@gmail.com', 'Mediterranean Heights High', 'MEU', 'HS', 'FR', 'Byblos', 'A165'),
+  ('D3221', 'Liam', 'Hill', 22334455, 'liam.hill@gmail.com', 'Mediterranean Heights High', 'MEU', 'HS', 'FR', 'Byblos', 'A165'),
+  ('D3222', 'Olivia', 'Ward', 33445566, 'olivia.ward@gmail.com', 'Mediterranean Heights High', 'MAL', 'HS', 'AR', 'Byblos', 'A165'),
+  ('D3223', 'Noah', 'Mitchell', 44556677, 'noah.mitchell@gmail.com', 'Mediterranean Heights High', 'MAL', 'HS', 'AR', 'Byblos', 'A165'),
+  ('D3224', 'Emma', 'Dixon', 55667788, 'emma.dixon@gmail.com', 'Mediterranean Heights High', 'MAL', 'HS', 'AR', 'Byblos', 'A165'),
+  ('D3225', 'William', 'Hill', 66778899, 'william.hill@gmail.com', 'Mediterranean Heights High', 'MAL', 'MS', 'EN', 'Byblos', 'A165'),
+  ('D3226', 'Grace', 'Ward', 77889900, 'grace.ward@gmail.com', 'Mediterranean Heights High', 'MAL', 'MS', 'EN', 'Byblos', 'A165'),
+  ('D3227', 'Mason', 'Mitchell', 88990011, 'mason.mitchell@gmail.com', 'Mediterranean Heights High', 'MAL', 'MS', 'EN', 'Byblos', 'A165'),
+]
+# Fourteenth set
+data_set_14 = [
+  ('D3228', 'Ella', 'Fisher', 55667788, 'ella.fisher@gmail.com', 'Rosewood College', 'MAL', 'HS', 'AR', 'Beirut', 'A167'),
+  ('D3229', 'Leo', 'Dixon', 66778899, 'leo.dixon@gmail.com', 'Rosewood College', 'MAL', 'HS', 'AR', 'Beirut', 'A167'),
+  ('D3230', 'Aria', 'Hill', 77889900, 'aria.hill@gmail.com', 'Rosewood College', 'MAL', 'HS', 'AR', 'Beirut', 'A167'),
+  ('D3231', 'Henry', 'Ward', 88990011, 'henry.ward@gmail.com', 'Rosewood College', 'MGG', 'HS', 'EN', 'Beirut', 'A167'),
+  ('D3232', 'Lily', 'Mitchell', 99001122, 'lily.mitchell@gmail.com', 'Rosewood College', 'MGG', 'HS', 'EN', 'Beirut', 'A167'),
+  ('D3233', 'Jack', 'Dixon', 11223344, 'jack.dixon@gmail.com', 'Rosewood College', 'MGG', 'HS', 'EN', 'Beirut', 'A167'),
+  ('D3234', 'Sophia', 'Hill', 22334455, 'sophia.hill@gmail.com', 'Rosewood College', 'MGG', 'HS', 'EN', 'Beirut', 'A167'),
+  ('D3235', 'Mason', 'Ward', 33445566, 'mason.ward@gmail.com', 'Rosewood College', 'MGG', 'HS', 'EN', 'Beirut', 'A167'),
+  ('D3236', 'Ava', 'Mitchell', 44556677, 'ava.mitchell@gmail.com', 'Rosewood College', 'MUN', 'HS', 'EN', 'Beirut', 'A167'),
+  ('D3237', 'Liam', 'Dixon', 55667788, 'liam.dixon@gmail.com', 'Rosewood College', 'MUN', 'HS', 'EN', 'Beirut', 'A167'),
+  ('D3238', 'Olivia', 'Hill', 66778899, 'olivia.hill@gmail.com', 'Rosewood College', 'MEU', 'HS', 'EN', 'Beirut', 'A167'),
+  ('D3239', 'Noah', 'Ward', 77889900, 'noah.ward@gmail.com', 'Rosewood College', 'MEU', 'HS', 'EN', 'Beirut', 'A167'),
+  ('D3240', 'Emma', 'Mitchell', 88990011, 'emma.mitchell@gmail.com', 'Rosewood College', 'MEU', 'HS', 'EN', 'Beirut', 'A167'),
+  ('D3241', 'William', 'Dixon', 99001122, 'william.dixon@gmail.com', 'Rosewood College', 'MUN', 'HS', 'EN', 'Beirut', 'A167'),
+]
+
+# Fifteenth set
+data_set_15 = [
+  ('D3242', 'Ella', 'Hill', 77889900, 'ella.hill@gmail.com', 'Sunset Hills High', 'MEU', 'HS', 'FR', 'Byblos', 'A169'),
+  ('D3243', 'Leo', 'Ward', 88990011, 'leo.ward@gmail.com', 'Sunset Hills High', 'MEU', 'HS', 'FR', 'Byblos', 'A169'),
+  ('D3244', 'Aria', 'Mitchell', 99001122, 'aria.mitchell@gmail.com', 'Sunset Hills High', 'MUN', 'HS', 'EN', 'Byblos', 'A169'),
+  ('D3245', 'Henry', 'Dixon', 11223344, 'henry.dixon@gmail.com', 'Sunset Hills High', 'MUN', 'HS', 'EN', 'Byblos', 'A169'),
+  ('D3246', 'Lily', 'Hill', 22334455, 'lily.hill@gmail.com', 'Sunset Hills High', 'MUN', 'HS', 'EN', 'Byblos', 'A169'),
+  ('D3247', 'Jack', 'Ward', 33445566, 'jack.ward@gmail.com', 'Sunset Hills High', 'MUN', 'MS', 'EN', 'Byblos', 'A169'),
+  ('D3248', 'Sophia', 'Mitchell', 44556677, 'sophia.mitchell@gmail.com', 'Sunset Hills High', 'MUN', 'MS', 'EN', 'Byblos', 'A169'),
+  ('D3249', 'Mason', 'Dixon', 55667788, 'mason.dixon@gmail.com', 'Sunset Hills High', 'MUN', 'MS', 'EN', 'Byblos', 'A169'),
+  ('D3250', 'Ava', 'Hill', 66778899, 'ava.hill@gmail.com', 'Sunset Hills High', 'MAL', 'HS', 'EN', 'Byblos', 'A169'),
+  ('D3251', 'Liam', 'Ward', 77889900, 'liam.ward@gmail.com', 'Sunset Hills High', 'MAL', 'HS', 'EN', 'Byblos', 'A169'),
+  ('D3252', 'Olivia', 'Mitchell', 88990011, 'olivia.mitchell@gmail.com', 'Sunset Hills High', 'MAL', 'HS', 'EN', 'Byblos', 'A169'),
+  ('D3253', 'Noah', 'Dixon', 99001122, 'noah.dixon@gmail.com', 'Sunset Hills High', 'MAL', 'HS', 'EN', 'Byblos', 'A169'),
+  ('D3254', 'Emma', 'Hill', 11223344, 'emma.hill@gmail.com', 'Sunset Hills High', 'MAL', 'MS', 'EN', 'Byblos', 'A169'),
+  ('D3255', 'William', 'Ward', 22334455, 'william.ward@gmail.com', 'Sunset Hills High', 'MAL', 'MS', 'EN', 'Byblos', 'A169'),
+  ('D3256', 'Grace', 'Mitchell', 33445566, 'grace.mitchell@gmail.com', 'Sunset Hills High', 'MAL', 'MS', 'EN', 'Byblos', 'A169'),
+]
+
+# Sixteenth set
+data_set_16 = [
+  ('D3257', 'Ethan', 'Dixon', 44556677, 'ethan.dixon@gmail.com', 'Sunshine Elementary School', 'MAL', 'HS', 'AR', 'Beirut', 'A171'),
+  ('D3258', 'Sophie', 'Hill', 55667788, 'sophie.hill@gmail.com', 'Sunshine Elementary School', 'MAL', 'HS', 'AR', 'Beirut', 'A171'),
+  ('D3259', 'Mia', 'Ward', 66778899, 'mia.ward@gmail.com', 'Sunshine Elementary School', 'MAL', 'HS', 'AR', 'Beirut', 'A171'),
+  ('D3260', 'Noah', 'Mitchell', 77889900, 'noah.mitchell@gmail.com', 'Sunshine Elementary School', 'MAL', 'HS', 'AR', 'Beirut', 'A171'),
+  ('D3261', 'Isabella', 'Dixon', 88990011, 'isabella.dixon@gmail.com', 'Sunshine Elementary School', 'MGG', 'HS', 'EN', 'Beirut', 'A171'),
+  ('D3262', 'Lucas', 'Hill', 99001122, 'lucas.hill@gmail.com', 'Sunshine Elementary School', 'MGG', 'HS', 'EN', 'Beirut', 'A171'),
+  ('D3263', 'Ava', 'Ward', 11223344, 'ava.ward@gmail.com', 'Sunshine Elementary School', 'MGG', 'HS', 'EN', 'Beirut', 'A171'),
+  ('D3264', 'Liam', 'Mitchell', 22334455, 'liam.mitchell@gmail.com', 'Sunshine Elementary School', 'MGG', 'HS', 'EN', 'Beirut', 'A171'),
+  ('D3265', 'Olivia', 'Dixon', 33445566, 'olivia.dixon@gmail.com', 'Sunshine Elementary School', 'MEU', 'HS', 'EN', 'Beirut', 'A171'),
+  ('D3266', 'Noah', 'Hill', 44556677, 'noah.hill@gmail.com', 'Sunshine Elementary School', 'MEU', 'HS', 'EN', 'Beirut', 'A171'),
+  ('D3267', 'Emma', 'Ward', 55667788, 'emma.ward@gmail.com', 'Sunshine Elementary School', 'MEU', 'HS', 'EN', 'Beirut', 'A171'),
+  ('D3268', 'William', 'Mitchell', 66778899, 'william.mitchell@gmail.com', 'Sunshine Elementary School', 'MAL', 'MS', 'EN', 'Beirut', 'A171'),
+  ('D3269', 'Grace', 'Dixon', 77889900, 'grace.dixon@gmail.com', 'Sunshine Elementary School', 'MUN', 'HS', 'EN', 'Beirut', 'A171'),
+  ('D3270', 'Mason', 'Hill', 88990011, 'mason.hill@gmail.com', 'Sunshine Elementary School', 'MEU', 'HS', 'FR', 'Beirut', 'A171'),

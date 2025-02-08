@@ -1,0 +1,452 @@
+CREATE DATABASE LAUSM;
+
+USE DATABASE LAUSM;
+
+
+
+
+CREATE TABLE TSCLASS 
+(
+ 
+  classID VARCHAR(10), 
+  campus CHAR(6) CHECK(campus IN('Beirut','Byblos')),
+  capacity DECIMAL(2,0),
+  pgm CHAR(3) CHECK(pgm IN('MUN','MAL','MEU','MGG')),
+  level CHAR(2) CHECK(level IN('MS','HS')),
+  lang CHAR(2)  CHECK (lang IN('EN','FR','AR')),
+  PRIMARY KEY (classID)
+);
+
+INSERT INTO TSCLASS VALUES ('FR302', 'Byblos', 25, 'MUN', 'HS', 'EN');
+INSERT INTO TSCLASS VALUES ('SC407', 'Byblos', 20, 'MUN', 'MS', 'EN');
+INSERT INTO TSCLASS VALUES ('ZK505', 'Byblos', 20, 'MAL', 'HS', 'AR');
+INSERT INTO TSCLASS VALUES ('GB1400', 'Beirut', 25, 'MEU', 'HS', 'FR');
+INSERT INTO TSCLASS VALUES ('AKSOB1100', 'Beirut', 15, 'MAL', 'MS', 'EN');
+
+INSERT INTO TSCLASS VALUES ('FR301', 'Byblos', 25, 'MUN', 'HS', 'EN'), ('FR302', 'Byblos', 25, 'MUN', 'HS', 'EN'),
+('FR303', 'Byblos', 25, 'MUN', 'HS', 'EN'),
+('BB304', 'Beirut', 25, 'MUN', 'HS', 'EN'),
+('BB305', 'Beirut', 25, 'MUN', 'HS', 'EN'), 
+('FR304', 'Byblos', 20, 'MUN', 'MS', 'EN'),
+('FR305', 'Byblos', 20, 'MUN', 'HS', 'EN'),
+('BB306', 'Beirut', 20, 'MUN', 'MS', 'EN'),
+('BB307', 'Beirut', 20, 'MUN', 'MS', 'EN'),
+('SC402', 'Byblos', 25, 'MAL', 'HS', 'EN'),
+('SC403', 'Byblos', 25, 'MAL', 'HS', 'EN'),
+('SG402', 'Beirut', 25, 'MAL', 'HS', 'EN'),
+('SG403', 'Beirut', 25, 'MAL', 'HS', 'EN'),
+('SC404', 'Byblos', 15, 'MAL', 'MS', 'EN'),
+('SC405', 'Byblos', 15, 'MAL', 'MS', 'EN'),
+('SG404', 'Beirut', 15, 'MAL', 'MS', 'EN'),
+('SG405', 'Beirut', 15, 'MAL', 'MS', 'EN'),
+('SC406', 'Byblos', 25, 'MAL', 'HS', 'AR'),
+('SC407', 'Byblos', 25, 'MAL', 'HS', 'AR'),
+('SG406', 'Beirut', 25, 'MAL', 'HS', 'AR'),
+('SG407', 'Beirut', 25, 'MAL', 'HS', 'AR'),
+('ENG401', 'Byblos', 25, 'MEU', 'HS', 'EN'),
+('ENG402', 'Byblos', 25, 'MEU', 'HS', 'EN'),
+('NC301', 'Beirut', 25, 'MEU', 'HS', 'EN'),
+('NC302', 'Beirut', 25, 'MEU', 'HS', 'EN'),
+('ENG403', 'Byblos', 25, 'MEU', 'HS', 'FR'),
+('ENG404', 'Byblos', 25, 'MEU', 'HS', 'FR'),
+('NC303', 'Beirut', 25, 'MEU', 'HS', 'FR'),
+('NC304', 'Beirut', 25, 'MEU', 'HS', 'FR'),
+('MD5001', 'Byblos', 25, 'MGG', 'HS', 'EN'),
+('MD5002', 'Byblos', 25, 'MGG', 'HS', 'EN'),
+('GB804', 'Beirut', 25, 'MGG', 'HS', 'EN'),
+('GB805', 'Beirut', 25, 'MGG', 'HS', 'EN');
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE TABLE MCCLASS 
+(
+ 
+  committeeID VARCHAR(10), 
+  committeeName VARCHAR(100) NOT NULL,
+  campus CHAR(6) CHECK(campus IN('Beirut','Byblos')),
+  capacity DECIMAL(2,0),
+  pgm CHAR(3) CHECK(pgm IN('MUN','MAL','MEU','MGG')),
+  level CHAR(2) CHECK(level IN('MS','HS')),
+  lang CHAR(2)  CHECK (lang IN('EN','FR','AR')),
+  PRIMARY KEY (committeeID)
+);
+
+INSERT INTO MCCLASS VALUES ('AP', 'Arab Parliament', 'Beirut', 20, 'MAL', 'HS', 'AR');
+INSERT INTO MCCLASS VALUES ('WHO', 'World Health Organization', 'Byblos', '85', 'MUN', 'HS', 'EN');
+INSERT INTO MCCLASS VALUES ('FAO', 'Food and Agriculture Organization', 'Byblos', 45, 'MUN', 'MS', 'EN');
+INSERT INTO MCCLASS VALUES ('MSA', 'Ministry of Social affairs', 'Byblos', 23, 'MGG', 'MS', 'EN');
+
+
+
+CREATE TABLE FCCLASS 
+(
+ 
+  committeeID VARCHAR(10),
+  committeeName VARCHAR(100) NOT NULL,
+  campus CHAR(6) CHECK(campus IN('Beirut','Byblos')),
+  capacity DECIMAL(2,0),
+  pgm CHAR(3) CHECK(pgm IN('MUN','MAL','MEU','MGG')),
+  level CHAR(2) CHECK(level IN('MS','HS')),
+  lang CHAR(2)  CHECK (lang IN('EN','FR','AR')),
+  PRIMARY KEY (committeeID)
+);
+
+INSERT INTO FCCLASS VALUES ('CAME', 'Council of Arab Ministers of Education', 'Beirut', 20, 'MAL', 'HS', 'AR');
+INSERT INTO FCCLASS VALUES ('UNESCO', 'United Nations Educational, Scientific, and Cultural Organization', 'Beirut', '85', 'MUN', 'HS', 'EN');
+INSERT INTO FCCLASS VALUES ('UNW', 'UN Women', 'Byblos', 45, 'MUN', 'MS', 'EN');
+INSERT INTO FCCLASS VALUES ('MEHE', 'Ministry of Education and Higher Education', 'Byblos', 23, 'MGG', 'MS', 'EN');
+
+
+
+CREATE TABLE LOCOORDINATOR 
+(
+ 
+  lauID DECIMAL(9,0),
+  fName VARCHAR(100) NOT NULL,
+  lName VARCHAR(100) NOT NULL,
+  campus CHAR(6) CHECK(campus IN('Beirut','Byblos')),
+  phoneNb DECIMAL(8,0) NOT NULL,
+  loEmail VARCHAR(100) NOT NULL,
+  mcCommittee VARCHAR(10),
+  fcCommittee VARCHAR(10),
+  PRIMARY KEY (lauID),
+  FOREIGN KEY (mcCommittee) REFERENCES MCCLASS(committeeID) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (fcCommittee) REFERENCES FCCLASS(committeeID) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+INSERT INTO LOCOORDINATOR VALUES (202106747, 'Hiba','El Balbaki', 'Byblos', 76850885, 'hiba.elbaalbaki@lau.edu', 'WHO', 'MEHE');
+
+
+CREATE TABLE TRAINER 
+(
+ 
+  lauID CHAR(9),
+  fName VARCHAR(50) NOT NULL,
+  lName VARCHAR(50) NOT NULL,
+  campus CHAR(6) CHECK(campus IN('Beirut','Byblos')),
+  phoneNb DECIMAL(8,0) NOT NULL,
+  trainerEmail VARCHAR(100) NOT NULL,
+  tsClass VARCHAR(10),
+  mcCommittee VARCHAR(10),
+  fcCommittee VARCHAR(10),
+  PRIMARY KEY (lauID),
+  FOREIGN KEY (tsclass) REFERENCES TSCLASS(classID) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (mcCommittee) REFERENCES MCCLASS(committeeID) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (fcCommittee) REFERENCES FCCLASS(committeeID) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+INSERT INTO TRAINER VALUES ('202006747', 'Mira', 'Badr', 'Beirut', 81007875, 'mira.badr@lau.edu', 'GB804', 'AP','CAME');
+
+
+
+CREATE TABLE SCHOOL 
+(
+ 
+  schoolName VARCHAR(100),
+  
+  landline DECIMAL(8,0) NOT NULL,
+  principalName VARCHAR(50),
+  principalNumber DECIMAL(8,0),
+  schoolCmp CHAR(6) CHECK(schoolCmp IN('Beirut','Byblos')),
+  PRIMARY KEY (schoolName)
+);
+
+INSERT INTO SCHOOL VALUES ('College Notre Dame De Jamhour', 21987456, 'Melissa Jamhour', 76546783,'Byblos','MUN');
+
+INSERT INTO SCHOOL VALUES ('Lycee Verdun', 32456789, 'Philippe Verdun', 98765432,'Beirut'),
+('International School of Choueifat', 90123456, 'Christina Choueifat', 21987654, 'Byblos'),
+('American Community School Beirut', 43215678, 'Emily ACS', 87654321, 'Beirut');
+
+
+INSERT INTO SCHOOL VALUES ('Lycee Abdel Kader', 56789012, 'Antoine Kader', 65432198, 'Byblos','MUN');
+
+
+
+INSERT INTO SCHOOL VALUES ('Saint George School', 11111111, 'George Saint', 22222222, 'Beirut'),
+('Liberty Academy', 33333333, 'Alex Liberty', 44444444, 'Beirut'),
+('International School of Jounieh', 55555555, 'Jessica Jounieh', 66666666, 'Beirut'),
+('Sunshine Elementary School', 77777777, 'Sam Sunshine', 88888888, 'Beirut'),
+('Lebanese National School', 99999999, 'Nadia National', 12345678, 'Byblos'),
+('Unity High School', 13579246, 'Umar Unity', 24681357, 'Beirut'),
+('Maple Grove Academy', 98765432, 'Melissa Maple', 87654321, 'Beirut'),
+('Beacon International School', 11122333, 'Brian Beacon', 33445566, 'Beirut'),
+('Hope Christian School', 77889900, 'Hannah Hope', 11223344, 'Beirut'),
+('Rosewood College', 55667788, 'Robert Rosewood', 88990011, 'Beirut'),
+('Unity International School', 11223344, 'Uma Unity', 22334455, 'Byblos'),
+('Golden Gate Academy', 33445566, 'Gary Gate', 44556677, 'Byblos'),
+('Cedar Valley School', 55667788, 'Catherine Cedar', 66778899, 'Beirut'),
+('Mediterranean Heights High', 77889900, 'Mia Heights', 88990011, 'Byblos'),
+('Evergreen International School', 99001122, 'Evan Evergreen', 11223344, 'Byblos'),
+('Diamond Ridge Academy', 11223344, 'Diana Ridge', 22334455, 'Byblos'),
+('Horizon Elementary', 33445566, 'Henry Horizon', 44556677, 'Beirut'),
+('Lebanon Central School', 55667788, 'Linda Central', 66778899, 'Byblos'),
+('Elite Academy', 77889900, 'Elijah Elite', 88990011, 'Byblos'),
+('Sunset Hills High', 99001122, 'Samantha Sunset', 11223344, 'Byblos');
+
+
+
+CREATE TABLE ADVISOR
+(
+ 
+  advID CHAR(4),
+  fName VARCHAR(20) NOT NULL,
+  lName VARCHAR(20) NOT NULL,
+  advNB DECIMAL(8,0),
+  advEmail VARCHAR(100),
+
+  advSchool VARCHAR(100),
+  mainAdv CHAR(5),
+  PRIMARY KEY (advID),
+  FOREIGN KEY (advSchool) REFERENCES SCHOOL(SchoolName),
+  FOREIGN KEY (mainAdv) REFERENCES ADVISOR(advID)
+);
+
+INSERT INTO ADVISOR VALUES ('A100', 'Jana', 'Smith', 03454768, 'jana.smith@gmail.com', 'College Notre Dame De Jamhour', 'A100');
+INSERT INTO ADVISOR VALUES ('A101', 'Rita', 'Jones', 03777325, 'rita.jones@gmail.com', 'College Notre Dame De Jamhour', 'A100');
+
+
+INSERT INTO ADVISOR VALUES
+
+  ('A102', 'Emily', 'Williams', 05678901, 'emily.williams@gmail.com', 'Lycee Verdun', 'A102'),
+  ('A103', 'Daniel', 'Brown', 06789012, 'daniel.brown@gmail.com', 'Lycee Verdun', 'A102'),
+  ('A112', 'Robert', 'Johnson', 04561234, 'robert.johnson@gmail.com',  'International School of Choueifat', 'A112'),
+  ('A104', 'Sophia', 'Davis', 07890123, 'sophia.davis@gmail.com',  'International School of Choueifat', 'A112'),
+  ('A109', 'William', 'Anderson', 12345678, 'william.anderson@gmail.com', 'American Community School Beirut', 'A109');
+ 
+INSERT INTO ADVISOR VALUES ('A108', 'Emma', 'Taylor', 11234567, 'emma.taylor@gmail.com', 'Lycee Abdel Kader', 'A108'),
+('A110', 'Ava', 'Moore', 13456789, 'ava.moore@gmail.com', 'Lycee Abdel Kader', 'A108'),
+('A111', 'Ethan', 'Clark', 14567890, 'ethan.clark@gmail.com',  'Lycee Abdel Kader', 'A108');
+
+
+  INSERT INTO ADVISOR VALUES ('A125', 'Olivia', 'Taylor', 78901234, 'olivia.taylor@gmail.com', 'Lebanese National School', 'A125'), 
+  ('A126', 'William', 'Davis', 89012345, 'william.davis@gmail.com', 'Lebanese National School', 'A125');
+
+  INSERT INTO ADVISOR VALUES ('A137', 'Michael', 'Williams', 98765432, 'michael.williams@gmail.com', 'Beacon International School', 'A137'),
+  ('A138', 'Sophia', 'Miller', 87654321, 'sophia.miller@gmail.com', 'Beacon International School', 'A137'),
+  ('A139', 'Olivia', 'Anderson', 34567890, 'olivia.anderson@gmail.com', 'Beacon International School', 'A137'),
+  ('A140', 'William', 'Johnson', 45678901, 'william.johnson@gmail.com', 'Beacon International School', 'A137');
+
+ INSERT INTO ADVISOR VALUES('A141', 'Ethan', 'Johnson', 34567890, 'ethan.johnson@gmail.com', 'Saint George School', 'A141'),
+  ('A142', 'Grace', 'Smith', 45678901, 'grace.smith@gmail.com', 'Saint George School', 'A141');
+
+
+
+
+
+
+
+
+
+
+CREATE TABLE DELEGATE 
+(
+ 
+  dlgID CHAR(5),
+  fName VARCHAR(20) NOT NULL,
+  lName VARCHAR(20) NOT NULL,
+  dlgNB DECIMAL(8,0),
+  dlgEmail VARCHAR(100), 
+  dlgSchool VARCHAR(100),
+  dlgPGM CHAR(3) CHECK(dlgPGM IN('MUN','MAL','MEU','MGG')),
+  level CHAR(2) CHECK(level IN('MS','HS')),
+  lang CHAR(2) CHECK (lang IN('EN','FR','AR')),
+  dlgCampus CHAR(6) CHECK(dlgCampus IN('Beirut','Byblos')),
+  dlgAdv CHAR(4),
+  tsClass VARCHAR(10), 
+  attendanceTS1 BOOLEAN DEFAULT FALSE, 
+  attendanceTS2 BOOLEAN DEFAULT FALSE, 
+  mcCommittee VARCHAR(10), 
+  mcCountry VARCHAR(50) DEFAULT 'TBA',
+  mcAttendance BOOLEAN DEFAULT FALSE,
+  fcCommittee VARCHAR(10),
+  fcCountry VARCHAR(50) DEFAULT 'TBA',
+  fcAttendance BOOLEAN DEFAULT FALSE,
+  countryRep VARCHAR(100) DEFAULT 'TBA'
+  PRIMARY KEY (dlgID),
+  FOREIGN KEY (dlgSchool) REFERENCES SCHOOL(SchoolName),
+  FOREIGN KEY (dlgAdv) REFERENCES ADVISOR(advID),
+  FOREIGN KEY (tsClass) REFERENCES TSCLASS(classID) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (mcCommittee) REFERENCES MCCLASS(committeeID) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (fcCommittee) REFERENCES FCCLASS(committeeID) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY(representation) REFERENCES REPRESENTATION ON DELETE SET DEFAULT ON UPDATE SET DEFAULT
+);
+
+INSERT INTO DELEGATE (dlgID,fName,lName,dlgNB,dlgEmail,dlgSchool,dlgPGM,level,lang,dlgCampus,dlgAdv)
+VALUES ('D1000','Sara', 'Nassar',81454793,'sara.nassar@gmail.com','College Notre Dame De Jamhour', 'MUN','HS','EN', 'Byblos' , 'A100'), 
+('D1001', 'Chloe', 'Cooper', 17890123, 'chloe.cooper@gmail.com', 'College Notre Dame De Jamhour','MUN','HS','EN','Byblos', 'A101');
+
+
+INSERT INTO DELEGATE (dlgID,fName,lName,dlgNB,dlgEmail,dlgSchool,dlgPGM,level,lang,dlgCampus,dlgAdv)
+VALUES ('D1400', 'Logan', 'Fletcher', 89012345, 'logan.fletcher@gmail.com', 'Lycee Verdun', 'MEU', 'HS', 'FR', 'Beirut', 'A102'),
+('D1401', 'Grace', 'Morgan', 56782345, 'grace.morgan@gmail.com', 'Lycee Verdun', 'MEU', 'HS', 'FR', 'Beirut', 'A102'),
+('D1448', 'Ethan', 'Spencer', 78904567, 'ethan.spencer@gmail.com', 'Lycee Verdun', 'MEU', 'HS', 'FR', 'Beirut', 'A102'),
+('D1449', 'Zoe', 'Nguyen', 45678901, 'zoe.nguyen@gmail.com', 'Lycee Verdun', 'MEU', 'HS', 'FR', 'Beirut', 'A102'),
+('D1498', 'Liam', 'Jordan', 56789012, 'liam.jordan@gmail.com', 'Lycee Verdun', 'MEU', 'HS', 'FR', 'Beirut', 'A102'),
+('D1499', 'Aria', 'Fowler', 23456789, 'aria.fowler@gmail.com', 'Lycee Verdun', 'MEU', 'HS', 'FR', 'Beirut', 'A103'),
+('D1500', 'Mason', 'Perez', 34567890, 'mason.perez@gmail.com', 'Lycee Verdun', 'MUN', 'HS', 'EN', 'Beirut', 'A103'),
+('D1549', 'Ella', 'Ford', 89012345, 'ella.ford@gmail.com', 'Lycee Verdun', 'MUN', 'HS', 'EN', 'Beirut', 'A103');
+
+
+
+
+
+
+
+
+INSERT INTO DELEGATE (dlgID, fName, lName, dlgNB, dlgEmail, dlgSchool, dlgPGM, level, lang, dlgCampus, dlgAdv)
+VALUES
+  ('D2201', 'Emma', 'Anderson', 56789012, 'emma.anderson@gmail.com', 'Lycee Abdel Kader', 'MUN', 'HS', 'EN', 'Byblos', 'A108'),
+  ('D2202', 'Jackson', 'Ward', 67890123, 'jackson.ward@gmail.com', 'Lycee Abdel Kader', 'MUN', 'HS', 'EN', 'Byblos', 'A108'),
+  ('D2203', 'Sophia', 'Murray', 78901234, 'sophia.murray@gmail.com', 'Lycee Abdel Kader', 'MUN', 'HS', 'EN', 'Byblos', 'A108'),
+  ('D2204', 'Oliver', 'Dixon', 89012345, 'oliver.dixon@gmail.com','Lycee Abdel Kader', 'MUN', 'HS', 'EN', 'Byblos', 'A108'),
+  ('D2205', 'Ava', 'Rossi', 90123456, 'ava.rossi@gmail.com', 'Lycee Abdel Kader', 'MGG', 'HS', 'EN', 'Byblos', 'A108'),
+  ('D2206', 'Liam', 'Romano', 12345678, 'liam.romano@gmail.com', 'Lycee Abdel Kader', 'MGG', 'HS', 'EN', 'Byblos', 'A111'),
+  ('D2207', 'Ethan', 'Ferrari', 23456789, 'ethan.ferrari@gmail.com', 'Lycee Abdel Kader', 'MGG', 'HS', 'EN', 'Byblos', 'A111'),
+  ('D2208', 'Aria', 'Gallo', 34567890, 'aria.gallo@gmail.com', 'Lycee Abdel Kader', 'MGG', 'HS', 'EN', 'Byblos', 'A111'),
+  ('D2209', 'Sebastian', 'Ricci', 45678901, 'sebastian.ricci@gmail.com', 'Lycee Abdel Kader', 'MEU', 'HS', 'FR', 'Byblos', 'A111'),
+  ('D2210', 'Scarlett', 'Conti', 56789012, 'scarlett.conti@gmail.com',  'Lycee Abdel Kader', 'MEU', 'HS', 'FR', 'Byblos', 'A111'),
+  ('D2211', 'Landon', 'Moretti', 67890123, 'landon.moretti@gmail.com',  'Lycee Abdel Kader', 'MEU', 'HS', 'FR', 'Byblos', 'A111'),
+  ('D2212', 'Madison', 'Orlando', 78901234, 'madison.orlando@gmail.com', 'Lycee Abdel Kader', 'MEU', 'HS', 'FR', 'Byblos', 'A110'),
+  ('D2213', 'Grayson', 'Martino', 89012345, 'grayson.martino@gmail.com', 'Lycee Abdel Kader', 'MEU', 'HS', 'FR', 'Byblos', 'A110');
+
+
+
+INSERT INTO DELEGATE (dlgID, fName, lName, dlgNB, dlgEmail, dlgSchool, dlgPGM, level, lang, dlgCampus, dlgAdv)
+VALUES
+  ('D3001', 'Ava', 'Robinson', 12345678, 'ava.robinson@gmail.com', 'Lebanese National School', 'MGG', 'HS', 'EN', 'Byblos', 'A125'),
+  ('D3002', 'Liam', 'Fisher', 23456789, 'liam.fisher@gmail.com', 'Lebanese National School', 'MGG', 'HS', 'EN', 'Byblos', 'A125'),
+  ('D3003', 'Mia', 'Bennett', 34567890, 'mia.bennett@gmail.com', 'Lebanese National School', 'MUN', 'HS', 'EN', 'Byblos', 'A125'),
+  ('D3004', 'Noah', 'Fletcher', 45678901, 'noah.fletcher@gmail.com', 'Lebanese National School', 'MUN', 'HS', 'EN', 'Byblos', 'A125'),
+  ('D3005', 'Isabella', 'Webster', 56789012, 'isabella.webster@gmail.com', 'Lebanese National School', 'MUN', 'MS', 'EN', 'Byblos', 'A125'),
+  ('D3006', 'Lucas', 'Gibson', 67890123, 'lucas.gibson@gmail.com', 'Lebanese National School', 'MUN', 'MS', 'EN', 'Byblos', 'A126'),
+  ('D3007', 'Sophie', 'Chapman', 78901234, 'sophie.chapman@gmail.com', 'Lebanese National School', 'MUN', 'MS', 'EN', 'Byblos', 'A126'),
+  ('D3008', 'Ethan', 'Henderson', 89012345, 'ethan.henderson@gmail.com', 'Lebanese National School', 'MUN', 'MS', 'EN', 'Byblos', 'A126'),
+  ('D3009', 'Olivia', 'Sullivan', 90123456, 'olivia.sullivan@gmail.com', 'Lebanese National School', 'MGG', 'HS', 'EN', 'Byblos', 'A126'),
+  ('D3010', 'Mason', 'Watts', 11223344, 'mason.watts@gmail.com', 'Lebanese National School', 'MGG', 'HS', 'EN', 'Byblos', 'A126');
+
+
+INSERT INTO DELEGATE (dlgID, fName, lName, dlgNB, dlgEmail, dlgSchool, dlgPGM, level, lang, dlgCampus, dlgAdv)
+VALUES ('D3011', 'Emma', 'Stewart', 12345678, 'emma.stewart@gmail.com', 'Beacon International School', 'MUN', 'MS', 'EN', 'Beirut', 'A137'),
+  ('D3012', 'Liam', 'Coleman', 23456789, 'liam.coleman@gmail.com', 'Beacon International School', 'MUN', 'HS', 'EN', 'Beirut', 'A137'),
+  ('D3013', 'Mia', 'Ferguson', 34567890, 'mia.ferguson@gmail.com', 'Beacon International School', 'MUN', 'HS', 'EN', 'Beirut', 'A137'),
+  ('D3014', 'Noah', 'Walsh', 45678901, 'noah.walsh@gmail.com', 'Beacon International School', 'MUN', 'HS', 'EN', 'Beirut', 'A137'),
+  ('D3015', 'Isabella', 'Carpenter', 56789012, 'isabella.carpenter@gmail.com', 'Beacon International School', 'MAL', 'MS', 'EN', 'Beirut', 'A137'),
+  ('D3016', 'Lucas', 'Sharp', 67890123, 'lucas.sharp@gmail.com', 'Beacon International School', 'MAL', 'MS', 'EN', 'Beirut', 'A137'),
+  ('D3017', 'Sophie', 'Norton', 78901234, 'sophie.norton@gmail.com', 'Beacon International School', 'MAL', 'HS', 'EN', 'Beirut', 'A137'),
+  ('D3018', 'Ethan', 'Wells', 89012345, 'ethan.wells@gmail.com', 'Beacon International School', 'MAL', 'HS', 'AR', 'Beirut', 'A137'),
+  ('D3019', 'Olivia', 'Fisher', 90123456, 'olivia.fisher@gmail.com', 'Beacon International School', 'MAL', 'MS', 'AR', 'Beirut', 'A137'),
+  ('D3020', 'Mason', 'Harrison', 11223344, 'mason.harrison@gmail.com', 'Beacon International School', 'MUN', 'MS', 'EN', 'Beirut', 'A137'),
+  ('D3021', 'Ava', 'Henderson', 22334455, 'ava.henderson@gmail.com', 'Beacon International School', 'MUN', 'MS', 'EN', 'Beirut', 'A138'),
+  ('D3022', 'Liam', 'Fletcher', 33445566, 'liam.fletcher@gmail.com', 'Beacon International School', 'MGG', 'HS', 'EN', 'Beirut', 'A138'),
+  ('D3023', 'Mia', 'Hawkins', 44556677, 'mia.hawkins@gmail.com', 'Beacon International School', 'MGG', 'HS', 'EN', 'Beirut', 'A138'),
+  ('D3024', 'Noah', 'Carter', 55667788, 'noah.carter@gmail.com', 'Beacon International School', 'MGG', 'HS', 'EN', 'Beirut', 'A138'),
+  ('D3025', 'Isabella', 'Hudson', 66778899, 'isabella.hudson@gmail.com', 'Beacon International School', 'MGG', 'HS', 'EN', 'Beirut', 'A138');
+
+
+INSERT INTO DELEGATE (dlgID, fName, lName, dlgNB, dlgEmail, dlgSchool, dlgPGM, level, lang, dlgCampus, dlgAdv)
+VALUES ('D3026', 'Ella', 'Hill', 77889900, 'ella.hill@gmail.com', 'Saint George School', 'MUN', 'HS', 'EN', 'Beirut', 'A141'),
+  ('D3027', 'Leo', 'Mitchell', 88990011, 'leo.mitchell@gmail.com', 'Saint George School', 'MUN', 'HS', 'EN', 'Beirut', 'A141'),
+  ('D3028', 'Aria', 'Clark', 99001122, 'aria.clark@gmail.com', 'Saint George School', 'MUN', 'HS', 'EN', 'Beirut', 'A141'),
+  ('D3029', 'Henry', 'Perry', 11223344, 'henry.perry@gmail.com', 'Saint George School', 'MUN', 'MS', 'EN', 'Beirut', 'A141'),
+  ('D3030', 'Lily', 'Smith', 22334455, 'lily.smith@gmail.com', 'Saint George School', 'MUN', 'MS', 'EN', 'Beirut', 'A141'),
+  ('D3031', 'Jack', 'Harrison', 33445566, 'jack.harrison@gmail.com', 'Saint George School', 'MUN', 'MS', 'EN', 'Beirut', 'A141'),
+  ('D3032', 'Sophia', 'Nelson', 44556677, 'sophia.nelson@gmail.com', 'Saint George School', 'MAL', 'HS', 'EN', 'Beirut', 'A141'),
+  ('D3033', 'Mason', 'Brown', 55667788, 'mason.brown@gmail.com', 'Saint George School', 'MAL', 'HS', 'EN', 'Beirut', 'A142'),
+  ('D3034', 'Ava', 'Fletcher', 66778899, 'ava.fletcher@gmail.com', 'Saint George School', 'MAL', 'HS', 'AR', 'Beirut', 'A142'),
+  ('D3035', 'Liam', 'Gibson', 77889900, 'liam.gibson@gmail.com', 'Saint George School', 'MAL', 'HS', 'AR', 'Beirut', 'A142'),
+  ('D3036', 'Olivia', 'Wells', 88990011, 'olivia.wells@gmail.com', 'Saint George School', 'MEU', 'HS', 'FR', 'Beirut', 'A142'),
+  ('D3037', 'Noah', 'Coleman', 99001122, 'noah.coleman@gmail.com', 'Saint George School', 'MEU', 'HS', 'FR', 'Beirut', 'A142'),
+  ('D3038', 'Emma', 'Hudson', 11223344, 'emma.hudson@gmail.com', 'Saint George School', 'MEU', 'HS', 'FR', 'Beirut', 'A142'),
+  ('D3039', 'William', 'Hawkins', 22334455, 'william.hawkins@gmail.com', 'Saint George School', 'MEU', 'HS', 'FR', 'Beirut', 'A142'),
+  ('D3040', 'Grace', 'Carter', 33445566, 'grace.carter@gmail.com', 'Saint George School', 'MEU', 'HS', 'FR', 'Beirut', 'A142');
+
+
+
+
+
+INSERT INTO COUNTRY_ORG VALUES ('France'),('Germany'),('United kingdom'),('Saudi Arabia'),('Lebanon');
+
+CREATE TABLE MCREPRESENTATION(
+
+dlgID CHAR(5), 
+countryName VARCHAR(50),
+committeeID VARCHAR(10),
+PRIMARY KEY(dlgID,countryName,committeeID),
+FOREIGN KEY(dlgID) REFERENCES DELEGATE(dlgID),
+FOREIGN KEY(countryName) REFERENCES COUNTRY_ORG(countryName),
+FOREIGN KEY(committeeID) REFERENCES MCCLASS(committeeID)
+);
+
+
+
+
+  INSERT INTO MCREPRESENTATION VALUES('D1400','France','FAO'),('D1401','Germany','AP');
+
+CREATE TABLE FCREPRESENTATION(
+
+dlgID CHAR(5), 
+countryName VARCHAR(50),
+committeeID VARCHAR(10),
+PRIMARY KEY(dlgID,countryName,committeeID),
+FOREIGN KEY(dlgID) REFERENCES DELEGATE(dlgID),
+FOREIGN KEY(countryName) REFERENCES COUNTRY_ORG(countryName),
+FOREIGN KEY(committeeID) REFERENCES FCCLASS(committeeID)
+);
+
+
+
+
+
+
+  INSERT INTO ADVISOR VALUES  ('A143', 'Daniel', 'Brown', 56789012, 'daniel.brown@gmail.com', 'Cedar Valley School', 'A143'),
+  ('A144', 'Grace', 'Taylor', 67890123, 'grace.taylor@gmail.com', 'Cedar Valley School', 'A143');
+
+  
+   INSERT INTO DELEGATE (dlgID, fName, lName, dlgNB, dlgEmail, dlgSchool, dlgPGM, level, lang, dlgCampus, dlgAdv)VALUES('D3041', 'Ethan', 'Johnson', 44556677, 'ethan.johnson@gmail.com', 'Cedar Valley School', 'MUN', 'HS', 'EN', 'Beirut', 'A143'),
+  ('D3042', 'Sophie', 'Miller', 55667788, 'sophie.miller@gmail.com', 'Cedar Valley School', 'MUN', 'MS', 'EN', 'Beirut', 'A143'),
+  ('D3043', 'Mia', 'Henderson', 66778899, 'mia.henderson@gmail.com', 'Cedar Valley School', 'MUN', 'MS', 'EN', 'Beirut', 'A143'),
+  ('D3044', 'Noah', 'Brown', 77889900, 'noah.brown@gmail.com', 'Cedar Valley School', 'MAL', 'HS', 'EN', 'Beirut', 'A143'),
+  ('D3045', 'Isabella', 'Taylor', 88990011, 'isabella.taylor@gmail.com', 'Cedar Valley School', 'MAL', 'MS', 'EN', 'Beirut', 'A143'),
+  ('D3046', 'Lucas', 'Smith', 99001122, 'lucas.smith@gmail.com', 'Cedar Valley School', 'MAL', 'HS', 'EN', 'Beirut', 'A144'),
+  ('D3047', 'Ava', 'Webster', 11223344, 'ava.webster@gmail.com', 'Cedar Valley School', 'MAL', 'MS', 'EN', 'Beirut', 'A144'),
+  ('D3048', 'Liam', 'Fisher', 22334455, 'liam.fisher@gmail.com', 'Cedar Valley School', 'MAL', 'HS', 'AR', 'Beirut', 'A144'),
+  ('D3049', 'Mia', 'Clark', 33445566, 'mia.clark@gmail.com', 'Cedar Valley School', 'MAL', 'HS', 'AR', 'Beirut', 'A144'),
+  ('D3050', 'Noah', 'Perry', 44556677, 'noah.perry@gmail.com', 'Cedar Valley School', 'MGG', 'HS', 'EN', 'Beirut', 'A143'),
+  ('D3051', 'Isabella', 'Nelson', 55667788, 'isabella.nelson@gmail.com', 'Cedar Valley School', 'MGG', 'HS', 'EN', 'Beirut', 'A143'),
+  ('D3052', 'Lucas', 'Harrison', 66778899, 'lucas.harrison@gmail.com', 'Cedar Valley School', 'MEU', 'HS', 'FR', 'Beirut', 'A143'),
+  ('D3053', 'Sophia', 'Coleman', 77889900, 'sophia.coleman@gmail.com', 'Cedar Valley School', 'MEU', 'HS', 'FR', 'Beirut', 'A143'),
+  ('D3054', 'Mason', 'Wells', 88990011, 'mason.wells@gmail.com', 'Cedar Valley School', 'MEU', 'HS', 'FR', 'Beirut', 'A143'),
+  ('D3055', 'Ava', 'Hudson', 99001122, 'ava.hudson@gmail.com', 'Cedar Valley School', 'MEU', 'HS', 'FR', 'Beirut', 'A143');
+
+  
+
+
+CREATE TABLE REPRESENTATION (
+repID CHAR(4),
+country_org VARCHAR(100) NOT NULL,
+school VARCHAR(100),
+pgm CHAR(3) CHECK(pgm IN('MUN','MAL','MEU','MGG')),
+level CHAR(2) CHECK(level IN('MS','HS')),
+lang CHAR(2) CHECK (lang IN('EN','FR','AR')),
+campus CHAR(6) CHECK(campus IN('Beirut','Byblos')),
+PRIMARY KEY (repID),
+FOREIGN KEY (school) REFERENCES SCHOOL(schoolName)
+  );
+
+
+  ALTER TABLE DELEGATE
+ADD CONSTRAINT fk_representation
+FOREIGN KEY (representation)
+REFERENCES REPRESENTATION (repID)
+ON DELETE SET DEFAULT
+ON UPDATE SET DEFAULT;

@@ -1,0 +1,277 @@
+INSERT INTO REPRESENTATION(repID,country_org,pgm,level,lang,campus) VALUES
+  ('R001', 'SWEDEN', 'MUN', 'MS', 'EN', 'Beirut'),
+  ('R002', 'CANADA', 'MUN', 'MS', 'EN', 'Beirut'),
+  ('R003', 'BRAZIL', 'MUN', 'MS', 'EN', 'Beirut'),
+  ('R004', 'GERMANY', 'MUN', 'MS', 'EN', 'Beirut'),
+  ('R005', 'JAPAN', 'MUN', 'MS', 'EN', 'Beirut'),
+  ('R006', 'AUSTRALIA', 'MUN', 'MS', 'EN', 'Beirut'),
+  ('R007', 'INDIA', 'MUN', 'MS', 'EN', 'Beirut'),
+  ('R008', 'MEXICO', 'MUN', 'MS', 'EN', 'Beirut'),
+  ('R009', 'FRANCE', 'MUN', 'MS', 'EN', 'Beirut'),
+  ('R010', 'NIGERIA', 'MUN', 'MS', 'EN', 'Beirut'),
+  ('R011', 'CHINA', 'MUN', 'MS', 'EN', 'Beirut'),
+  ('R012', 'RUSSIA', 'MUN', 'MS', 'EN', 'Beirut'),
+  ('R013', 'SOUTH AFRICA', 'MUN', 'MS', 'EN', 'Beirut'),
+  ('R014', 'SOUTH KOREA', 'MUN', 'MS', 'EN', 'Beirut'),
+  ('R015', 'SAUDI ARABIA', 'MUN', 'MS', 'EN', 'Beirut'),
+  ('R016', 'ARGENTINA', 'MUN', 'MS', 'EN', 'Beirut'),
+  ('R017', 'ITALY', 'MUN', 'MS', 'EN', 'Beirut'),
+  ('R018', 'SPAIN', 'MUN', 'MS', 'EN', 'Beirut'),
+  ('R019', 'EGYPT', 'MUN', 'MS', 'EN', 'Beirut'),
+  ('R020', 'PAKISTAN', 'MUN', 'MS', 'EN', 'Beirut'),
+  ('R021', 'UNITED KINGDOM', 'MUN', 'MS', 'EN', 'Beirut');
+
+
+
+
+
+INSERT INTO REPRESENTATION(repID,country_org,pgm,level,lang,campus) VALUES
+  ('R022', 'SWEDEN', 'MUN', 'MS', 'EN', 'Byblos'),
+  ('R023', 'CANADA', 'MUN', 'MS', 'EN', 'Byblos'),
+  ('R024', 'BRAZIL', 'MUN', 'MS', 'EN', 'Byblos'),
+  ('R025', 'GERMANY', 'MUN', 'MS', 'EN', 'Byblos'),
+  ('R026', 'JAPAN', 'MUN', 'MS', 'EN', 'Byblos'),
+  ('R027', 'AUSTRALIA', 'MUN', 'MS', 'EN', 'Byblos'),
+  ('R028', 'INDIA', 'MUN', 'MS', 'EN', 'Byblos'),
+  ('R029', 'MEXICO', 'MUN', 'MS', 'EN', 'Byblos'),
+  ('R030', 'FRANCE', 'MUN', 'MS', 'EN', 'Byblos'),
+  ('R031', 'NIGERIA', 'MUN', 'MS', 'EN', 'Byblos'),
+  ('R032', 'CHINA', 'MUN', 'MS', 'EN', 'Byblos'),
+  ('R033', 'RUSSIA', 'MUN', 'MS', 'EN', 'Byblos'),
+  ('R034', 'SOUTH AFRICA', 'MUN', 'MS', 'EN', 'Byblos'),
+  ('R035', 'SOUTH KOREA', 'MUN', 'MS', 'EN', 'Byblos'),
+  ('R036', 'SAUDI ARABIA', 'MUN', 'MS', 'EN', 'Byblos'),
+  ('R037', 'ARGENTINA', 'MUN', 'MS', 'EN', 'Byblos'),
+  ('R038', 'ITALY', 'MUN', 'MS', 'EN', 'Byblos'),
+  ('R039', 'SPAIN', 'MUN', 'MS', 'EN', 'Byblos'),
+  ('R040', 'EGYPT', 'MUN', 'MS', 'EN', 'Byblos'),
+  ('R041', 'PAKISTAN', 'MUN', 'MS', 'EN', 'Byblos'),
+  ('R042', 'UNITED KINGDOM', 'MUN', 'MS', 'EN', 'Byblos');
+
+
+
+INSERT INTO REPRESENTATION(repID,country_org,pgm,level,lang,campus) VALUES
+  ('R043', 'AUSTRALIA', 'MUN', 'HS', 'EN', 'Byblos'),
+  ('R044', 'INDONESIA', 'MUN', 'HS', 'EN', 'Byblos'),
+  ('R045', 'THAILAND', 'MUN', 'HS', 'EN', 'Byblos'),
+  ('R046', 'ARGENTINA', 'MUN', 'HS', 'EN', 'Byblos'),
+  ('R047', 'SWITZERLAND', 'MUN', 'HS', 'EN', 'Byblos'),
+  ('R048', 'MOROCCO', 'MUN', 'HS', 'EN', 'Byblos'),
+  ('R049', 'NORWAY', 'MUN', 'HS', 'EN', 'Byblos'),
+  ('R050', 'SINGAPORE', 'MUN', 'HS', 'EN', 'Byblos'),
+  ('R051', 'COLOMBIA', 'MUN', 'HS', 'EN', 'Byblos'),
+  ('R052', 'GREECE', 'MUN', 'HS', 'EN', 'Byblos'),
+  ('R053', 'IRELAND', 'MUN', 'HS', 'EN', 'Byblos'),
+  ('R054', 'VIETNAM', 'MUN', 'HS', 'EN', 'Byblos'),
+  ('R055', 'PORTUGAL', 'MUN', 'HS', 'EN', 'Byblos'),
+  ('R056', 'PERU', 'MUN', 'HS', 'EN', 'Byblos'),
+  ('R057', 'DENMARK', 'MUN', 'HS', 'EN', 'Byblos'),
+  ('R058', 'MALAYSIA', 'MUN', 'HS', 'EN', 'Byblos'),
+  ('R059', 'POLAND', 'MUN', 'HS', 'EN', 'Byblos'),
+  ('R060', 'PHILIPPINES', 'MUN', 'HS', 'EN', 'Byblos'),
+  ('R061', 'BELGIUM', 'MUN', 'HS', 'EN', 'Byblos'),
+  ('R062', 'SWEDEN', 'MUN', 'HS', 'EN', 'Byblos');
+
+
+INSERT INTO REPRESENTATION(repID,country_org,pgm,level,lang,campus) VALUES
+  ('R063', 'NETHERLANDS', 'MUN', 'HS', 'EN', 'Beirut'),
+  ('R064', 'SOUTH AFRICA', 'MUN', 'HS', 'EN', 'Beirut'),
+  ('R065', 'NEW ZEALAND', 'MUN', 'HS', 'EN', 'Beirut'),
+  ('R066', 'THAILAND', 'MUN', 'HS', 'EN', 'Beirut'),
+  ('R067', 'MEXICO', 'MUN', 'HS', 'EN', 'Beirut'),
+  ('R068', 'SWITZERLAND', 'MUN', 'HS', 'EN', 'Beirut'),
+  ('R069', 'TURKEY', 'MUN', 'HS', 'EN', 'Beirut'),
+  ('R070', 'INDIA', 'MUN', 'HS', 'EN', 'Beirut'),
+  ('R071', 'SINGAPORE', 'MUN', 'HS', 'EN', 'Beirut'),
+  ('R072', 'ARGENTINA', 'MUN', 'HS', 'EN', 'Beirut'),
+  ('R073', 'EGYPT', 'MUN', 'HS', 'EN', 'Beirut'),
+  ('R074', 'JAMAICA', 'MUN', 'HS', 'EN', 'Beirut'),
+  ('R075', 'RUSSIA', 'MUN', 'HS', 'EN', 'Beirut'),
+  ('R076', 'VIETNAM', 'MUN', 'HS', 'EN', 'Beirut'),
+  ('R077', 'IRELAND', 'MUN', 'HS', 'EN', 'Beirut'),
+  ('R078', 'PERU', 'MUN', 'HS', 'EN', 'Beirut'),
+  ('R079', 'COLOMBIA', 'MUN', 'HS', 'EN', 'Beirut'),
+  ('R080', 'DENMARK', 'MUN', 'HS', 'EN', 'Beirut'),
+  ('R081', 'MALAYSIA', 'MUN', 'HS', 'EN', 'Beirut'),
+  ('R082', 'ITALY', 'MUN', 'HS', 'EN', 'Beirut');
+
+
+INSERT INTO REPRESENTATION(repID,country_org,pgm,level,lang,campus) VALUES
+  ('R083', 'LEBANON', 'MAL', 'HS', 'EN', 'Beirut'),
+  ('R084', 'SAUDI ARABIA', 'MAL', 'HS', 'EN', 'Beirut'),
+  ('R085', 'UNITED ARAB EMIRATES', 'MAL', 'HS', 'EN', 'Beirut'),
+  ('R086', 'QATAR', 'MAL', 'HS', 'EN', 'Beirut'),
+  ('R087', 'KUWAIT', 'MAL', 'HS', 'EN', 'Beirut'),
+  ('R088', 'JORDAN', 'MAL', 'HS', 'EN', 'Beirut'),
+  ('R089', 'TUNISIA', 'MAL', 'HS', 'EN', 'Beirut'),
+  ('R090', 'MOROCCO', 'MAL', 'HS', 'EN', 'Beirut'),
+  ('R091', 'OMAN', 'MAL', 'HS', 'EN', 'Beirut'),
+  ('R092', 'BAHRAIN', 'MAL', 'HS', 'EN', 'Beirut');
+
+
+INSERT INTO REPRESENTATION(repID,country_org,pgm,level,lang,campus) VALUES
+  ('R093', 'EGYPT', 'MAL', 'HS', 'AR', 'Beirut'),
+  ('R094', 'SYRIA', 'MAL', 'HS', 'AR', 'Beirut'),
+  ('R095', 'ALGERIA', 'MAL', 'HS', 'AR', 'Beirut'),
+  ('R096', 'YEMEN', 'MAL', 'HS', 'AR', 'Beirut'),
+  ('R097', 'IRAQ', 'MAL', 'HS', 'AR', 'Beirut'),
+  ('R098', 'SUDAN', 'MAL', 'HS', 'AR', 'Beirut'),
+  ('R099', 'MMAURITANIA', 'MAL', 'HS', 'AR', 'Beirut'),
+  ('R100', 'LIBYA', 'MAL', 'HS', 'AR', 'Beirut'),
+  ('R101', 'COMOROS', 'MAL', 'HS', 'AR', 'Beirut'),
+  ('R102', 'DJIBOUTI', 'MAL', 'HS', 'AR', 'Beirut');
+
+
+INSERT INTO REPRESENTATION(repID,country_org,pgm,level,lang,campus) VALUES
+  ('R103', 'JORDAN', 'MAL', 'HS', 'AR', 'Byblos'),
+  ('R104', 'SAUDI ARABIA', 'MAL', 'HS', 'AR', 'Byblos'),
+  ('R105', 'UNITED ARAB EMIRATES', 'MAL', 'HS', 'AR', 'Byblos'),
+  ('R106', 'QATAR', 'MAL', 'HS', 'AR', 'Byblos'),
+  ('R107', 'KUWAIT', 'MAL', 'HS', 'AR', 'Byblos'),
+  ('R108', 'IRAQ', 'MAL', 'HS', 'AR', 'Byblos'),
+  ('R109', 'SYRIA', 'MAL', 'HS', 'AR', 'Byblos'),
+  ('R110', 'LEBANON', 'MAL', 'HS', 'AR', 'Byblos'),
+  ('R111', 'TUNISIA', 'MAL', 'HS', 'AR', 'Byblos'),
+  ('R112', 'OMAN', 'MAL', 'HS', 'AR', 'Byblos');
+
+
+
+INSERT INTO REPRESENTATION(repID,country_org,pgm,level,lang,campus) VALUES
+  ('R113', 'EGYPT', 'MAL', 'HS', 'EN', 'Byblos'),
+  ('R114', 'MOROCCO', 'MAL', 'HS', 'EN', 'Byblos'),
+  ('R115', 'ALGERIA', 'MAL', 'HS', 'EN', 'Byblos'),
+  ('R116', 'YEMEN', 'MAL', 'HS', 'EN', 'Byblos'),
+  ('R117', 'SUDAN', 'MAL', 'HS', 'EN', 'Byblos'),
+  ('R118', 'LIBYA', 'MAL', 'HS', 'EN', 'Byblos'),
+  ('R119', 'PALESTINE', 'MAL', 'HS', 'EN', 'Byblos'),
+  ('R120', 'JORDAN', 'MAL', 'HS', 'EN', 'Byblos'),
+  ('R121', 'IRAQ', 'MAL', 'HS', 'EN', 'Byblos'),
+  ('R122', 'KUWAIT', 'MAL', 'HS', 'EN', 'Byblos');
+
+INSERT INTO REPRESENTATION(repID,country_org,pgm,level,lang,campus) VALUES
+  ('R123', 'LEBANON', 'MAL', 'MS', 'EN', 'Byblos'),
+  ('R124', 'SYRIA', 'MAL', 'MS', 'EN', 'Byblos'),
+  ('R125', 'ALGERIA', 'MAL', 'MS', 'EN', 'Byblos'),
+  ('R126', 'YEMEN', 'MAL', 'MS', 'EN', 'Byblos'),
+  ('R127', 'IRAQ', 'MAL', 'MS', 'EN', 'Byblos'),
+  ('R128', 'SUDAN', 'MAL', 'MS', 'EN', 'Byblos'),
+  ('R129', 'MMAURITANIA', 'MAL', 'MS', 'EN', 'Byblos'),
+  ('R130', 'LIBYA', 'MAL', 'MS', 'EN', 'Byblos'),
+  ('R131', 'COMOROS', 'MAL', 'MS', 'EN', 'Byblos'),
+  ('R132', 'DJIBOUTI', 'MAL', 'MS', 'EN', 'Byblos');
+
+INSERT INTO REPRESENTATION(repID,country_org,pgm,level,lang,campus) VALUES
+  ('R133', 'JORDAN', 'MAL', 'MS', 'EN', 'Beirut'),
+  ('R134', 'SAUDI ARABIA', 'MAL', 'MS', 'AR', 'Beirut'),
+  ('R135', 'UNITED ARAB EMIRATES', 'MAL', 'MS', 'AR', 'Beirut'),
+  ('R136', 'QATAR', 'MAL', 'MS', 'AR', 'Beirut'),
+  ('R137', 'KUWAIT', 'MAL', 'MS', 'AR', 'Beirut'),
+  ('R138', 'IRAQ', 'MAL', 'MS', 'AR', 'Beirut'),
+  ('R139', 'SYRIA', 'MAL', 'MS', 'AR', 'Beirut'),
+  ('R140', 'LEBANON', 'MAL', 'MS', 'AR', 'Beirut'),
+  ('R141', 'TUNISIA', 'MAL', 'MS', 'AR', 'Beirut'),
+  ('R142', 'OMAN', 'MAL', 'MS', 'AR', 'Beirut');
+
+
+
+
+
+INSERT INTO REPRESENTATION(repID,country_org,pgm,level,lang,campus) VALUES
+  ('R143', 'COUNCIL OF MINISTERS', 'MGG', 'HS', 'EN', 'Beirut'),
+  ('R144', 'PARLIAMENT OF LEBANON', 'MGG', 'HS', 'EN', 'Beirut'),
+  ('R145', 'LEBANESE ARMY', 'MGG', 'HS', 'EN', 'Beirut'),
+  ('R146', 'MINISTRY OF FOREIGN AFFAIRS', 'MGG', 'HS', 'EN', 'Beirut'),
+  ('R147', 'BEIRUT MUNICIPALITY', 'MGG', 'HS', 'EN', 'Beirut'),
+  ('R148', 'LEBANESE RED CROSS', 'MGG', 'HS', 'EN', 'Beirut'),
+  ('R149', 'MINISTRY OF EDUCATION', 'MGG', 'HS', 'EN', 'Beirut'),
+  ('R150', 'LEBANESE ORDER OF ENGINEERS AND ARCHITECTS', 'MGG', 'HS', 'EN', 'Beirut'),
+  ('R151', 'MINISTRY OF HEALTH', 'MGG', 'HS', 'EN', 'Beirut'),
+  ('R152', 'LEBANESE BAR ASSOCIATION', 'MGG', 'HS', 'EN', 'Beirut');
+
+INSERT INTO REPRESENTATION(repID,country_org,pgm,level,lang,campus) VALUES
+  ('R153', 'LEBANESE MINISTRY OF FINANCE', 'MGG', 'HS', 'EN', 'Beirut'),
+  ('R154', 'LEBANESE MINISTRY OF INTERIOR', 'MGG', 'HS', 'EN', 'Beirut'),
+  ('R155', 'LEBANESE MINISTRY OF ECONOMY', 'MGG', 'HS', 'EN', 'Beirut'),
+  ('R156', 'LEBANESE MINISTRY OF ENERGY', 'MGG', 'HS', 'EN', 'Beirut'),
+  ('R157', 'LEBANESE MINISTRY OF CULTURE', 'MGG', 'HS', 'EN', 'Beirut'),
+  ('R158', 'LEBANESE MINISTRY OF TOURISM', 'MGG', 'HS', 'EN', 'Beirut'),
+  ('R159', 'LEBANESE MINISTRY OF TELECOMMUNICATIONS', 'MGG', 'HS', 'EN', 'Beirut'),
+  ('R160', 'LEBANESE MINISTRY OF SOCIAL AFFAIRS', 'MGG', 'HS', 'EN', 'Beirut'),
+  ('R161', 'LEBANESE MINISTRY OF INDUSTRY', 'MGG', 'HS', 'EN', 'Beirut'),
+  ('R162', 'LEBANESE MINISTRY OF JUSTICE', 'MGG', 'HS', 'EN', 'Beirut');
+
+
+
+
+INSERT INTO REPRESENTATION(repID,country_org,pgm,level,lang,campus) VALUES
+  ('R163', 'LEBANESE MINISTRY OF AGRICULTURE', 'MGG', 'HS', 'EN', 'Byblos'),
+  ('R164', 'LEBANESE MINISTRY OF PLANNING', 'MGG', 'HS', 'EN', 'Byblos'),
+  ('R165', 'LEBANESE MINISTRY OF YOUTH AND SPORTS', 'MGG', 'HS', 'EN', 'Byblos'),
+  ('R166', 'LEBANESE MINISTRY OF PUBLIC HEALTH', 'MGG', 'HS', 'EN', 'Byblos'),
+  ('R167', 'LEBANESE MINISTRY OF FOREIGN AFFAIRS', 'MGG', 'HS', 'EN', 'Byblos'),
+  ('R168', 'LEBANESE MINISTRY OF ENVIRONMENT', 'MGG', 'HS', 'EN', 'Byblos'),
+  ('R169', 'LEBANESE MINISTRY OF LABOR', 'MGG', 'HS', 'EN', 'Byblos'),
+  ('R170', 'LEBANESE MINISTRY OF EDUCATION', 'MGG', 'HS', 'EN', 'Byblos'),
+  ('R171', 'LEBANESE MINISTRY OF SOCIAL AFFAIRS', 'MGG', 'HS', 'EN', 'Byblos'),
+  ('R172', 'LEBANESE MINISTRY OF TOURISM', 'MGG', 'HS', 'EN', 'Byblos'),
+  ('R173', 'LEBANESE MINISTRY OF INDUSTRY', 'MGG', 'HS', 'EN', 'Byblos'),
+  ('R174', 'LEBANESE MINISTRY OF TELECOMMUNICATIONS', 'MGG', 'HS', 'EN', 'Byblos'),
+  ('R175', 'LEBANESE MINISTRY OF CULTURE', 'MGG', 'HS', 'EN', 'Byblos'),
+  ('R176', 'LEBANESE MINISTRY OF ECONOMY', 'MGG', 'HS', 'EN', 'Byblos'),
+  ('R177', 'LEBANESE MINISTRY OF INTERIOR', 'MGG', 'HS', 'EN', 'Byblos'),
+  ('R178', 'LEBANESE MINISTRY OF FINANCE', 'MGG', 'HS', 'EN', 'Byblos'),
+  ('R179', 'LEBANESE MINISTRY OF ENERGY', 'MGG', 'HS', 'EN', 'Byblos'),
+  ('R180', 'LEBANESE MINISTRY OF JUSTICE', 'MGG', 'HS', 'EN', 'Byblos'),
+  ('R181', 'LEBANESE MINISTRY OF INFORMATION', 'MGG', 'HS', 'EN', 'Byblos'),
+  ('R182', 'LEBANESE MINISTRY OF PUBLIC WORKS', 'MGG', 'HS', 'EN', 'Byblos');
+
+
+
+INSERT INTO REPRESENTATION(repID,country_org,pgm,level,lang,campus) VALUES
+  ('R183', 'FRANCE', 'MEU', 'HS', 'EN', 'Byblos'),
+  ('R184', 'GERMANY', 'MEU', 'HS', 'EN', 'Byblos'),
+  ('R185', 'ITALY', 'MEU', 'HS', 'EN', 'Byblos'),
+  ('R186', 'SPAIN', 'MEU', 'HS', 'EN', 'Byblos'),
+  ('R187', 'NETHERLANDS', 'MEU', 'HS', 'EN', 'Byblos'),
+  ('R188', 'BELGIUM', 'MEU', 'HS', 'EN', 'Byblos'),
+  ('R189', 'AUSTRIA', 'MEU', 'HS', 'EN', 'Byblos'),
+  ('R190', 'SWEDEN', 'MEU', 'HS', 'EN', 'Byblos'),
+  ('R191', 'POLAND', 'MEU', 'HS', 'EN', 'Byblos'),
+  ('R192', 'GREECE', 'MEU', 'HS', 'EN', 'Byblos');
+
+
+INSERT INTO REPRESENTATION(repID,country_org,pgm,level,lang,campus) VALUES
+  ('R193', 'PORTUGAL', 'MEU', 'HS', 'FR', 'Byblos'),
+  ('R194', 'DENMARK', 'MEU', 'HS', 'FR', 'Byblos'),
+  ('R195', 'IRELAND', 'MEU', 'HS', 'FR', 'Byblos'),
+  ('R196', 'FINLAND', 'MEU', 'HS', 'FR', 'Byblos'),
+  ('R197', 'CZECH REPUBLIC', 'MEU', 'HS', 'FR', 'Byblos'),
+  ('R198', 'HUNGARY', 'MEU', 'HS', 'FR', 'Byblos'),
+  ('R199', 'BULGARIA', 'MEU', 'HS', 'FR', 'Byblos'),
+  ('R200', 'CROATIA', 'MEU', 'HS', 'FR', 'Byblos'),
+  ('R201', 'SLOVAKIA', 'MEU', 'HS', 'FR', 'Byblos'),
+  ('R202', 'ESTONIA', 'MEU', 'HS', 'FR', 'Byblos');
+
+INSERT INTO REPRESENTATION(repID,country_org,pgm,level,lang,campus) VALUES
+  ('R203', 'LUXEMBOURG', 'MEU', 'HS', 'FR', 'Beirut'),
+  ('R204', 'LATVIA', 'MEU', 'HS', 'FR', 'Beirut'),
+  ('R205', 'LITHUANIA', 'MEU', 'HS', 'FR', 'Beirut'),
+  ('R206', 'MALTA', 'MEU', 'HS', 'FR', 'Beirut'),
+  ('R207', 'CYPRUS', 'MEU', 'HS', 'FR', 'Beirut'),
+  ('R208', 'SLOVENIA', 'MEU', 'HS', 'FR', 'Beirut'),
+  ('R209', 'ROMANIA', 'MEU', 'HS', 'FR', 'Beirut'),
+  ('R210', 'BALTICS', 'MEU', 'HS', 'FR', 'Beirut'),
+  ('R211', 'EUROPEAN COMMISSION', 'MEU', 'HS', 'FR', 'Beirut'),
+  ('R212', 'EUROPEAN PARLIAMENT', 'MEU', 'HS', 'FR', 'Beirut');
+  
+INSERT INTO REPRESENTATION(repID,country_org,pgm,level,lang,campus) VALUES
+  ('R213', 'GERMANY', 'MEU', 'HS', 'EN', 'Beirut'),
+  ('R214', 'SWEDEN', 'MEU', 'HS', 'EN', 'Beirut'),
+  ('R215', 'SPAIN', 'MEU', 'HS', 'EN', 'Beirut'),
+  ('R216', 'ITALY', 'MEU', 'HS', 'EN', 'Beirut'),
+  ('R217', 'NETHERLANDS', 'MEU', 'HS', 'EN', 'Beirut'),
+  ('R218', 'BELGIUM', 'MEU', 'HS', 'EN', 'Beirut'),
+  ('R219', 'AUSTRIA', 'MEU', 'HS', 'EN', 'Beirut'),
+  ('R220', 'GREECE', 'MEU', 'HS', 'EN', 'Beirut'),
+  ('R221', 'POLAND', 'MEU', 'HS', 'EN', 'Beirut'),
+  ('R222', 'FINLAND', 'MEU', 'HS', 'EN', 'Beirut');
