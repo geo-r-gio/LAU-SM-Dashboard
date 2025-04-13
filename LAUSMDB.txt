@@ -1,3 +1,5 @@
+**Use LAUSM.txt instead
+
 CREATE DATABASE LAUSMDB;
 
 USE LAUSMDB;
