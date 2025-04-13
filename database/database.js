@@ -6,14 +6,14 @@ dotenv.config()
 
 const pool = mysql.createPool({
 host: process.env.MYSQL_HOST,
-user: process.env.MYSQL_USER,
-password: process.env.MYSQL_PASSWORD,
+user: 'root', //process.env.MYSQL_USER
+password: 'gpn#24#1#2003',  //process.env.MYSQL_PASSWORD
 database: process.env.MYSQL_DATABASE
 }).promise();
 
 
 export async function getCapacityForDashboard(campus,pgm,level){
-  await pool.query('USE LAUSM');
+  await pool.query('USE LAUSMDB');
   const [capacity] = await pool.query(`SELECT * FROM TSCLASS WHERE pgm='${pgm}' AND level='${level}' AND campus='${campus}'`);
   const cap = capacity[0].capacity;
 return cap;
@@ -49,15 +49,9 @@ return (cap[0].capacity) - (query[0].capacity);
 //   } 
 // }
 
-
-
-
-
-
-
 //array of js objects
 export async function getDlg(){
-  await pool.query('USE lausm');
+  await pool.query('USE LAUSMDB');
   const [rows] = await pool.query('SELECT * FROM delegate');
   return rows;
 }
@@ -72,7 +66,7 @@ async function saveDataToFile() {
 
     // Write JSON data to a file
     await fs.writeFile('newdlgData.json', jsonData, 'utf8');
-    console.log('Data successfully written to data.json');
+    //console.log('Data successfully written to data.json');
   } catch (error) {
     console.error('Error:', error);
   } 
@@ -80,7 +74,7 @@ async function saveDataToFile() {
 
 export async function signin(username, password) {
   // const hashedPassword = await bcrypt.hash(password, 10); // generate password hash in your application
-  await pool.query('USE lausm')
+  await pool.query('USE LAUSMDB')
   const [query] = await pool.query('SELECT * FROM login WHERE username = ? AND password = ?', [username, password]);
   // const [rows] = await pool.query(query, [username, hashedPassword]);
   let flag = false;
@@ -94,7 +88,7 @@ export async function signin(username, password) {
 
 // prepared statemet to avoid mysql injections
 export async function getOneDlg(id){
-  await pool.query('USE lausm');
+  await pool.query('USE LAUSMDB');
   const [rows] = await pool.query('SELECT * FROM delegate WHERE dlgID = ?',
    [id]);
   return rows; // get the object in the array
@@ -102,7 +96,7 @@ export async function getOneDlg(id){
 
 // update/edit delegate
 export async function updateOneDlg(dlgID,fName,lName,dlgNB,dlgEmail,dlgSchool,dlgPGM,level,lang,dlgCampus,dlgAdv){
-  await pool.query('USE lausm')
+  await pool.query('USE LAUSMDB')
   const result = await pool.query(
     'UPDATE delegate SET dlgID=?,fName=?,lName=?,dlgNB=?,dlgEmail=?,dlgSchool=?,dlgPGM=?,level=?,lang=?,dlgCampus=?,dlgAdv=?'
     , [dlgID,fName,lName,dlgNB,dlgEmail,dlgSchool,dlgPGM,level,lang,dlgCampus,dlgAdv]);
@@ -111,7 +105,7 @@ export async function updateOneDlg(dlgID,fName,lName,dlgNB,dlgEmail,dlgSchool,dl
 }
 
 export async function deleteOneDlg(id){
-  await pool.query('USE lausm')
+  await pool.query('USE LAUSMDB')
   const result = await pool.query(
     'DELETE FROM delegate WHERE dlgID = ?', [id]);
   const deletionSuccessful = result.affectedRows > 0;
@@ -130,7 +124,7 @@ export async function deleteOneDlg(id){
 
 // update/edit delegate
 // export async function updateOneDlg(fName,lName,dlgNB,dlgEmail,dlgSchool,dlgPGM,level,lang,dlgCampus,dlgAdv,dlgID){
-//   await pool.query('USE lausm')
+//   await pool.query('USE LAUSMDB')
 //   const result = await pool.query(
 //     'UPDATE delegate SET fName=?,lName=?,dlgNB=?,dlgEmail=?,dlgSchool=?,dlgPGM=?,level=?,lang=?,dlgCampus=?,dlgAdv=? WHERE dlgID=?'
 //     , [fName,lName,dlgNB,dlgEmail,dlgSchool,dlgPGM,level,lang,dlgCampus,dlgAdv,dlgID]);
@@ -139,7 +133,7 @@ export async function deleteOneDlg(id){
 // }
 
 export async function updateOneAdv(fName,lName,advNB,advEmail,advSchool,mainAdv,advID){
-  await pool.query('USE lausm')
+  await pool.query('USE LAUSMDB')
   const result = await pool.query(
     'UPDATE advisor SET fName=?,lName=?,advNB=?,advEmail=?,advSchool=?,mainAdv=? WHERE advID=?'
     , [fName,lName,advNB,advEmail,advSchool,mainAdv,advID]);
@@ -148,7 +142,7 @@ export async function updateOneAdv(fName,lName,advNB,advEmail,advSchool,mainAdv,
 }
 
 export async function updateTs1attendance(attendanceTS1, fName, classroom, campus){
-  await pool.query('USE lausm')
+  await pool.query('USE LAUSMDB')
   const result = await pool.query('UPDATE DELEGATE SET attendanceTS1 = ? WHERE fName = ? AND tsClass = ? AND dlgCampus = ?', [attendanceTS1, fName, classroom, campus]
   );
   const dID = result.insertId
@@ -157,7 +151,7 @@ export async function updateTs1attendance(attendanceTS1, fName, classroom, campu
 
 
 export async function updateTs2attendance(attendanceTS2, fName, classroom, campus){
-  await pool.query('USE lausm')
+  await pool.query('USE LAUSMDB')
   const result = await pool.query('UPDATE DELEGATE SET attendanceTS2= ? WHERE fName = ? AND tsClass = ? AND dlgCampus = ?', [attendanceTS2, fName, classroom, campus]
   );
   const dID = result.insertId
@@ -165,7 +159,7 @@ export async function updateTs2attendance(attendanceTS2, fName, classroom, campu
 }
 
 export async function updateMcattendance(mcAttendance){
-  await pool.query('USE lausm')
+  await pool.query('USE LAUSMDB')
   const result = await pool.query('UPDATE DELEGATE SET mcAttendance= ?', [mcAttendance]
   );
   const dID = result.insertId
@@ -174,7 +168,7 @@ export async function updateMcattendance(mcAttendance){
 
 
 export async function updateFcattendance(fcAttendance){
-  await pool.query('USE lausm')
+  await pool.query('USE LAUSMDB')
   const result = await pool.query('UPDATE DELEGATE SET fcAttendance= ?', [fcAttendance]
   );
   const dID = result.insertId
@@ -199,7 +193,7 @@ export async function updateFcattendance(fcAttendance){
 //adding to the db
 
 export async function addDlg(dlgID,fName,lName,dlgNB,dlgEmail,dlgSchool,dlgPGM,level,lang,dlgCampus,dlgAdv){
-  await pool.query('USE lausm')
+  await pool.query('USE LAUSMDB')
   const result = await pool.query(
   'INSERT INTO delegate (dlgID,fName,lName,dlgNB,dlgEmail,dlgSchool,dlgPGM,level,lang,dlgCampus,dlgAdv) VALUES(?,?,?,?,?,?,?,?,?,?,?)',
   [dlgID,fName,lName,dlgNB,dlgEmail,dlgSchool,dlgPGM,level,lang,dlgCampus,dlgAdv])
@@ -207,7 +201,7 @@ export async function addDlg(dlgID,fName,lName,dlgNB,dlgEmail,dlgSchool,dlgPGM,l
   return getOneDlg(dID)
 }
 // export async function addAdv(advID,fName,lName,advNB,advEmail,advSchool){
-//   await pool.query('USE lausm')
+//   await pool.query('USE LAUSMDB')
 //   const result = await pool.query(
 //   'INSERT INTO advisor (advID,fName,lName,advNB,advEmail,advSchool) VALUES(?,?,?,?,?,?)',
 //   [advID,fName,lName,advNB,advEmail,advSchool])
@@ -216,24 +210,24 @@ export async function addDlg(dlgID,fName,lName,dlgNB,dlgEmail,dlgSchool,dlgPGM,l
 // }
 
 export async function checkAdvID(advID){
-  await pool.query('USE lausm');
+  await pool.query('USE LAUSMDB');
   const exists = await pool.query(
   'SELECT EXISTS ( SELECT 1 FROM ADVISOR WHERE advID = ? ) AS value_exists',[advID]);
-  console.log( exists[0][0].value_exists);
+  //console.log( exists[0][0].value_exists);
   return exists[0][0].value_exists;
 }
 
 export async function checkDlgID(dlgID){
-  await pool.query('USE lausm');
+  await pool.query('USE LAUSMDB');
   const exists = await pool.query(
   'SELECT EXISTS ( SELECT 1 FROM DELEGATE WHERE dlgID = ? ) AS value_exists',[dlgID]);
-  console.log(dlgID, exists[0][0].value_exists);
+  //console.log(dlgID, exists[0][0].value_exists);
   return exists[0][0].value_exists;
 }
 
 
 // export async function getMainAdv(advSchool){
-//   await pool.query('USE LAUSM');
+//   await pool.query('USE LAUSMDB');
 //   const [isSchool] = pool.query(`SELECT * FROM SCHOOL WHERE schoolName=?`,[advSchool]);
   
 //   if(isSchool.length!=0){
@@ -247,14 +241,14 @@ export async function checkDlgID(dlgID){
 
 export async function insertSchool(advSchool){
 
-  await pool.query('USE lausm')
+  await pool.query('USE LAUSMDB')
   await pool.query("INSERT INTO SCHOOL (schoolName,landline,principalName,principalNumber,schoolCmp) VALUES (?,00000000,'UNKNOWN',00000000,'UNKOWN')",[advSchool]);
   
  
 }
 export async function editSchoolCampus(dlgSchool,dlgCampus){
 
-  await pool.query('USE lausm')
+  await pool.query('USE LAUSMDB')
   await pool.query('UPDATE SCHOOL SET schoolCmp=? WHERE schoolName=?',[dlgCampus,dlgSchool]);
   
  
@@ -262,7 +256,7 @@ export async function editSchoolCampus(dlgSchool,dlgCampus){
 
 
 export async function addAdv(advID,fName,lName,advNB,advEmail,advSchool){
-  await pool.query('USE lausm')
+  await pool.query('USE LAUSMDB')
   const [schools] = await pool.query(`SELECT schoolName FROM SCHOOL WHERE schoolName=?`,[advSchool]);
   if(schools.length==0){
     //add school in db and set main adv as advid
@@ -287,7 +281,7 @@ export async function addAdv(advID,fName,lName,advNB,advEmail,advSchool){
 
 
 export async function deleteOneAdv(id){
-  await pool.query('USE lausm')
+  await pool.query('USE LAUSMDB')
   const result = await pool.query(
     'DELETE FROM advisor WHERE advID = ?', [id]);
   const deletionSuccessful = result.affectedRows > 0;
@@ -295,14 +289,14 @@ export async function deleteOneAdv(id){
 }
 
 export async function getOneAdv(id){
-  await pool.query('USE lausm');
+  await pool.query('USE LAUSMDB');
   const [rows] = await pool.query('SELECT * FROM advisor WHERE advID = ?',
    [id]);
   return rows; // get the object in the array
 }
 
 export async function getAdv(){
-  await pool.query('USE lausm');
+  await pool.query('USE LAUSMDB');
   const [rows] = await pool.query('SELECT * FROM advisor');
   return rows;
 }
@@ -319,7 +313,7 @@ saveDataToFile();
 
 // bhess ma ela aaze
 export async function dlgNoClass(dlgPGM,level,lang,dlgCampus){
-  await pool.query('USE lausm');
+  await pool.query('USE LAUSMDB');
   const [delegates] = await pool.query(
   'SELECT * FROM DELEGATE WHERE dlgPGM=? AND level=? AND lang=? AND dlgCampus=? AND tsClass IS NULL', 
   [dlgPGM,level,lang,dlgCampus]);
@@ -330,7 +324,7 @@ export async function dlgNoClass(dlgPGM,level,lang,dlgCampus){
 // console.log(test);
 
 // export async function useDB(){
-//   const query = await pool.query(`USE LAUSM`);
+//   const query = await pool.query(`USE LAUSMDB`);
 //   return query;
 // }
 
@@ -352,7 +346,7 @@ export async function pgmTsClassQuery(pgm, level, lang, campus) {
 
 // should return the relation based on a condition
 // export async function testingLayla(){
-//   await pool.query('Use lausm');
+//   await pool.query('Use LAUSMDB');
 //   const test = await dlgNoClassQuery('MUN','MS','EN','Beirut');
 //   const [answer] = await pool.query(
 //     `SELECT * FROM (${test}) AS dlgNoClass WHERE dlgNoClass.dlgID=?`, ['D2200']);
@@ -362,7 +356,7 @@ export async function pgmTsClassQuery(pgm, level, lang, campus) {
 
 // bhess ma ela aaze too
 export async function getCapacity(dlgPGM, level, lang, dlgCampus){
-await pool.query('USE LAUSM');
+await pool.query('USE LAUSMDB');
 // const delegates = await dlgNoClassQuery(dlgPGM, level, lang, dlgCampus);
 const classes = await pgmTsClassQuery(dlgPGM, level, lang, dlgCampus);
 
@@ -378,7 +372,7 @@ export async function assignClassPGM(dlgPGM, level, lang, dlgCampus){
   const classes = await pgmTsClassQuery(dlgPGM, level, lang, dlgCampus);
   
 // getting remaining seats of class at idx i:
-await pool.query('USE LAUSM');
+await pool.query('USE LAUSMDB');
 const [size] = await pool.query(`SELECT COUNT(*) AS num FROM (${classes}) AS classes`);
 
 
@@ -451,7 +445,7 @@ SET DELEGATE.tsClass = ?`,[currentClass[0].classID]);
 
 
  await assignTsClass();
-  console.log('DONE');
+//console.log('DONE');
 
 
 
@@ -465,19 +459,19 @@ SET DELEGATE.tsClass = ?`,[currentClass[0].classID]);
 
   // ATTENDANCE DISPLAY TRAINING SESSION delegates = DELEGATE and classroom = input  
   export async function getAttendanceTS(classroom){
-    await pool.query('USE lausm');
+    await pool.query('USE LAUSMDB');
     const [rows] = await pool.query(`SELECT fname,lname FROM DELEGATE WHERE tsCLASS = ? `, [classroom]);
     return rows;
   }
 
 //    export async function getAttendanceTS(){
-//     await pool.query('USE lausm');
+//     await pool.query('USE LAUSMDB');
 //     const [rows] = await pool.query(`SELECT fname,lname,attendanceTS1 FROM DELEGATE WHERE tsCLASS ='FR301' `);
 //     return rows;
 //   }
 
 // export async function getBeirutTs1(){
-//   await pool.query('USE lausm');
+//   await pool.query('USE LAUSMDB');
 //   const [rows] = await pool.query(`SELECT dlgID,fName,lName,attendanceTS1 FROM DELEGATE WHERE tsCLASS = 'FR301'`);
 //   return rows;
 // }
@@ -487,7 +481,7 @@ SET DELEGATE.tsClass = ?`,[currentClass[0].classID]);
 
 // ATTENDANCE DISPLAY MC table= MCREPRESENTATION nd committee=input class 
 export async function getAttendanceMC(committee){
-  await pool.query('USE lausm');
+  await pool.query('USE LAUSMDB');
   const [rows] = await pool.query(`SELECT COUNTRYNAME FROM MCREPRESENTATION WHERE committeeID = ? `, [committee]);
   return rows;
 }
@@ -496,7 +490,7 @@ export async function getAttendanceMC(committee){
 
 // ATTENDANCE DISPLAY FC table = FCREPRESENTATION and committee = input class 
 export async function getAttendanceFC(committee){
-  await pool.query('USE lausm');
+  await pool.query('USE LAUSMDB');
   const [rows] = await pool.query(`SELECT COUNTRYNAME FROM FCREPRESENTATION WHERE committeeID = ?  `, [committee]);
   return rows;
 }
@@ -504,7 +498,7 @@ export async function getAttendanceFC(committee){
 
 
 export async function getTotalStudents(level,campus){
-  await pool.query('USE lausm');
+  await pool.query('USE LAUSMDB');
   const [rows] = await pool.query(`SELECT COUNT(*) AS Total FROM DELEGATE WHERE level = ? AND dlgCampus= ?  `, [level,campus]);
   return rows;
 }
@@ -531,7 +525,7 @@ export async function dlgNoRepQuery() {
 
 //getlist of delegates with no country yet
 export async function dlgNoRep() {
-  await pool.query('USE LAUSM');
+  await pool.query('USE LAUSMDB');
   const [delegates] = await pool.query(`SELECT dlgID, dlgSchool, dlgPGM, dlgCampus, level,lang, countryRep FROM DELEGATE  WHERE countryRep ='TBA'`);
   return delegates;
 }
@@ -539,7 +533,7 @@ export async function dlgNoRep() {
 
 
                           // export async function assignRep(){
-                          //   await pool.query('USE LAUSM');
+                          //   await pool.query('USE LAUSMDB');
                           //   let delegates = await dlgNoRepQuery(); // got the list of delegates with no country
                           // console.log('delegates quesry: ',delegates);
                           // let updated  = await dlgNoRep();
@@ -552,7 +546,7 @@ export async function dlgNoRep() {
                           // // 
                           // for(let i=0;i<size[0].num;i++){
                           //   console.log(i);
-                          //   await pool.query('USE LAUSM');
+                          //   await pool.query('USE LAUSMDB');
                           //   let [currentDlg] = await pool.query(`SELECT dlgID FROM (${delegates}) AS delegate LIMIT 1 OFFSET ${i}`);
                             
                           //   let [pgm] = await pool.query(`SELECT dlgPGM FROM (${delegates}) AS delegates WHERE dlgID ='${currentDlg[0].dlgID}'`);
@@ -611,7 +605,7 @@ export async function dlgNoRep() {
 
 
 // export async function assignRep(){
-//   await pool.query('USE LAUSM');
+//   await pool.query('USE LAUSMDB');
 
 //   //ordered list of delegates with no country
 //  let size=0;
@@ -623,7 +617,7 @@ export async function dlgNoRep() {
 // console.log(size);
 
 
-//   await pool.query('USE LAUSM');
+//   await pool.query('USE LAUSMDB');
 //   let currentDlg = delegates[0].dlgID;
 //     console.log('current dlg:', currentDlg);
 //   let pgm = delegates[0].dlgPGM;
@@ -692,7 +686,7 @@ export async function dlgNoRep() {
 
 
   // export async function updateTs1attendance(attendanceTS1){
-  //   await pool.query('USE lausm')
+  //   await pool.query('USE LAUSMDB')
   //   const result = await pool.query(`UPDATE DELEGATE SET attendanceTS1= ?`, [attendanceTS1]
   //   );
   //   const dID = result.insertId
@@ -701,7 +695,7 @@ export async function dlgNoRep() {
 
 
   // export async function updateTs2attendance(attendanceTS2){
-  //   await pool.query('USE lausm')
+  //   await pool.query('USE LAUSMDB')
   //   const result = await pool.query(`UPDATE DELEGATE SET attendanceTS2= ?`, [attendanceTS2]
   //   );
   //   const dID = result.insertId
@@ -709,7 +703,7 @@ export async function dlgNoRep() {
   // }
 
   // export async function updateTs1attendance(mcAttendance){
-  //   await pool.query('USE lausm')
+  //   await pool.query('USE LAUSMDB')
   //   const result = await pool.query(`UPDATE DELEGATE SET mcAttendance= ?`, [mcAttendance]
   //   );
   //   const dID = result.insertId
@@ -718,7 +712,7 @@ export async function dlgNoRep() {
 
 
   // export async function updateTs2attendance(fcAttendance){
-  //   await pool.query('USE lausm')
+  //   await pool.query('USE LAUSMDB')
   //   const result = await pool.query(`UPDATE DELEGATE SET fcAttendance= ?`, [fcAttendance]
   //   );
   //   const dID = result.insertId
@@ -729,35 +723,35 @@ export async function dlgNoRep() {
   
 //USE FOR TS1 CLASSES
 // export async function getBeirutTs1(classroom){
-//   await pool.query('USE lausm');
+//   await pool.query('USE LAUSMDB');
 //   const [rows] = await pool.query(SELECT dlgID,fName,lName,attendanceTS1 FROM DELEGATE WHERE tsCLASS = ?, [classroom]);
 //   return rows;
 // }
 
 //USE FOR TS1 CLASSES
 export async function getBeirutTs1(classroom, campus){
-  await pool.query('USE lausm');
+  await pool.query('USE LAUSMDB');
   const [rows] = await pool.query(`SELECT dlgID,fName,lName,attendanceTS1 FROM DELEGATE WHERE tsCLASS = ? AND dlgCampus = ?`, [classroom, campus]);
   return rows;
 }
 
 //USE FOR TS2 CLASSES
 export async function getBeirutTs2(classroom, campus){
-  await pool.query('USE lausm');
+  await pool.query('USE LAUSMDB');
   const [rows] = await pool.query(`SELECT dlgID,fName,lName,attendanceTS2 FROM DELEGATE WHERE tsCLASS = ? AND dlgCampus = ?`, [classroom, campus]);
   return rows;
 }
 
 // USE FOR MC CLASSES
 export async function getMCdelegates(mcCommittee, campus){
-  await pool.query('USE lausm');
+  await pool.query('USE LAUSMDB');
   const [rows] = await pool.query(`SELECT dlgID,fName,lName,mcAttendance FROM DELEGATE WHERE mcCommittee = ? AND dlgCampus = ?`, [mcCommittee, campus]);
   return rows;
 }
 
 //USE FOR FC CLASSES
 export async function getFCdelegates(fcCommittee, campus){
-  await pool.query('USE lausm');
+  await pool.query('USE LAUSMDB');
   const [rows] = await pool.query(`SELECT dlgID,fName,lName,fcAttendance FROM DELEGATE WHERE fcCommittee = ? AND dlgCampus = ?`, [fcCommittee, campus]);
   return rows;
 }
