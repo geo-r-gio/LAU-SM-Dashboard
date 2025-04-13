@@ -1,6 +1,6 @@
 CREATE DATABASE LAUSM;
 
-USE DATABASE LAUSM;
+USE LAUSM;
 
 
 
@@ -161,16 +161,9 @@ CREATE TABLE SCHOOL
   PRIMARY KEY (schoolName)
 );
 
-INSERT INTO SCHOOL VALUES ('College Notre Dame De Jamhour', 21987456, 'Melissa Jamhour', 76546783,'Byblos','MUN');
-
 INSERT INTO SCHOOL VALUES ('Lycee Verdun', 32456789, 'Philippe Verdun', 98765432,'Beirut'),
 ('International School of Choueifat', 90123456, 'Christina Choueifat', 21987654, 'Byblos'),
 ('American Community School Beirut', 43215678, 'Emily ACS', 87654321, 'Beirut');
-
-
-INSERT INTO SCHOOL VALUES ('Lycee Abdel Kader', 56789012, 'Antoine Kader', 65432198, 'Byblos','MUN');
-
-
 
 INSERT INTO SCHOOL VALUES ('Saint George School', 11111111, 'George Saint', 22222222, 'Beirut'),
 ('Liberty Academy', 33333333, 'Alex Liberty', 44444444, 'Beirut'),
@@ -271,7 +264,7 @@ CREATE TABLE DELEGATE
   fcCommittee VARCHAR(10),
   fcCountry VARCHAR(50) DEFAULT 'TBA',
   fcAttendance BOOLEAN DEFAULT FALSE,
-  countryRep VARCHAR(100) DEFAULT 'TBA'
+  countryRep VARCHAR(100) DEFAULT 'TBA',
   PRIMARY KEY (dlgID),
   FOREIGN KEY (dlgSchool) REFERENCES SCHOOL(SchoolName),
   FOREIGN KEY (dlgAdv) REFERENCES ADVISOR(advID),
