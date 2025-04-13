@@ -42,7 +42,6 @@ const DelegatesForm = () => {
   const handleFormSubmit = (values, { resetForm }) => {
 
     alert(JSON.stringify(values, null, 2));
-    //alert('Form has been submitted!')
     console.log(values);
 
     Axios.post('http://localhost:3000/delegates', values)
@@ -51,9 +50,6 @@ const DelegatesForm = () => {
       resetForm();
      })
     .catch(err => console.log(err))
-
-    // alert(JSON.stringify(values, null, 2));
-    // console.log(values);
   }
   
   return (
