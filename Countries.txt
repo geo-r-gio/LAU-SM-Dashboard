@@ -22,9 +22,6 @@ INSERT INTO REPRESENTATION(repID,country_org,pgm,level,lang,campus) VALUES
   ('R021', 'UNITED KINGDOM', 'MUN', 'MS', 'EN', 'Beirut');
 
 
-
-
-
 INSERT INTO REPRESENTATION(repID,country_org,pgm,level,lang,campus) VALUES
   ('R022', 'SWEDEN', 'MUN', 'MS', 'EN', 'Byblos'),
   ('R023', 'CANADA', 'MUN', 'MS', 'EN', 'Byblos'),
@@ -47,7 +44,6 @@ INSERT INTO REPRESENTATION(repID,country_org,pgm,level,lang,campus) VALUES
   ('R040', 'EGYPT', 'MUN', 'MS', 'EN', 'Byblos'),
   ('R041', 'PAKISTAN', 'MUN', 'MS', 'EN', 'Byblos'),
   ('R042', 'UNITED KINGDOM', 'MUN', 'MS', 'EN', 'Byblos');
-
 
 
 INSERT INTO REPRESENTATION(repID,country_org,pgm,level,lang,campus) VALUES
