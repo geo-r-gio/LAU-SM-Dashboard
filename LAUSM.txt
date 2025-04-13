@@ -1,9 +1,6 @@
-CREATE DATABASE LAUSM;
+CREATE DATABASE LAUSMDB;
 
-USE LAUSM;
-
-
-
+USE LAUSMDB;
 
 CREATE TABLE TSCLASS 
 (
@@ -56,18 +53,6 @@ INSERT INTO TSCLASS VALUES ('FR301', 'Byblos', 25, 'MUN', 'HS', 'EN'), ('FR302',
 ('GB804', 'Beirut', 25, 'MGG', 'HS', 'EN'),
 ('GB805', 'Beirut', 25, 'MGG', 'HS', 'EN');
 
-
-
-
-
-
-
-
-
-
-
-
-
 CREATE TABLE MCCLASS 
 (
  
@@ -85,7 +70,6 @@ INSERT INTO MCCLASS VALUES ('AP', 'Arab Parliament', 'Beirut', 20, 'MAL', 'HS', 
 INSERT INTO MCCLASS VALUES ('WHO', 'World Health Organization', 'Byblos', '85', 'MUN', 'HS', 'EN');
 INSERT INTO MCCLASS VALUES ('FAO', 'Food and Agriculture Organization', 'Byblos', 45, 'MUN', 'MS', 'EN');
 INSERT INTO MCCLASS VALUES ('MSA', 'Ministry of Social affairs', 'Byblos', 23, 'MGG', 'MS', 'EN');
-
 
 
 CREATE TABLE FCCLASS 
@@ -187,7 +171,6 @@ INSERT INTO SCHOOL VALUES ('Saint George School', 11111111, 'George Saint', 2222
 ('Sunset Hills High', 99001122, 'Samantha Sunset', 11223344, 'Byblos');
 
 
-
 CREATE TABLE ADVISOR
 (
  
@@ -204,10 +187,6 @@ CREATE TABLE ADVISOR
   FOREIGN KEY (mainAdv) REFERENCES ADVISOR(advID)
 );
 
-INSERT INTO ADVISOR VALUES ('A100', 'Jana', 'Smith', 03454768, 'jana.smith@gmail.com', 'College Notre Dame De Jamhour', 'A100');
-INSERT INTO ADVISOR VALUES ('A101', 'Rita', 'Jones', 03777325, 'rita.jones@gmail.com', 'College Notre Dame De Jamhour', 'A100');
-
-
 INSERT INTO ADVISOR VALUES
 
   ('A102', 'Emily', 'Williams', 05678901, 'emily.williams@gmail.com', 'Lycee Verdun', 'A102'),
@@ -215,11 +194,6 @@ INSERT INTO ADVISOR VALUES
   ('A112', 'Robert', 'Johnson', 04561234, 'robert.johnson@gmail.com',  'International School of Choueifat', 'A112'),
   ('A104', 'Sophia', 'Davis', 07890123, 'sophia.davis@gmail.com',  'International School of Choueifat', 'A112'),
   ('A109', 'William', 'Anderson', 12345678, 'william.anderson@gmail.com', 'American Community School Beirut', 'A109');
- 
-INSERT INTO ADVISOR VALUES ('A108', 'Emma', 'Taylor', 11234567, 'emma.taylor@gmail.com', 'Lycee Abdel Kader', 'A108'),
-('A110', 'Ava', 'Moore', 13456789, 'ava.moore@gmail.com', 'Lycee Abdel Kader', 'A108'),
-('A111', 'Ethan', 'Clark', 14567890, 'ethan.clark@gmail.com',  'Lycee Abdel Kader', 'A108');
-
 
   INSERT INTO ADVISOR VALUES ('A125', 'Olivia', 'Taylor', 78901234, 'olivia.taylor@gmail.com', 'Lebanese National School', 'A125'), 
   ('A126', 'William', 'Davis', 89012345, 'william.davis@gmail.com', 'Lebanese National School', 'A125');
@@ -271,7 +245,6 @@ CREATE TABLE DELEGATE
   FOREIGN KEY (tsClass) REFERENCES TSCLASS(classID) ON DELETE CASCADE ON UPDATE CASCADE,
   FOREIGN KEY (mcCommittee) REFERENCES MCCLASS(committeeID) ON DELETE CASCADE ON UPDATE CASCADE,
   FOREIGN KEY (fcCommittee) REFERENCES FCCLASS(committeeID) ON DELETE CASCADE ON UPDATE CASCADE,
-  FOREIGN KEY(representation) REFERENCES REPRESENTATION ON DELETE SET DEFAULT ON UPDATE SET DEFAULT
 );
 
 INSERT INTO DELEGATE (dlgID,fName,lName,dlgNB,dlgEmail,dlgSchool,dlgPGM,level,lang,dlgCampus,dlgAdv)
@@ -288,31 +261,6 @@ VALUES ('D1400', 'Logan', 'Fletcher', 89012345, 'logan.fletcher@gmail.com', 'Lyc
 ('D1499', 'Aria', 'Fowler', 23456789, 'aria.fowler@gmail.com', 'Lycee Verdun', 'MEU', 'HS', 'FR', 'Beirut', 'A103'),
 ('D1500', 'Mason', 'Perez', 34567890, 'mason.perez@gmail.com', 'Lycee Verdun', 'MUN', 'HS', 'EN', 'Beirut', 'A103'),
 ('D1549', 'Ella', 'Ford', 89012345, 'ella.ford@gmail.com', 'Lycee Verdun', 'MUN', 'HS', 'EN', 'Beirut', 'A103');
-
-
-
-
-
-
-
-
-INSERT INTO DELEGATE (dlgID, fName, lName, dlgNB, dlgEmail, dlgSchool, dlgPGM, level, lang, dlgCampus, dlgAdv)
-VALUES
-  ('D2201', 'Emma', 'Anderson', 56789012, 'emma.anderson@gmail.com', 'Lycee Abdel Kader', 'MUN', 'HS', 'EN', 'Byblos', 'A108'),
-  ('D2202', 'Jackson', 'Ward', 67890123, 'jackson.ward@gmail.com', 'Lycee Abdel Kader', 'MUN', 'HS', 'EN', 'Byblos', 'A108'),
-  ('D2203', 'Sophia', 'Murray', 78901234, 'sophia.murray@gmail.com', 'Lycee Abdel Kader', 'MUN', 'HS', 'EN', 'Byblos', 'A108'),
-  ('D2204', 'Oliver', 'Dixon', 89012345, 'oliver.dixon@gmail.com','Lycee Abdel Kader', 'MUN', 'HS', 'EN', 'Byblos', 'A108'),
-  ('D2205', 'Ava', 'Rossi', 90123456, 'ava.rossi@gmail.com', 'Lycee Abdel Kader', 'MGG', 'HS', 'EN', 'Byblos', 'A108'),
-  ('D2206', 'Liam', 'Romano', 12345678, 'liam.romano@gmail.com', 'Lycee Abdel Kader', 'MGG', 'HS', 'EN', 'Byblos', 'A111'),
-  ('D2207', 'Ethan', 'Ferrari', 23456789, 'ethan.ferrari@gmail.com', 'Lycee Abdel Kader', 'MGG', 'HS', 'EN', 'Byblos', 'A111'),
-  ('D2208', 'Aria', 'Gallo', 34567890, 'aria.gallo@gmail.com', 'Lycee Abdel Kader', 'MGG', 'HS', 'EN', 'Byblos', 'A111'),
-  ('D2209', 'Sebastian', 'Ricci', 45678901, 'sebastian.ricci@gmail.com', 'Lycee Abdel Kader', 'MEU', 'HS', 'FR', 'Byblos', 'A111'),
-  ('D2210', 'Scarlett', 'Conti', 56789012, 'scarlett.conti@gmail.com',  'Lycee Abdel Kader', 'MEU', 'HS', 'FR', 'Byblos', 'A111'),
-  ('D2211', 'Landon', 'Moretti', 67890123, 'landon.moretti@gmail.com',  'Lycee Abdel Kader', 'MEU', 'HS', 'FR', 'Byblos', 'A111'),
-  ('D2212', 'Madison', 'Orlando', 78901234, 'madison.orlando@gmail.com', 'Lycee Abdel Kader', 'MEU', 'HS', 'FR', 'Byblos', 'A110'),
-  ('D2213', 'Grayson', 'Martino', 89012345, 'grayson.martino@gmail.com', 'Lycee Abdel Kader', 'MEU', 'HS', 'FR', 'Byblos', 'A110');
-
-
 
 INSERT INTO DELEGATE (dlgID, fName, lName, dlgNB, dlgEmail, dlgSchool, dlgPGM, level, lang, dlgCampus, dlgAdv)
 VALUES
@@ -364,11 +312,6 @@ VALUES ('D3026', 'Ella', 'Hill', 77889900, 'ella.hill@gmail.com', 'Saint George 
   ('D3040', 'Grace', 'Carter', 33445566, 'grace.carter@gmail.com', 'Saint George School', 'MEU', 'HS', 'FR', 'Beirut', 'A142');
 
 
-
-
-
-INSERT INTO COUNTRY_ORG VALUES ('France'),('Germany'),('United kingdom'),('Saudi Arabia'),('Lebanon');
-
 CREATE TABLE MCREPRESENTATION(
 
 dlgID CHAR(5), 
@@ -380,10 +323,7 @@ FOREIGN KEY(countryName) REFERENCES COUNTRY_ORG(countryName),
 FOREIGN KEY(committeeID) REFERENCES MCCLASS(committeeID)
 );
 
-
-
-
-  INSERT INTO MCREPRESENTATION VALUES('D1400','France','FAO'),('D1401','Germany','AP');
+INSERT INTO MCREPRESENTATION VALUES('D1400','France','FAO'),('D1401','Germany','AP');
 
 CREATE TABLE FCREPRESENTATION(
 
@@ -436,8 +376,10 @@ PRIMARY KEY (repID),
 FOREIGN KEY (school) REFERENCES SCHOOL(schoolName)
   );
 
+ALTER TABLE DELEGATE
+ADD representation CHAR(4) DEFAULT 'R001';
 
-  ALTER TABLE DELEGATE
+ALTER TABLE DELEGATE
 ADD CONSTRAINT fk_representation
 FOREIGN KEY (representation)
 REFERENCES REPRESENTATION (repID)
