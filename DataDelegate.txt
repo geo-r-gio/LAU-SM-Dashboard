@@ -1,4 +1,5 @@
-
+INSERT INTO DELEGATE (dlgID, fName, lName, dlgNB, dlgEmail, dlgSchool, dlgPGM, level, lang, dlgCampus, dlgAdv)
+VALUES
   ('D3041', 'Ethan', 'Johnson', 44556677, 'ethan.johnson@gmail.com', 'Cedar Valley School', 'MUN', 'HS', 'EN', 'Beirut', 'A143'),
   ('D3042', 'Sophie', 'Miller', 55667788, 'sophie.miller@gmail.com', 'Cedar Valley School', 'MUN', 'MS', 'EN', 'Beirut', 'A143'),
   ('D3043', 'Mia', 'Henderson', 66778899, 'mia.henderson@gmail.com', 'Cedar Valley School', 'MUN', 'MS', 'EN', 'Beirut', 'A143'),
@@ -62,16 +63,7 @@ VALUES
 
 
 
-
-
-
-
-
-
-
-
-INSERT INTO ADVISOR VALUES
-
+INSERT INTO DELEGATE VALUES
   ('D3086', 'Liam', 'Fletcher', 33445566, 'liam.fletcher@gmail.com', 'Evergreen International School', 'MUN', 'HS', 'EN', 'Byblos', 'A149'),
   ('D3087', 'Olivia', 'Wells', 44556677, 'olivia.wells@gmail.com', 'Evergreen International School', 'MUN', 'MS', 'EN', 'Byblos', 'A149'),
   ('D3088', 'Noah', 'Clark', 55667788, 'noah.clark@gmail.com', 'Evergreen International School', 'MUN', 'MS', 'EN', 'Byblos', 'A149'),
@@ -117,8 +109,6 @@ INSERT INTO ADVISOR VALUES
   ('D3126', 'Noah', 'Dixon', 11223344, 'noah.dixon@gmail.com', 'Hope Christian School', 'MEU', 'HS', 'EN', 'Beirut', 'A153'),
   ('D3127', 'Emma', 'Hill', 22334455, 'emma.hill@gmail.com', 'Hope Christian School', 'MGG', 'HS', 'EN', 'Beirut', 'A153'),
   ('D3128', 'William', 'Mitchell', 33445566, 'william.mitchell@gmail.com', 'Hope Christian School', 'MEU', 'HS', 'EN', 'Beirut', 'A153'),
-
-
 
   ('D3129', 'Ethan', 'Fletcher', 44556677, 'ethan.fletcher@gmail.com', 'Horizon Elementary', 'MUN', 'HS', 'EN', 'Beirut', 'A155'),
   ('D3130', 'Sophie', 'Wells', 55667788, 'sophie.wells@gmail.com', 'Horizon Elementary', 'MUN', 'MS', 'EN', 'Beirut', 'A155'),
