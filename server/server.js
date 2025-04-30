@@ -76,7 +76,7 @@ app.post("/login", async (req, res) => {
 //     const db = await mysql.createConnection({
 //       host: "localhost",          // 🛠 Replace with your actual DB config
 //       user: "root",               // or your MySQL user
-//       password: "root",               // or your MySQL password
+//       password: "gpn#24#1#2003",               // or your MySQL password
 //       database: "lausmdb"         // or your actual database name
 //     });
 //     const [rows] = await db.execute("SELECT username, password FROM login");
