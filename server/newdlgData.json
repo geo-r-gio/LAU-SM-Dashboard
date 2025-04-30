@@ -1126,5 +1126,29 @@
     "fcAttendance": 0,
     "countryRep": "TBA",
     "representation": "R001"
+  },
+  {
+    "dlgID": "D3311",
+    "fName": "Rona",
+    "lName": "Elias",
+    "dlgNB": "76573904",
+    "dlgEmail": "ronaelias1@gmail.com",
+    "dlgSchool": "Lycee Verdun",
+    "dlgPGM": "MUN",
+    "level": "MS",
+    "lang": "EN",
+    "dlgCampus": "Beirut",
+    "dlgAdv": "A102",
+    "tsClass": "BB306",
+    "attendanceTS1": 0,
+    "attendanceTS2": 0,
+    "mcCommittee": null,
+    "mcCountry": "TBA",
+    "mcAttendance": 0,
+    "fcCommittee": null,
+    "fcCountry": "TBA",
+    "fcAttendance": 0,
+    "countryRep": "TBA",
+    "representation": "R001"
   }
 ]
