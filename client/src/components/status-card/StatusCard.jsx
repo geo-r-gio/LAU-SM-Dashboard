@@ -2,10 +2,6 @@ import React, { useEffect, useState } from 'react'
 import Axios from 'axios';
 import './statuscard.css'
 
-
-
-
-
 //   useEffect(() => {
 //     const fetchData = async () => {
 //       try {
@@ -46,8 +42,8 @@ const StatusCard = ({ icon, title, level, campus })  => {
       try {
         const response = await Axios.get(`http://localhost:3000/dashboard/${level}/${campus}`);
    
-        console.log('Response from client:', response);
-        console.log('setcoun:', response.data.count);
+        //console.log('Response from client:', response);
+        //console.log('setcount:', response.data.count);
         if (Array.isArray(response.data) && response.data.length > 0) {
           // Extract the count from the 'Total' property of the first element
           setCount(response.data[0].Total);

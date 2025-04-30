@@ -1,1 +1,1 @@
-select*from delegate where dlgSchool='Lycee Abdel Kader';
+//select*from delegate where dlgSchool='Lycee Abdel Kader';

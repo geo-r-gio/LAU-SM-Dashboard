@@ -112,37 +112,37 @@ const sessions = {
     {
       "sess": "Training Session 1",
       "cam": "Beirut",
-      "dat": "September 9, 2023",
+      "dat": "September 9, 2024",
     },
     {
       "sess": "Training Session 1",
       "cam": "Byblos",
-      "dat": "September 16, 2023",
+      "dat": "September 16, 2024",
     },
     {
       "sess": "Training Session 2",
       "cam": "Beirut",
-      "dat": "September 23, 2023",
+      "dat": "September 23, 2024",
     },
     {
       "sess": "Training Session 2",
       "cam": "Byblos",
-      "dat": "October 7, 2023",
+      "dat": "October 7, 2024",
     },
     {
       "sess": "Mock Conference",
       "cam": "Beirut/Byblos",
-      "dat": "November 25, 2023",
+      "dat": "November 25, 2024",
     },
     {
       "sess": "Final Conference",
       "cam": "Beirut",
-      "dat": "May 9, 2024",
+      "dat": "May 9, 2025",
     },
     {
       "sess": "Final Conference",
       "cam": "Byblos",
-      "dat": "May 16, 2024",
+      "dat": "May 16, 2025",
     }
   ]    
 }

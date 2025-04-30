@@ -6,8 +6,8 @@ dotenv.config()
 
 const pool = mysql.createPool({
 host: process.env.MYSQL_HOST,
-user: process.env.MYSQL_USER,
-password: process.env.MYSQL_PASSWORD,
+user: 'root', //process.env.MYSQL_USER
+password: 'gpn#24#1#2003',  //process.env.MYSQL_PASSWORD
 database: process.env.MYSQL_DATABASE
 }).promise();
 
@@ -49,12 +49,6 @@ return (cap[0].capacity) - (query[0].capacity);
 //   } 
 // }
 
-
-
-
-
-
-
 //array of js objects
 export async function getDlg(){
   await pool.query('USE LAUSMDB');
@@ -72,7 +66,7 @@ async function saveDataToFile() {
 
     // Write JSON data to a file
     await fs.writeFile('newdlgData.json', jsonData, 'utf8');
-    console.log('Data successfully written to data.json');
+    //console.log('Data successfully written to data.json');
   } catch (error) {
     console.error('Error:', error);
   } 
@@ -219,7 +213,7 @@ export async function checkAdvID(advID){
   await pool.query('USE LAUSMDB');
   const exists = await pool.query(
   'SELECT EXISTS ( SELECT 1 FROM ADVISOR WHERE advID = ? ) AS value_exists',[advID]);
-  console.log( exists[0][0].value_exists);
+  //console.log( exists[0][0].value_exists);
   return exists[0][0].value_exists;
 }
 
@@ -227,7 +221,7 @@ export async function checkDlgID(dlgID){
   await pool.query('USE LAUSMDB');
   const exists = await pool.query(
   'SELECT EXISTS ( SELECT 1 FROM DELEGATE WHERE dlgID = ? ) AS value_exists',[dlgID]);
-  console.log(dlgID, exists[0][0].value_exists);
+  //console.log(dlgID, exists[0][0].value_exists);
   return exists[0][0].value_exists;
 }
 
@@ -451,7 +445,7 @@ SET DELEGATE.tsClass = ?`,[currentClass[0].classID]);
 
 
  await assignTsClass();
-  console.log('DONE');
+//console.log('DONE');
 
 
 

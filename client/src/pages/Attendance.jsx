@@ -48,7 +48,6 @@ const Attendance = () => {
     
         Axios.get(url)
           .then(res => {
-            // console.log(res);
             const responseData = res.data;
             console.log('Response Data:', responseData);
            setShowTable(true);

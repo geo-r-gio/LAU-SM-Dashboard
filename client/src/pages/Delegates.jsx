@@ -104,8 +104,6 @@ export default function FullFeaturedCrudGrid() {
     { field: "dlgNB", headerName: "Phone Number", flex: 1, editable: true },
     { field: "dlgEmail", headerName: "Email Address", flex: 1, editable: true },
     { field: "dlgSchool", headerName: "School Name", flex: 1, editable: true },
-    // { field: "dlgPin", headerName: "PIN", flex: 1, editable: true },
-    // { field: "dlgClass", headerName: "Room", flex: 1, editable: true },
     { field: "dlgPGM", headerName: "Program of Interest", flex: 1, editable: true },
     { field: "level", headerName: "HS/MS", flex: 1, editable: true },
     { field: "lang", headerName: "Language", flex: 1, editable: true },
@@ -115,10 +113,8 @@ export default function FullFeaturedCrudGrid() {
     { field: "attendanceTS1", headerName: "TS1 Attendance", flex:1, editable:true },
     { field: "attendanceTS2", headerName: "TS2 Attendance", flex:1, editable:true },
     { field: "mcCommittee", headerName: "MC Committee", flex:1, editable:false },
-    // { field: "mcCountry", headerName: "MC Country", flex:1, editable:false },
     { field: "mcAttendance", headerName: "MC Attendance", flex:1, editable:true },
     { field: "fcCommittee", headerName: "FC Committee", flex:1, editable:false },
-   
     { field: "fcAttendance", headerName: "FC Attendance", flex:1, editable:true },
     { field: "countryRep", headerName: "Representation", flex:1, editable:false },
     // { field: "school", headerName: "Access Level", flex: 1, 
@@ -240,7 +236,6 @@ export default function FullFeaturedCrudGrid() {
             columns: {
               columnVisibilityModel: {
                 // Hide columns id and age, the other columns will remain visible
-                // dlgID: false,
                 lang: false,
                 dlgEmail: false,
                 level: false,
@@ -256,9 +251,6 @@ export default function FullFeaturedCrudGrid() {
                 // fcCountry: false,
                 fcAttendance: false,
                 countryRep: false,
-         
-
-          
               },
             },
             pagination: {
