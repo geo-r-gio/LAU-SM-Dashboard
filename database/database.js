@@ -118,6 +118,36 @@ export async function getAllSchools() {
   return rows;
 }
 
+export async function getAllPrograms() {
+  await pool.query('USE LAUSMDB');
+  const [rows] = await pool.query('SELECT DISTINCT dlgPGM FROM DELEGATE');
+  return rows;
+}
+
+export async function getAllLevels() {
+  await pool.query('USE LAUSMDB');
+  const [rows] = await pool.query('SELECT DISTINCT level FROM DELEGATE');
+  return rows;
+}
+
+export async function getAllLanguages() {
+  await pool.query('USE LAUSMDB');
+  const [rows] = await pool.query('SELECT DISTINCT lang FROM DELEGATE');
+  return rows;
+}
+
+export async function getAllCampuses() {
+  await pool.query('USE LAUSMDB');
+  const [rows] = await pool.query('SELECT DISTINCT dlgCampus FROM DELEGATE');
+  return rows;
+}
+
+export async function getAllAdvisors() {
+  await pool.query('USE LAUSMDB');
+  const [rows] = await pool.query('SELECT DISTINCT dlgAdv FROM DELEGATE');
+  return rows;
+}
+
 // const delegates = await getDlg();
 // console.log("getting all delegates");
 // console.log(delegates);

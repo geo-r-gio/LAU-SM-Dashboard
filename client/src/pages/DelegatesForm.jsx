@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Box, Button, TextField } from '@mui/material';
+import { Box, Button, MenuItem, TextField } from '@mui/material';
 import { Formik } from 'formik';
 import * as yup from "yup";
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -38,6 +38,85 @@ const userSchema = yup.object().shape({
 const DelegatesForm = () => {
   
   const isNonMobile = useMediaQuery("(min-width:600px)");
+
+  const [schoolOptions, setSchoolOptions] = React.useState([]);
+  const [programOptions, setProgramOptions] = React.useState([]);
+  const [levelOptions, setLevelOptions] = React.useState([]);
+  const [langOptions, setLangOptions] = React.useState([]);
+  const [campusOptions, setCampusOptions] = React.useState([]);
+  const [advisorOptions, setAdvisorOptions] = React.useState([]);
+
+  React.useEffect(() => {
+    Axios.get('http://localhost:3000/schools')
+      .then((res) => {
+        const options = res.data.map((school) => ({
+          label: school.schoolName,
+          value: school.schoolName,
+        }));
+        setSchoolOptions(options);
+      })
+      .catch((err) => console.error("Failed to fetch school names", err));
+  }, []);
+
+  React.useEffect(() => {
+    Axios.get('http://localhost:3000/programs')
+      .then((res) => {
+        const options = res.data.map((program) => ({
+          label: program.dlgPGM,
+          value: program.dlgPGM,
+        }));
+        setProgramOptions(options);
+      })
+      .catch((err) => console.error("Failed to fetch program names", err));
+  }, []);
+
+  React.useEffect(() => {
+    Axios.get('http://localhost:3000/levels')
+      .then((res) => {
+        const options = res.data.map((level) => ({
+          label: level.level,
+          value: level.level,
+        }));
+        setLevelOptions(options);
+      })
+      .catch((err) => console.error("Failed to fetch levels", err));
+  }, []);
+
+  React.useEffect(() => {
+    Axios.get('http://localhost:3000/languages')
+      .then((res) => {
+        const options = res.data.map((lang) => ({
+          label: lang.lang,
+          value: lang.lang,
+        }));
+        setLangOptions(options);
+      })
+      .catch((err) => console.error("Failed to fetch languages", err));
+  }, []);
+
+  React.useEffect(() => {
+    Axios.get('http://localhost:3000/campuses')
+      .then((res) => {
+        const options = res.data.map((campus) => ({
+          label: campus.dlgCampus,
+          value: campus.dlgCampus,
+        }));
+        setCampusOptions(options);
+      })
+      .catch((err) => console.error("Failed to fetch campuses", err));
+  }, []);
+
+  React.useEffect(() => {
+    Axios.get('http://localhost:3000/advisorsID')
+      .then((res) => {
+        const options = res.data.map((advisor) => ({
+          label: advisor.dlgAdv,
+          value: advisor.dlgAdv,
+        }));
+        setAdvisorOptions(options);
+      })
+      .catch((err) => console.error("Failed to fetch advisors ID", err));
+  }, []);
 
   const handleFormSubmit = (values, { resetForm }) => {
 
@@ -122,7 +201,7 @@ const DelegatesForm = () => {
                 helperText={touched.dlgEmail && errors.dlgEmail}
                 sx={{ gridColumn: "span 2" }}
               />
-              <TextField
+              {/* <TextField
                 fullWidth
                 variant="filled"
                 type="text"
@@ -134,8 +213,37 @@ const DelegatesForm = () => {
                 error={!!touched.dlgSchool && !!errors.dlgSchool}
                 helperText={touched.dlgSchool && errors.dlgSchool}
                 sx={{ gridColumn: "span 2" }}
-              />
+              /> */}
               <TextField
+                fullWidth
+                select
+                variant="filled"
+                label="School Name"
+                name="dlgSchool"
+                value={values.advSchool}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={!!touched.dlgSchool && !!errors.dlgSchool}
+                helperText={touched.dlgSchool && errors.dlgSchool}
+                sx={{ gridColumn: "span 2" }}
+                SelectProps={{
+                  MenuProps: {
+                    PaperProps: {
+                      style: {
+                        maxHeight: 5 * 48, // 5 items * default item height (48px)
+                        overflowY: 'auto'
+                      }
+                    }
+                  }
+                }}
+              >
+                {schoolOptions.map((option) => (
+                  <MenuItem key={option.value} value={option.value} sx={{ minHeight: '48px !important' }}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField>
+              {/* <TextField
                 fullWidth
                 variant="filled"
                 type="text"
@@ -147,8 +255,39 @@ const DelegatesForm = () => {
                 error={!!touched.dlgPGM && !!errors.dlgPGM}
                 helperText={touched.dlgPGM && errors.dlgPGM}
                 sx={{ gridColumn: "span 2" }}
-              />
+              /> */}
+
               <TextField
+                fullWidth
+                select
+                variant="filled"
+                label="Program of Interest"
+                name="dlgPGM"
+                value={values.dlgPGM}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={!!touched.dlgPGM && !!errors.dlgPGM}
+                helperText={touched.dlgPGM && errors.dlgPGM}
+                sx={{ gridColumn: "span 2" }}
+                SelectProps={{
+                  MenuProps: {
+                    PaperProps: {
+                      style: {
+                        maxHeight: 5 * 48, // 5 items * default item height (48px)
+                        overflowY: 'auto'
+                      }
+                    }
+                  }
+                }}
+              >
+                {programOptions.map((option) => (
+                  <MenuItem key={option.value} value={option.value} sx={{ minHeight: '48px !important' }}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField>
+
+              {/* <TextField
                 fullWidth
                 variant="filled"
                 type="text"
@@ -160,8 +299,39 @@ const DelegatesForm = () => {
                 error={!!touched.level && !!errors.level}
                 helperText={touched.level && errors.level}
                 sx={{ gridColumn: "span 2" }}
-              />
+              /> */}
+
               <TextField
+                fullWidth
+                select
+                variant="filled"
+                label="HS/MS"
+                name="level"
+                value={values.level}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={!!touched.level && !!errors.level}
+                helperText={touched.level && errors.level}
+                sx={{ gridColumn: "span 2" }}
+                SelectProps={{
+                  MenuProps: {
+                    PaperProps: {
+                      style: {
+                        maxHeight: 5 * 48, // 5 items * default item height (48px)
+                        overflowY: 'auto'
+                      }
+                    }
+                  }
+                }}
+              >
+                {levelOptions.map((option) => (
+                  <MenuItem key={option.value} value={option.value} sx={{ minHeight: '48px !important' }}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField>
+
+              {/* <TextField
                 fullWidth
                 variant="filled"
                 type="text"
@@ -173,7 +343,38 @@ const DelegatesForm = () => {
                 error={!!touched.lang && !!errors.lang}
                 helperText={touched.lang && errors.lang}
                 sx={{ gridColumn: "span 2" }}
-              />
+              /> */}
+
+              <TextField
+                fullWidth
+                select
+                variant="filled"
+                label="Language"
+                name="lang"
+                value={values.lang}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={!!touched.lang && !!errors.lang}
+                helperText={touched.lang && errors.lang}
+                sx={{ gridColumn: "span 2" }}
+                SelectProps={{
+                  MenuProps: {
+                    PaperProps: {
+                      style: {
+                        maxHeight: 5 * 48, // 5 items * default item height (48px)
+                        overflowY: 'auto'
+                      }
+                    }
+                  }
+                }}
+              >
+                {langOptions.map((option) => (
+                  <MenuItem key={option.value} value={option.value} sx={{ minHeight: '48px !important' }}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField>
+{/* 
               <TextField
                 fullWidth
                 variant="filled"
@@ -186,8 +387,39 @@ const DelegatesForm = () => {
                 error={!!touched.dlgCampus && !!errors.dlgCampus}
                 helperText={touched.dlgCampus && errors.dlgCampus}
                 sx={{ gridColumn: "span 2" }}
-              />
+              /> */}
+
               <TextField
+                fullWidth
+                select
+                variant="filled"
+                label="Campus"
+                name="dlgCampus"
+                value={values.dlgCampus}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={!!touched.dlgCampus && !!errors.dlgCampus}
+                helperText={touched.dlgCampus && errors.dlgCampus}
+                sx={{ gridColumn: "span 2" }}
+                SelectProps={{
+                  MenuProps: {
+                    PaperProps: {
+                      style: {
+                        maxHeight: 5 * 48, // 5 items * default item height (48px)
+                        overflowY: 'auto'
+                      }
+                    }
+                  }
+                }}
+              >
+                {campusOptions.map((option) => (
+                  <MenuItem key={option.value} value={option.value} sx={{ minHeight: '48px !important' }}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField>
+
+              {/* <TextField
                 fullWidth
                 variant="filled"
                 type="text"
@@ -199,7 +431,37 @@ const DelegatesForm = () => {
                 error={!!touched.dlgAdv && !!errors.dlgAdv}
                 helperText={touched.dlgAdv && errors.dlgAdv}
                 sx={{ gridColumn: "span 2" }}
-              />
+              /> */}
+
+              <TextField
+                fullWidth
+                select
+                variant="filled"
+                label="Advisor's ID"
+                name="dlgAdv"
+                value={values.dlgAdv}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                error={!!touched.dlgAdv && !!errors.dlgAdv}
+                helperText={touched.dlgAdv && errors.dlgAdv}
+                sx={{ gridColumn: "span 2" }}
+                SelectProps={{
+                  MenuProps: {
+                    PaperProps: {
+                      style: {
+                        maxHeight: 5 * 48, // 5 items * default item height (48px)
+                        overflowY: 'auto'
+                      }
+                    }
+                  }
+                }}
+              >
+                {advisorOptions.map((option) => (
+                  <MenuItem key={option.value} value={option.value} sx={{ minHeight: '48px !important' }}>
+                    {option.label}
+                  </MenuItem>
+                ))}
+              </TextField>
             </Box>
             <Box display="flex" justifyContent="end" mt="20px">
               <Button type="submit" color="primary" variant="contained">
