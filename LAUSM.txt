@@ -1,9 +1,6 @@
-CREATE DATABASE LAUSM;
+CREATE DATABASE LAUSMDB;
 
-USE DATABASE LAUSM;
-
-
-
+USE DATABASE LAUSMDB;
 
 CREATE TABLE TSCLASS 
 (
@@ -55,17 +52,6 @@ INSERT INTO TSCLASS VALUES ('FR301', 'Byblos', 25, 'MUN', 'HS', 'EN'), ('FR302',
 ('MD5002', 'Byblos', 25, 'MGG', 'HS', 'EN'),
 ('GB804', 'Beirut', 25, 'MGG', 'HS', 'EN'),
 ('GB805', 'Beirut', 25, 'MGG', 'HS', 'EN');
-
-
-
-
-
-
-
-
-
-
-
 
 
 CREATE TABLE MCCLASS 
