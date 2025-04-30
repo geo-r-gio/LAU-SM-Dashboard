@@ -3,6 +3,11 @@ import { getDlg, getOneDlg, getAllSchools, updateTs1attendance,editSchoolCampus,
 
 import express from "express";
 import cors from "cors";
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
+import mysql from 'mysql2/promise';
+import dotenv from "dotenv";
+
 
 // const express = require('express');
 // const cors = require('cors');
@@ -24,12 +29,78 @@ app.use((err, req, res, next) => {
   res.status(500).send('Something broke!')
 })
 
+dotenv.config();
+const SECRET_KEY = process.env.JWT_SECRET; 
+if (!SECRET_KEY) {
+  console.warn("No JWT_SECRET in .env — login will fail!");
+}
+
 app.post("/login", async (req, res) => {
   const { username, password } = req.body;
-  const user = await signin(username, password)
-  res.send(user)
-})
 
+  if (!username || !password) {
+    console.log("Missing username or password");
+    return res.status(400).json({ message: "Username and password are required" });
+  }
+
+  try {
+    const user = await signin(username);
+
+    if (!user) {
+      console.log("No such user in DB");
+      return res.status(401).json({ message: "Invalid username or password" });
+    }
+
+    const isMatch = await bcrypt.compare(password, user.password);
+
+    if (!isMatch) {
+      console.log("Password mismatch");
+      return res.status(401).json({ message: "Invalid username or password" });
+    }
+
+    const payload = { username: user.username };
+    const token = jwt.sign(payload, SECRET_KEY, { expiresIn: 20 });
+
+    return res.json({ token, user: { username: user.username } });
+
+  } catch (err) {
+    console.error("Login error caught:", err);
+    return res.status(500).json({ message: "Server error" });
+  }
+});
+
+// hashAllPasswordsOnce();
+
+// async function hashAllPasswordsOnce() {
+//   try {
+//     const db = await mysql.createConnection({
+//       host: "localhost",          // 🛠 Replace with your actual DB config
+//       user: "root",               // or your MySQL user
+//       password: "root",               // or your MySQL password
+//       database: "lausmdb"         // or your actual database name
+//     });
+//     const [rows] = await db.execute("SELECT username, password FROM login");
+
+//     for (const row of rows) {
+//       const { username, password } = row;
+
+//       if (password.startsWith("$2b$")) {
+//         console.log(`Skipping already hashed password for ${username}`);
+//         continue;
+//       }
+
+//       const hashed = await bcrypt.hash(password, 10);
+//       await db.execute("UPDATE login SET password = ? WHERE username = ?", [hashed, username]);
+//       console.log(`Hashed password for ${username}`);
+//     }
+
+//     await db.end();
+//     console.log("✅ All passwords hashed.");
+
+//   } catch (err) {
+//     console.error("Error hashing passwords:", err);
+//   }
+// }
 
 // app.get("/", function(req, res){
 //   res.send("express here!")
