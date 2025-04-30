@@ -182,9 +182,19 @@ const AdvisorsForm = () => {
                 error={!!touched.advSchool && !!errors.advSchool}
                 helperText={touched.advSchool && errors.advSchool}
                 sx={{ gridColumn: "span 4" }}
+                SelectProps={{
+                  MenuProps: {
+                    PaperProps: {
+                      style: {
+                        maxHeight: 5 * 48, // 5 items * default item height (48px)
+                        overflowY: 'auto'
+                      }
+                    }
+                  }
+                }}
               >
                 {schoolOptions.map((option) => (
-                  <MenuItem key={option.value} value={option.value}>
+                  <MenuItem key={option.value} value={option.value} sx={{ minHeight: '48px !important' }}>
                     {option.label}
                   </MenuItem>
                 ))}
