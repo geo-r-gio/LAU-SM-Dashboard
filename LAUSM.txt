@@ -14,8 +14,6 @@ CREATE TABLE TSCLASS
   PRIMARY KEY (classID)
 );
 
-INSERT INTO TSCLASS VALUES ('FR302', 'Byblos', 25, 'MUN', 'HS', 'EN');
-INSERT INTO TSCLASS VALUES ('SC407', 'Byblos', 20, 'MUN', 'MS', 'EN');
 INSERT INTO TSCLASS VALUES ('ZK505', 'Byblos', 20, 'MAL', 'HS', 'AR');
 INSERT INTO TSCLASS VALUES ('GB1400', 'Beirut', 25, 'MEU', 'HS', 'FR');
 INSERT INTO TSCLASS VALUES ('AKSOB1100', 'Beirut', 15, 'MAL', 'MS', 'EN');
@@ -244,13 +242,8 @@ CREATE TABLE DELEGATE
   FOREIGN KEY (dlgAdv) REFERENCES ADVISOR(advID),
   FOREIGN KEY (tsClass) REFERENCES TSCLASS(classID) ON DELETE CASCADE ON UPDATE CASCADE,
   FOREIGN KEY (mcCommittee) REFERENCES MCCLASS(committeeID) ON DELETE CASCADE ON UPDATE CASCADE,
-  FOREIGN KEY (fcCommittee) REFERENCES FCCLASS(committeeID) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (fcCommittee) REFERENCES FCCLASS(committeeID) ON DELETE CASCADE ON UPDATE CASCADE
 );
-
-INSERT INTO DELEGATE (dlgID,fName,lName,dlgNB,dlgEmail,dlgSchool,dlgPGM,level,lang,dlgCampus,dlgAdv)
-VALUES ('D1000','Sara', 'Nassar',81454793,'sara.nassar@gmail.com','College Notre Dame De Jamhour', 'MUN','HS','EN', 'Byblos' , 'A100'), 
-('D1001', 'Chloe', 'Cooper', 17890123, 'chloe.cooper@gmail.com', 'College Notre Dame De Jamhour','MUN','HS','EN','Byblos', 'A101');
-
 
 INSERT INTO DELEGATE (dlgID,fName,lName,dlgNB,dlgEmail,dlgSchool,dlgPGM,level,lang,dlgCampus,dlgAdv)
 VALUES ('D1400', 'Logan', 'Fletcher', 89012345, 'logan.fletcher@gmail.com', 'Lycee Verdun', 'MEU', 'HS', 'FR', 'Beirut', 'A102'),
@@ -335,11 +328,6 @@ FOREIGN KEY(dlgID) REFERENCES DELEGATE(dlgID),
 FOREIGN KEY(countryName) REFERENCES COUNTRY_ORG(countryName),
 FOREIGN KEY(committeeID) REFERENCES FCCLASS(committeeID)
 );
-
-
-
-
-
 
   INSERT INTO ADVISOR VALUES  ('A143', 'Daniel', 'Brown', 56789012, 'daniel.brown@gmail.com', 'Cedar Valley School', 'A143'),
   ('A144', 'Grace', 'Taylor', 67890123, 'grace.taylor@gmail.com', 'Cedar Valley School', 'A143');
