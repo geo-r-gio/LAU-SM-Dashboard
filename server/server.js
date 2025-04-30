@@ -1,5 +1,5 @@
 
-import { getDlg, getOneDlg,updateTs1attendance,editSchoolCampus, assignClassPGM,updateTs2attendance,getBeirutTs1,getBeirutTs2,getMCdelegates,addAdv,getAdv, getOneAdv,deleteOneAdv, getFCdelegates, addDlg,getTotalStudents, updateOneDlg, deleteOneDlg,checkAdvID,checkDlgID,getAttendanceTS,getAttendanceMC,getAttendanceFC, signin } from '../database/database.js';
+import { getDlg, getOneDlg, getAllSchools, getAllPrograms, getAllLevels, getAllLanguages, getAllCampuses, getAllAdvisors, updateTs1attendance,editSchoolCampus, assignClassPGM,updateTs2attendance,getBeirutTs1,getBeirutTs2,getMCdelegates,addAdv,getAdv, getOneAdv,deleteOneAdv, getFCdelegates, addDlg,getTotalStudents, updateOneDlg, deleteOneDlg,checkAdvID,checkDlgID,getAttendanceTS,getAttendanceMC,getAttendanceFC, signin } from '../database/database.js';
 
 import express from "express";
 import cors from "cors";
@@ -110,6 +110,75 @@ app.post("/advisors", async (req,res) => {
   res.status(201).send(adv)
 })
 
+app.get("/schools", async (req, res) => {
+  try {
+    const schools = await getAllSchools();
+    res.send(schools);
+  } catch (error) {
+    console.error("Error fetching schools:", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
+app.get("/programs", async (req, res) => {
+  try {
+    const programs = await getAllPrograms();
+    res.send(programs);
+  } catch (error) {
+    console.error("Error fetching programs:", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
+app.get("/levels", async (req, res) => {
+  try {
+    const levels = await getAllLevels();
+    res.send(levels);
+  } catch (error) {
+    console.error("Error fetching levels:", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
+app.get("/languages", async (req, res) => {
+  try {
+    const languages = await getAllLanguages();
+    res.send(languages);
+  } catch (error) {
+    console.error("Error fetching languages:", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
+app.get("/campuses", async (req, res) => {
+  try {
+    const campuses = await getAllCampuses();
+    res.send(campuses);
+  } catch (error) {
+    console.error("Error fetching campuses:", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
+app.get("/campuses", async (req, res) => {
+  try {
+    const campuses = await getAllCampuses();
+    res.send(campuses);
+  } catch (error) {
+    console.error("Error fetching campuses:", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
+app.get("/advisorsID", async (req, res) => {
+  try {
+    const advisors = await getAllAdvisors();
+    res.send(advisors);
+  } catch (error) {
+    console.error("Error fetching advisors ID:", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
 
 async function dlgIdGen() {
   try {
