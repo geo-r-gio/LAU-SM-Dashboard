@@ -19,8 +19,10 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-  const [isLoggedIn, setIsLoggedIn] = useState(false)  
-
+  const [isLoggedIn, setIsLoggedIn] = useState(() => {
+    // On first render, check if we already have a token
+    return !!localStorage.getItem('token')
+  })
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
   const handleMouseDownPassword = (event) => {
