@@ -112,6 +112,12 @@ export async function deleteOneDlg(id){
   return deletionSuccessful;
 }
 
+export async function getAllSchools() {
+  await pool.query('USE LAUSMDB');
+  const [rows] = await pool.query('SELECT schoolName FROM SCHOOL');
+  return rows;
+}
+
 // const delegates = await getDlg();
 // console.log("getting all delegates");
 // console.log(delegates);
@@ -269,7 +275,7 @@ export async function addAdv(advID,fName,lName,advNB,advEmail,advSchool){
   }
   else{
     const [getquery] = await pool.query(`SELECT mainAdv FROM ADVISOR WHERE advSchool=? `, [advSchool]);
-  const mainAdv=(getquery[0].mainAdv);
+    const mainAdv=(getquery[0].mainAdv);
     const result = await pool.query(
       'INSERT INTO advisor (advID,fName,lName,advNB,advEmail,advSchool,mainAdv) VALUES(?,?,?,?,?,?,?)',
       [advID,fName,lName,advNB,advEmail,advSchool,mainAdv])

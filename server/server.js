@@ -1,5 +1,5 @@
 
-import { getDlg, getOneDlg,updateTs1attendance,editSchoolCampus, assignClassPGM,updateTs2attendance,getBeirutTs1,getBeirutTs2,getMCdelegates,addAdv,getAdv, getOneAdv,deleteOneAdv, getFCdelegates, addDlg,getTotalStudents, updateOneDlg, deleteOneDlg,checkAdvID,checkDlgID,getAttendanceTS,getAttendanceMC,getAttendanceFC, signin } from '../database/database.js';
+import { getDlg, getOneDlg, getAllSchools, updateTs1attendance,editSchoolCampus, assignClassPGM,updateTs2attendance,getBeirutTs1,getBeirutTs2,getMCdelegates,addAdv,getAdv, getOneAdv,deleteOneAdv, getFCdelegates, addDlg,getTotalStudents, updateOneDlg, deleteOneDlg,checkAdvID,checkDlgID,getAttendanceTS,getAttendanceMC,getAttendanceFC, signin } from '../database/database.js';
 
 import express from "express";
 import cors from "cors";
@@ -181,6 +181,15 @@ app.post("/advisors", async (req,res) => {
   res.status(201).send(adv)
 })
 
+app.get("/schools", async (req, res) => {
+  try {
+    const schools = await getAllSchools();
+    res.send(schools);
+  } catch (error) {
+    console.error("Error fetching schools:", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
 
 async function dlgIdGen() {
   try {
