@@ -205,12 +205,83 @@ INSERT INTO ADVISOR VALUES
   ('A142', 'Grace', 'Smith', 45678901, 'grace.smith@gmail.com', 'Saint George School', 'A141');
 
 
+-- American Community School Beirut
+INSERT INTO ADVISOR VALUES 
+('A150', 'Liam', 'Thompson', '12345679', 'liam.thompson@gmail.com', 'American Community School Beirut', 'A109');
 
+-- Cedar Valley School
+INSERT INTO ADVISOR VALUES 
+('A201', 'Emma', 'Hughes', '11223344', 'emma.hughes@gmail.com', 'Cedar Valley School', 'A201'),
+('A202', 'Lucas', 'Bennett', '22334455', 'lucas.bennett@gmail.com', 'Cedar Valley School', 'A201');
 
+-- Diamond Ridge Academy
+INSERT INTO ADVISOR VALUES 
+('A203', 'Mia', 'Evans', '33445566', 'mia.evans@gmail.com', 'Diamond Ridge Academy', 'A203'),
+('A204', 'Noah', 'Murphy', '44556677', 'noah.murphy@gmail.com', 'Diamond Ridge Academy', 'A203');
 
+-- Elite Academy
+INSERT INTO ADVISOR VALUES 
+('A205', 'Lily', 'Green', '55667788', 'lily.green@gmail.com', 'Elite Academy', 'A205');
 
+-- Evergreen International School
+INSERT INTO ADVISOR VALUES 
+('A206', 'James', 'Hill', '66778899', 'james.hill@gmail.com', 'Evergreen International School', 'A206');
 
+-- Golden Gate Academy
+INSERT INTO ADVISOR VALUES 
+('A207', 'Ava', 'Scott', '77889900', 'ava.scott@gmail.com', 'Golden Gate Academy', 'A207');
 
+-- Hope Christian School
+INSERT INTO ADVISOR VALUES 
+('A208', 'Ethan', 'Walker', '88990011', 'ethan.walker@gmail.com', 'Hope Christian School', 'A208');
+
+-- Horizon Elementary
+INSERT INTO ADVISOR VALUES 
+('A209', 'Chloe', 'Hall', '99001122', 'chloe.hall@gmail.com', 'Horizon Elementary', 'A209');
+
+-- International School of Jounieh
+INSERT INTO ADVISOR VALUES 
+('A210', 'Ella', 'Moore', '10111213', 'ella.moore@gmail.com', 'International School of Jounieh', 'A210');
+
+-- Lebanon Central School
+INSERT INTO ADVISOR VALUES 
+('A211', 'Grace', 'White', '90123456', 'grace.white@gmail.com', 'Lebanon Central School', 'A211');
+
+-- Liberty Academy
+INSERT INTO ADVISOR VALUES 
+('A212', 'Jacob', 'Lewis', '91234567', 'jacob.lewis@gmail.com', 'Liberty Academy', 'A212');
+
+-- Maple Grove Academy
+INSERT INTO ADVISOR VALUES 
+('A213', 'Henry', 'Young', '92234567', 'henry.young@gmail.com', 'Maple Grove Academy', 'A213');
+
+-- Mediterranean Heights High
+INSERT INTO ADVISOR VALUES 
+('A214', 'Zoe', 'Clark', '93345678', 'zoe.clark@gmail.com', 'Mediterranean Heights High', 'A214');
+
+-- Rosewood College
+INSERT INTO ADVISOR VALUES 
+('A215', 'Matthew', 'King', '94456789', 'matthew.king@gmail.com', 'Rosewood College', 'A215');
+
+-- George School
+INSERT INTO ADVISOR VALUES 
+('A216', 'Aria', 'Martinez', '95567890', 'aria.martinez@gmail.com', 'Saint George School', 'A216');
+
+-- Sunset Hills High
+INSERT INTO ADVISOR VALUES 
+('A217', 'Nathan', 'Perez', '96678901', 'nathan.perez@gmail.com', 'Sunset Hills High', 'A217');
+
+-- Sunshine Elementary School
+INSERT INTO ADVISOR VALUES 
+('A218', 'Layla', 'Adams', '97789012', 'layla.adams@gmail.com', 'Sunshine Elementary School', 'A218');
+
+-- Unity High School
+INSERT INTO ADVISOR VALUES 
+('A219', 'Samuel', 'Baker', '98890123', 'samuel.baker@gmail.com', 'Unity High School', 'A219');
+
+-- Unity International School
+INSERT INTO ADVISOR VALUES 
+('A220', 'Victoria', 'Campbell', '99901234', 'victoria.campbell@gmail.com', 'Unity International School', 'A220');
 
 
 CREATE TABLE DELEGATE 
@@ -304,30 +375,31 @@ VALUES ('D3026', 'Ella', 'Hill', 77889900, 'ella.hill@gmail.com', 'Saint George 
   ('D3039', 'William', 'Hawkins', 22334455, 'william.hawkins@gmail.com', 'Saint George School', 'MEU', 'HS', 'FR', 'Beirut', 'A142'),
   ('D3040', 'Grace', 'Carter', 33445566, 'grace.carter@gmail.com', 'Saint George School', 'MEU', 'HS', 'FR', 'Beirut', 'A142');
 
+--Do Not Run MCREPRESENTATION and FCREPRESENTATION
 
-CREATE TABLE MCREPRESENTATION(
+              CREATE TABLE MCREPRESENTATION(
 
-dlgID CHAR(5), 
-countryName VARCHAR(50),
-committeeID VARCHAR(10),
-PRIMARY KEY(dlgID,countryName,committeeID),
-FOREIGN KEY(dlgID) REFERENCES DELEGATE(dlgID),
-FOREIGN KEY(countryName) REFERENCES COUNTRY_ORG(countryName),
-FOREIGN KEY(committeeID) REFERENCES MCCLASS(committeeID)
-);
+              dlgID CHAR(5), 
+              countryName VARCHAR(50),
+              committeeID VARCHAR(10),
+              PRIMARY KEY(dlgID,countryName,committeeID),
+              FOREIGN KEY(dlgID) REFERENCES DELEGATE(dlgID),
+              FOREIGN KEY(countryName) REFERENCES COUNTRY_ORG(countryName),
+              FOREIGN KEY(committeeID) REFERENCES MCCLASS(committeeID)
+              );
 
-INSERT INTO MCREPRESENTATION VALUES('D1400','France','FAO'),('D1401','Germany','AP');
+              INSERT INTO MCREPRESENTATION VALUES('D1400','France','FAO'),('D1401','Germany','AP');
 
-CREATE TABLE FCREPRESENTATION(
+              CREATE TABLE FCREPRESENTATION(
 
-dlgID CHAR(5), 
-countryName VARCHAR(50),
-committeeID VARCHAR(10),
-PRIMARY KEY(dlgID,countryName,committeeID),
-FOREIGN KEY(dlgID) REFERENCES DELEGATE(dlgID),
-FOREIGN KEY(countryName) REFERENCES COUNTRY_ORG(countryName),
-FOREIGN KEY(committeeID) REFERENCES FCCLASS(committeeID)
-);
+              dlgID CHAR(5), 
+              countryName VARCHAR(50),
+              committeeID VARCHAR(10),
+              PRIMARY KEY(dlgID,countryName,committeeID),
+              FOREIGN KEY(dlgID) REFERENCES DELEGATE(dlgID),
+              FOREIGN KEY(countryName) REFERENCES COUNTRY_ORG(countryName),
+              FOREIGN KEY(committeeID) REFERENCES FCCLASS(committeeID)
+              );
 
   INSERT INTO ADVISOR VALUES  ('A143', 'Daniel', 'Brown', 56789012, 'daniel.brown@gmail.com', 'Cedar Valley School', 'A143'),
   ('A144', 'Grace', 'Taylor', 67890123, 'grace.taylor@gmail.com', 'Cedar Valley School', 'A143');
