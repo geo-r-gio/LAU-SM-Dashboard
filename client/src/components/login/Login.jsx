@@ -33,8 +33,13 @@ const Login = () => {
     Axios.post('http://localhost:3000/login', {username, password})
     .then(res => { 
       console.log("Login Successful:", res.data);
-      if(res.data == true){
-        setIsLoggedIn(true)
+      if (res.data.token) {
+        // store the token if you need it
+        localStorage.setItem('token', res.data.token);
+        // trigger the Layout swap
+        setIsLoggedIn(true);
+        } else {
+        console.error("Login response had no token:", res.data);
       }
     })
     .catch(err => console.log("Login Failed:", err))

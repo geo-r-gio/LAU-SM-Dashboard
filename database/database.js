@@ -7,7 +7,7 @@ dotenv.config()
 const pool = mysql.createPool({
 host: process.env.MYSQL_HOST,
 user: 'root', //process.env.MYSQL_USER
-password: 'gpn#24#1#2003',  //process.env.MYSQL_PASSWORD
+password: 'root',  //process.env.MYSQL_PASSWORD
 database: process.env.MYSQL_DATABASE
 }).promise();
 
@@ -72,17 +72,17 @@ async function saveDataToFile() {
   } 
 }
 
-export async function signin(username, password) {
-  // const hashedPassword = await bcrypt.hash(password, 10); // generate password hash in your application
-  await pool.query('USE LAUSMDB')
-  const [query] = await pool.query('SELECT * FROM login WHERE username = ? AND password = ?', [username, password]);
-  // const [rows] = await pool.query(query, [username, hashedPassword]);
-  let flag = false;
+export async function signin(username) {
+  await pool.query("USE lausmdb");                         // point at the right schema
 
+  // Query by username *only*
+  const [rows] = await pool.query(
+    "SELECT * FROM login WHERE username = ?",
+    [username]
+  );
 
-  if(query.length!=0){
-  flag=true;}
-  return flag;
+  console.log("signin() DB returned rows:", rows);
+  return rows[0] || null;                                 // either a row or null
 }
 
 
