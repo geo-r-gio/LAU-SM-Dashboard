@@ -59,7 +59,7 @@ app.post("/login", async (req, res) => {
     }
 
     const payload = { username: user.username };
-    const token = jwt.sign(payload, SECRET_KEY, { expiresIn: 20 });
+    const token = jwt.sign(payload, SECRET_KEY, { expiresIn: "1h" });
 
     return res.json({ token, user: { username: user.username } });
 
