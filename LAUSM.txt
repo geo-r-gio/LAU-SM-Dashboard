@@ -425,8 +425,8 @@ VALUES ('D3026', 'Ella', 'Hill', 77889900, 'ella.hill@gmail.com', 'Saint George 
   ('D3054', 'Mason', 'Wells', 88990011, 'mason.wells@gmail.com', 'Cedar Valley School', 'MEU', 'HS', 'FR', 'Beirut', 'A143'),
   ('D3055', 'Ava', 'Hudson', 99001122, 'ava.hudson@gmail.com', 'Cedar Valley School', 'MEU', 'HS', 'FR', 'Beirut', 'A143');
 
-  
 
+--Run the following
 
 CREATE TABLE REPRESENTATION (
 repID CHAR(4),
@@ -439,6 +439,8 @@ campus CHAR(6) CHECK(campus IN('Beirut','Byblos')),
 PRIMARY KEY (repID),
 FOREIGN KEY (school) REFERENCES SCHOOL(schoolName)
   );
+
+--before running the queries below, go to file Countries.txt and fill in the table REPRESENTATION
 
 ALTER TABLE DELEGATE
 ADD representation CHAR(4) DEFAULT 'R001';
