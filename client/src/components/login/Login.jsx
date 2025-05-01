@@ -48,9 +48,6 @@ const Login = () => {
   }
 
   if (isLoggedIn) {
-    // <Router>
-    //     <Redirect to="/"/>
-    // </Router>
    return <>{isLoggedIn && <Layout />}</>
   }
 
@@ -83,26 +80,7 @@ const Login = () => {
                         overflow: 'hidden',
                       }}
                     ></div>
-                    {/* <Paper elevation={10} style={{
-                        padding: 20,
-                        height:'65vh',
-                        width: 400,
-                        position: "fixed",
-                        top: "50%", 
-                        left: "50%",
-                        transform: "translate(-50%, -50%)",
-                        }}> */}
-                    {/* <Formik
-                      onSubmit={handleFormSubmit}
-                      // onSubmit={(values, { setSubmitting }) => {
-                      //   handleFormSubmit(values);
-                      //   setSubmitting(false);
-                      // }}
-                      initialValues={initialValues}
-                      validationSchema={userSchema}
-                    > */}
                     <div>
-                     {/* {({ values, handleBlur, handleChange, handleSubmit }) => (      */}
                       <form onSubmit={handleFormSubmit}> 
                         <Paper elevation={10} 
                         style={{
@@ -117,33 +95,15 @@ const Login = () => {
                         >     
                         <img src={logo} alt="SM logo" style={{width: '70%', height: '49%', marginTop: "-44px", padding: "20px"}}/>
                         <h2 style={{color: "#717378", marginTop: "-35px"}}>Sign In</h2>
-                        {/* <TextField label='Username' placeholder='Enter Username' style={{marginTop: "20px", width: "40ch"}}/> */}
                         <FormControl sx={{ "& .MuiInput-input": { width: "39.7ch" }, marginTop: "20px" }} variant="standard">
                         <InputLabel htmlFor="standard-adornment-username">Username</InputLabel> 
                         <Input
                           id="standard-adornment-username"
                           placeholder='Enter Username'
                           sx={{"input:focus": { border: "0" }}}
-                          // onBlur={handleBlur}
-                          // onChange={handleChange}
-                          // value={values.username}
                           name="username"
                           onChange={e => setUsername(e.target.value)}
-                          // value={values.username}
-                        />                        
-                        {/* <TextField
-                          fullWidth
-                          variant="filled"
-                          type="text"
-                          label="Username"
-                          // onBlur={handleBlur}
-                          onChange={handleChange}
-                          value={values.username}
-                          name="username"
-                          // error={!!touched.username && !!errors.username}
-                          // helperText={touched.username && errors.username}
-                          sx={{ gridColumn: "span 2" }}
-                        /> */}
+                        />
                         </FormControl>
                         <FormControl sx={{ "& .MuiInput-input": { width: "33.5ch" }, marginTop: "30px" }} variant="standard">
                         <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
@@ -163,12 +123,8 @@ const Login = () => {
                               </IconButton>
                             </InputAdornment>
                           }
-                          // onBlur={handleBlur}
-                          // onChange={handleChange}
-                          // value={values.password}
                           name="password"
                           onChange={e => setPassword(e.target.value)}
-                          // value={values.password}
                         />
                         </FormControl>
                         <Button type="submit" onClick={handleFormSubmit} color="primary" variant="contained" style={{marginTop: "40px"}}>
@@ -176,9 +132,7 @@ const Login = () => {
                         </Button>
                        </Paper> 
                       </form>
-                     {/* )} */}
                     </div> 
-                    {/* </Formik> */}
                 </Grid>
         </Router>
     </div>

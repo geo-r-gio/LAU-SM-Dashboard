@@ -1,10 +1,9 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 
-import { Box, Typography, useTheme } from "@mui/material";
+import { Box, useTheme } from "@mui/material";
 import { DataGrid, GridToolbar, GridRowModes, GridActionsCellItem, GridRowEditStopReasons, } from "@mui/x-data-grid";
 import { tokens } from '../theme';
-// import { mockDataAdv } from '../data/mockData';
 import Axios from 'axios';
 
 import EditIcon from '@mui/icons-material/Edit';
@@ -153,7 +152,6 @@ export default function FullFeaturedCrudGrid() {
   return (
     <Box>
       <h2 className="page-header">Advisors</h2>
-      {/* <Header title="TEAM" subtitle="Managing the team members" /> */}
       <Box sx={{
         "& .MuiDataGrid-root":{
         border: "none",
@@ -163,9 +161,6 @@ export default function FullFeaturedCrudGrid() {
           backgroundColor: "var(--main-color)",
           color: "#ffff"
           },
-        // "& .MuiDataGrid-columnHeaders":{
-        //   color: "#edb119"
-        //   },
         "& .MuiDataGrid-toolbarContainer .MuiButton-text":{
           color: "var(--txt-color)"
           },

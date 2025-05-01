@@ -1,9 +1,8 @@
 import React, { useMemo, useEffect, useState } from 'react'
 
-import { Box, Typography, useTheme } from "@mui/material";
+import { Box, useTheme } from "@mui/material";
 import { DataGrid, GridToolbar, GridRowModes, GridActionsCellItem, GridRowEditStopReasons, } from "@mui/x-data-grid";
 import { tokens } from '../theme';
-//import dlgData from '/Users/user/OneDrive/Desktop/DB project 2/DB project/server/newdlgData.json';
 import Axios from 'axios';
 
 import EditIcon from '@mui/icons-material/Edit';
@@ -95,8 +94,6 @@ export default function FullFeaturedCrudGrid() {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
-  //const [rowId, setRowId] = useState(null)
-
   const columns = useMemo( () => [
     { field: "dlgID", headerName: "Delegate ID" },
     { field: "fName", headerName: "First Name" },
@@ -117,29 +114,6 @@ export default function FullFeaturedCrudGrid() {
     { field: "fcCommittee", headerName: "FC Committee", flex:1, editable:false },
     { field: "fcAttendance", headerName: "FC Attendance", flex:1, editable:true },
     { field: "countryRep", headerName: "Representation", flex:1, editable:false },
-    // { field: "school", headerName: "Access Level", flex: 1, 
-    // renderCell: ({ row: {school} }) =>{
-    //   return(
-    //     <Box
-    //       width="60%"
-    //       m="0 auto"
-    //       p="5px"
-    //       display="flex"
-    //       justifyContent="center"
-    //       backgroundColor={
-    //         school === "admin" ? colors.greenAccent[600] : colors.greenAccent[700]
-    //       }
-    //       borderRadius="4px"
-    //     >
-    //       { school === "admin" && < AdminPanelSettingsOutlinedIcon />}
-    //       { school === "manager" && < SecurityOutlinedIcon />}
-    //       { school === "user" && < LockOpenOutlinedIcon />}
-    //       <Typography color={colors.grey[100]} sx={{ ml:"5px" }}>
-    //         {school}
-    //       </Typography>
-    //     </Box>
-    //   )
-    // } },
     {
       field: 'actions',
       type: 'actions',
@@ -186,17 +160,13 @@ export default function FullFeaturedCrudGrid() {
         ];
       },
     },
-    //{ field: 'action', headerName: 'Actions', type: 'actions', renderCell: (params) => ( <UserActions {...{params, rowId, setRowId}} /> ), },
-    // [rowId] 
   ],
-    //[rowId]
   );
   
 
   return (
     <Box>
       <h2 className="page-header">Delegates</h2>
-      {/* <Header title="TEAM" subtitle="Managing the team members" /> */}
       <Box sx={{
         "& .MuiDataGrid-root":{
         border: "none",
@@ -206,9 +176,6 @@ export default function FullFeaturedCrudGrid() {
           backgroundColor: "var(--main-color)",
           color: "#ffff"
           },
-        // "& .MuiDataGrid-columnHeaders":{
-        //   color: "#edb119"
-        //   },
         "& .MuiDataGrid-toolbarContainer .MuiButton-text":{
           color: "var(--txt-color)"
           },
@@ -245,10 +212,8 @@ export default function FullFeaturedCrudGrid() {
                 attendanceTS1: false,
                 attendanceTS2: false,
                 mcCommittee: false,
-                // mcCountry: false,
                 mcAttendance: false,
                 fcCommittee: false,
-                // fcCountry: false,
                 fcAttendance: false,
                 countryRep: false,
               },
@@ -259,7 +224,6 @@ export default function FullFeaturedCrudGrid() {
               }
             },
           }}
-          //onCellEditStop={(params) => setRowId(params.id)}
         />
       </Box>
     </Box>

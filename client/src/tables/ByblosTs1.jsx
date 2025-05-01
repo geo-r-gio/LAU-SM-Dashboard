@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { Box, Typography, useTheme } from "@mui/material";
+import { Box, useTheme } from "@mui/material";
 import { DataGrid, GridToolbar, GridRowModes, GridActionsCellItem, GridRowEditStopReasons, } from "@mui/x-data-grid";
 import { tokens } from '../theme';
 import { mockDataByblosTs1 } from '../data/mockData';
@@ -115,7 +115,6 @@ export default function FullFeaturedCrudGrid() {
   return (
     <Box>
       <h2 className="page-header">Delegates</h2>
-      {/* <Header title="TEAM" subtitle="Managing the team members" /> */}
       <Box sx={{
         "& .MuiDataGrid-root":{
         border: "none",
@@ -125,9 +124,6 @@ export default function FullFeaturedCrudGrid() {
           backgroundColor: "var(--main-color)",
           color: "#ffff"
           },
-        // "& .MuiDataGrid-columnHeaders":{
-        //   color: "#edb119"
-        //   },
         "& .MuiDataGrid-toolbarContainer .MuiButton-text":{
           color: "var(--txt-color)"
           },
@@ -156,15 +152,9 @@ export default function FullFeaturedCrudGrid() {
           initialState={{
             columns: {
               columnVisibilityModel: {
-                // Hide columns id and age, the other columns will remain visible
                 id: false,
               },
             },
-            // pagination: {
-            //   paginationModel: {
-            //     pageSize: 5,
-            //   }
-            // },
           }}
         />
       </Box>

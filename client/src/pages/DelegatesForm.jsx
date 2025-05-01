@@ -20,7 +20,6 @@ const initialValues = {
 };
 
 const phoneRegExp = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{2})$/;
-//const ageRegExp = /^[1-9]?[0-9]{1}$|^100$/;
 
 const userSchema = yup.object().shape({
   fName: yup.string().required("Required"),
@@ -201,19 +200,6 @@ const DelegatesForm = () => {
                 helperText={touched.dlgEmail && errors.dlgEmail}
                 sx={{ gridColumn: "span 2" }}
               />
-              {/* <TextField
-                fullWidth
-                variant="filled"
-                type="text"
-                label="School Name"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.dlgSchool}
-                name="dlgSchool"
-                error={!!touched.dlgSchool && !!errors.dlgSchool}
-                helperText={touched.dlgSchool && errors.dlgSchool}
-                sx={{ gridColumn: "span 2" }}
-              /> */}
               <TextField
                 fullWidth
                 select
@@ -243,20 +229,6 @@ const DelegatesForm = () => {
                   </MenuItem>
                 ))}
               </TextField>
-              {/* <TextField
-                fullWidth
-                variant="filled"
-                type="text"
-                label="Program of Interest"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.dlgPGM}
-                name="dlgPGM"
-                error={!!touched.dlgPGM && !!errors.dlgPGM}
-                helperText={touched.dlgPGM && errors.dlgPGM}
-                sx={{ gridColumn: "span 2" }}
-              /> */}
-
               <TextField
                 fullWidth
                 select
@@ -286,21 +258,6 @@ const DelegatesForm = () => {
                   </MenuItem>
                 ))}
               </TextField>
-
-              {/* <TextField
-                fullWidth
-                variant="filled"
-                type="text"
-                label="HS/MS"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.level}
-                name="level"
-                error={!!touched.level && !!errors.level}
-                helperText={touched.level && errors.level}
-                sx={{ gridColumn: "span 2" }}
-              /> */}
-
               <TextField
                 fullWidth
                 select
@@ -330,21 +287,6 @@ const DelegatesForm = () => {
                   </MenuItem>
                 ))}
               </TextField>
-
-              {/* <TextField
-                fullWidth
-                variant="filled"
-                type="text"
-                label="Language"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.lang}
-                name="lang"
-                error={!!touched.lang && !!errors.lang}
-                helperText={touched.lang && errors.lang}
-                sx={{ gridColumn: "span 2" }}
-              /> */}
-
               <TextField
                 fullWidth
                 select
@@ -374,21 +316,6 @@ const DelegatesForm = () => {
                   </MenuItem>
                 ))}
               </TextField>
-{/* 
-              <TextField
-                fullWidth
-                variant="filled"
-                type="text"
-                label="Campus"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.dlgCampus}
-                name="dlgCampus"
-                error={!!touched.dlgCampus && !!errors.dlgCampus}
-                helperText={touched.dlgCampus && errors.dlgCampus}
-                sx={{ gridColumn: "span 2" }}
-              /> */}
-
               <TextField
                 fullWidth
                 select
@@ -418,21 +345,6 @@ const DelegatesForm = () => {
                   </MenuItem>
                 ))}
               </TextField>
-
-              {/* <TextField
-                fullWidth
-                variant="filled"
-                type="text"
-                label="Advisor's ID"
-                onBlur={handleBlur}
-                onChange={handleChange}
-                value={values.dlgAdv}
-                name="dlgAdv"
-                error={!!touched.dlgAdv && !!errors.dlgAdv}
-                helperText={touched.dlgAdv && errors.dlgAdv}
-                sx={{ gridColumn: "span 2" }}
-              /> */}
-
               <TextField
                 fullWidth
                 select

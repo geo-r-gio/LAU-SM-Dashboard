@@ -1,9 +1,8 @@
-import React, {  useMemo, useEffect, useState } from 'react'
+import React, {  useEffect, useState } from 'react'
 
-import { Box, Typography, useTheme } from "@mui/material";
+import { Box, useTheme } from "@mui/material";
 import { DataGrid, GridToolbar, GridRowModes, GridActionsCellItem, GridRowEditStopReasons, } from "@mui/x-data-grid";
 import { tokens } from '../theme';
-// import { mockDataBeirutTs1 } from '../data/mockData';
 import Axios from 'axios';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/DeleteOutlined';
@@ -14,38 +13,13 @@ export default function FullFeaturedCrudGrid() {
 
     const [rows, setRows] = useState([]);
     const [rowModesModel, setRowModesModel] = useState({});
-  
-    // useEffect(() => {
-    //   const fetchData = async () => {
-    //     try {
-    //       const response = await Axios.get('http://localhost:3000/beiruttxt');
-         
-    //       setRows(response.data);
-    //       console.log('Fetched Data:', response.data);
-    //     } catch (error) {
-    //       console.error('Error fetching data:', error);
-    //     }
-    //   };
-  
-    //   fetchData();
-    // }, []);      
 
     useEffect(() => {
       const fetchData = async () => {
         try {
           // Simulating data fetching
           const response = await Axios.get('http://localhost:3000/beiruttxt');
-          // const response = { data: [{ dlgID: 1, fName: 'John', lName: 'Doe', attendanceTS1: true },
-          //  {  dlgID: 2, fName: 'Jane', lName: 'Doe', attendanceTS1: false },
-          //  { dlgID: 3, fName: 'hiba', lName: 'Doe', attendanceTS1: false }] };
-          // setRows(prevRows => {
-            // Use a Set to keep track of unique IDs
-            // const idSet = new Set(prevRows.map(row => row.dlgID));
-            // // Filter out rows with IDs already present
-            // const newRows = response.data.filter(row => !idSet.has(row.dlgID));
-            // Concatenate new rows with existing rows
-            // return [...prevRows, ...newRows];});
-            setRows(response.data);
+          setRows(response.data);
           console.log('Fetched Data:', response.data);
         } catch (error) {
           console.error('Error fetching data:', error);
@@ -100,11 +74,9 @@ export default function FullFeaturedCrudGrid() {
 
 
   const columns = [
-    // { field: "dlgID", headerName: "Delegate ID" },
     { field: "fName", headerName: "First Name" },
     { field: "lName", headerName: "Last Name", flex: 1, cellClassName: "name-column--cell", },
     { field: "attendanceTS1", headerName: "Attendance", flex: 1, type: "boolean", editable: true  },
-    // { field: "pm", headerName: "No", flex: 1, type: "boolean", editable: true },
     {
       field: 'actions',
       type: 'actions',
@@ -156,7 +128,6 @@ export default function FullFeaturedCrudGrid() {
   return (
     <Box>
       <h2 className="page-header">Training Session 1 Attendance</h2>
-      {/* <Header title="TEAM" subtitle="Managing the team members" /> */}
       <Box sx={{
         "& .MuiDataGrid-root":{
         border: "none",
@@ -166,9 +137,6 @@ export default function FullFeaturedCrudGrid() {
           backgroundColor: "var(--main-color)",
           color: "#ffff"
           },
-        // "& .MuiDataGrid-columnHeaders":{
-        //   color: "#edb119"
-        //   },
         "& .MuiDataGrid-toolbarContainer .MuiButton-text":{
           color: "var(--txt-color)"
           },
@@ -198,16 +166,10 @@ export default function FullFeaturedCrudGrid() {
           initialState={{
             columns: {
               columnVisibilityModel: {
-                // Hide columns id and age, the other columns will remain visible
-              
+           
 
               },
             },
-            // pagination: {
-            //   paginationModel: {
-            //     pageSize: 5,
-            //   }
-            // },
           }}
         />
       </Box>

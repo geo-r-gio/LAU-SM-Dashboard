@@ -6,15 +6,12 @@ import * as yup from "yup";
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Axios from 'axios';
 import Sessions from '../tables/Sessions';
-// import ByblosTs1 from '../tables/Byblos';
 import { useState } from 'react';
 
 const dropdownOptions = [
-  //{key: 'Select a session', value: ''},
   {key: 'Training Session 1', value: 'ts1'},
   {key: 'Training Session 2', value: 'ts2'},
   {key: 'Mock Conference', value: 'mc'},
-  // {key: 'Final Conference 1', value: 'fc1'},
   {key: 'Final Conference ', value: 'fc'},
 ]
 
@@ -67,22 +64,7 @@ const Attendance = () => {
             console.log('Response Data:', responseData);
           })
           .catch(err => console.log(err));
-      } 
-      // else if(values.class=='mc')
-      // else {
-       
-      //   const url = `http://localhost:3000/attendance/${values.class}/fcrepresentatives`;
-    
-      //   Axios.get(url)
-      //     .then(res => {
-      //       // console.log(res);
-      //       const responseData = res.data;
-
-           
-      //       console.log('Response Data:', responseData);
-      //     })
-      //     .catch(err => console.log(err));
-      // } 
+      }
     }
     
   return (
@@ -163,11 +145,6 @@ const Attendance = () => {
           </form>
         )}
       </Formik>
-
-      {/* {showTable === 'be-ts1-AKSOB406' && <Sessions />}
-      {showTable === 'by-ts1-ZK406' && <ByblosTs1 />} */}
-      
-
     </Box>
   )
 }

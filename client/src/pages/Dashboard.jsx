@@ -214,7 +214,7 @@ const Dashboard = () => {
         <div className="col-4">
           <div className="card">
             <div className="card__header">
-              <h3>2023 - 2024</h3>
+              <h3>2024 - 2025</h3>
             </div>
             <div className="card__body">
               <Table
@@ -224,9 +224,6 @@ const Dashboard = () => {
                   renderBody={(item, index) => renderStudentBody(item, index)}
               />
             </div>
-            {/* <div className="card__footer">
-              <Link to='/'>view all</Link>
-            </div> */}
           </div>
         </div>
       </div>

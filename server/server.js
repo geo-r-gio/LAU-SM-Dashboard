@@ -5,15 +5,10 @@ import express from "express";
 import cors from "cors";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import mysql from 'mysql2/promise';
 import dotenv from "dotenv";
 
 
-// const express = require('express');
-// const cors = require('cors');
-
 const app = express();
-//require("dotenv").config();
 
 app.listen(3000, function() {
   console.log("express is running on port 3000");
@@ -141,7 +136,6 @@ app.put("/advisors/:id", async (req,res) => {
 
 app.delete("/advisors/:id", async (req,res) => {
   const { id } = req.params;
-  //const { dlgID } = req.body;
 
   try {
     const deletedRows = await deleteOneAdv(id);
@@ -173,9 +167,7 @@ console.log(testing);
 
 app.post("/advisors", async (req,res) => {
   const {fName,lName,advNB,advEmail,advSchool} = req.body
-  // create dlgId generator 
   const advID = await advIdGen();
-//  const mainAdv = await getMainAdv(advSchool);
   const adv = await addAdv(advID,fName,lName,advNB,advEmail,advSchool);
 
   res.status(201).send(adv)
@@ -291,18 +283,7 @@ addAdv(advID,fName,lName,advNB,advEmail,advSchool,mainAdv)
   res.status(201).send(advisor)
 })
 
-
-
-
-
-
-
-
-// WHAT  GIO   DID
-
-
 app.put("/delegates/:id", async (req,res) => {
-  //const { id } = req.params;
   const { dlgName, dlgEmail, dlgPhoneNb, dlgSchool, dlgCampus, dlgAdvisor, dlgPgm, dlgLang, pgmLevel, dlgID } = req.body;
 
   try {
@@ -316,7 +297,6 @@ app.put("/delegates/:id", async (req,res) => {
 
 app.delete("/delegates/:id", async (req,res) => {
   const { id } = req.params;
-  //const { dlgID } = req.body;
 
   try {
     const deletedRows = await deleteOneDlg(id);
@@ -326,86 +306,6 @@ app.delete("/delegates/:id", async (req,res) => {
     res.status(500).json({ message: 'Internal Server Error' });
   }
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const fs = require('fs');
-
-
-
-// fs.readFile('../client/src/data/dlgData.json', 'utf8', function(err,data){
-// if(err){
-//   console.error(err);
-//   return;
-
-// }
- 
-//  try {
-//   const delegate = JSON.parse(data);
-//   console.log(delegate);
-//  } catch (error){
-//   console.error('ERROR', error);
-
-//  }
-// })
-
-//import { readFileSync, writeFile } from 'fs';
-
-//const delegate = readFileSync('../client/src/data/dlgData.json','utf-8');
-
-
-//console.log(JSON.parse(delegate));
-
-
-// const saveData = (data,file) => {
-//   const finished = (error) => {
-//       if (error){
-//           console.error(error)
-//           return;
-//       }
-
-//   }
-
- 
-//   writeFile(file,JSON.stringify(data,null,2), finished)
-
-// }
- 
-//saveData(JSON.parse(delegate), 'newdlgData.json');
-
-
-
-
-
 
 app.get("/attendance/:classroom/delegates", async (req,res) => {
   const list = await getAttendanceTS(req.params.classroom);
@@ -423,48 +323,6 @@ app.get("/BEIRUTTS1/delegates", async (req,res) => {
   res.send(list);
 })
 
-
-// // gio's: worked
-// app.get("/beiruttxt/:classroom/delegates1", async (req,res) => {
-//   const list = await getBeirutTs1(req.params.classroom);
-//   res.send(list);
-// })
-// //for TS2 
-// app.get("/beiruttxt/:classroom/delegates2", async (req,res) => {
-//   const list = await getBeirutTs2(req.params.classroom);
-//   res.send(list);
-// })
-
-// //for mock
-// app.get("/beiruttxt/:mCommittee/delegates", async (req,res) => {
-//   const list = await getMCdelegates(req.params.mcCommittee);
-//   res.send(list);
-// })
-
-
-// //for fc
-// app.get("/beiruttxt/:fCommittee/delegates", async (req,res) => {
-//   const list = await getFCdelegates(req.params.fcCommittee);
-//   res.send(list);
-// })
-// app.get("/delegates/:id", async (req,res) => {
-//   const delegate = await getOneDlg(req.params.id)
-//  res.send(delegate);
-// })
-
- 
-// app.get("/attendance/:committee/MCrepresentatives", async (req,res) => {
-//   const list = await getAttendanceMC(req.params.committee);
-//   res.send(list);
-// })
-
-
-   
-// app.get("/attendance/:committee/FCrepresentatives", async (req,res) => {
-//   const list = await getAttendanceFC(req.params.committee);
-//   res.send(list);
-// })
-   
 app.get("/attendance/:classroom/delegates", async (req,res) => {
   const list = await getAttendanceTS(req.params.classroom);
   res.send(list);
@@ -501,7 +359,6 @@ app.put("/beiruttxt/:fName/:classroom/:campus/delegates2", async (req,res) => {
 })
 
 // FOR TOTAL STUDENTS DASHBOARD
-
 
 app.get("/dashboard/:level/:campus", async (req,res) => {
  try{ const {level,campus} = req.params
