@@ -50,7 +50,7 @@ npm install
 Open the file:
 
 ```
-server/database/database.js
+database/database.js
 ```
 
 Update the following fields with your MySQL Workbench credentials:
