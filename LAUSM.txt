@@ -448,3 +448,11 @@ FOREIGN KEY (representation)
 REFERENCES REPRESENTATION (repID)
 ON DELETE SET DEFAULT
 ON UPDATE SET DEFAULT;
+
+CREATE TABLE LOGIN (
+  username VARCHAR(50) PRIMARY KEY,
+  password VARCHAR(255) NOT NULL
+);
+
+INSERT INTO LOGIN (username, password)
+VALUES ('lau_outreach', 'lausmdb');
