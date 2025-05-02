@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Box, Button, MenuItem, TextField } from '@mui/material';
+import { Box, Button, MenuItem, TextField, Snackbar, Alert } from '@mui/material';
 import { Formik } from 'formik';
 import * as yup from "yup";
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -44,6 +44,9 @@ const DelegatesForm = () => {
   const [langOptions, setLangOptions] = React.useState([]);
   const [campusOptions, setCampusOptions] = React.useState([]);
   const [advisorOptions, setAdvisorOptions] = React.useState([]);
+
+  const [errorMessage, setErrorMessage] = React.useState('');
+  const [openSnackbar, setOpenSnackbar] = React.useState(false);
 
   React.useEffect(() => {
     Axios.get('http://localhost:3000/schools')
@@ -109,8 +112,8 @@ const DelegatesForm = () => {
     Axios.get('http://localhost:3000/advisorsID')
       .then((res) => {
         const options = res.data.map((advisor) => ({
-          label: advisor.dlgAdv,
-          value: advisor.dlgAdv,
+          label: advisor.advID,
+          value: advisor.advID,
         }));
         setAdvisorOptions(options);
       })
@@ -127,7 +130,12 @@ const DelegatesForm = () => {
       console.log(res)
       resetForm();
      })
-    .catch(err => console.log(err))
+    .catch(err => {
+      console.log(err)
+      const msg = err.response?.data?.message || "Submission failed";
+      setErrorMessage(msg);
+      setOpenSnackbar(true);
+    })
   }
   
   return (
@@ -206,7 +214,7 @@ const DelegatesForm = () => {
                 variant="filled"
                 label="School Name"
                 name="dlgSchool"
-                value={values.advSchool}
+                value={values.dlgSchool}
                 onChange={handleChange}
                 onBlur={handleBlur}
                 error={!!touched.dlgSchool && !!errors.dlgSchool}
@@ -383,6 +391,16 @@ const DelegatesForm = () => {
           </form>
         )}
       </Formik>
+      <Snackbar
+        open={openSnackbar}
+        autoHideDuration={5000}
+        onClose={() => setOpenSnackbar(false)}
+        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+      >
+        <Alert onClose={() => setOpenSnackbar(false)} severity="error" sx={{ width: '100%' }}>
+          {errorMessage}
+        </Alert>
+      </Snackbar>
 
     </Box>
   )

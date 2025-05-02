@@ -4,7 +4,7 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 
-const pool = mysql.createPool({
+export const pool = mysql.createPool({
 host: process.env.MYSQL_HOST,
 user: 'root', //process.env.MYSQL_USER
 password: 'gpn#24#1#2003',  //process.env.MYSQL_PASSWORD
@@ -118,7 +118,7 @@ export async function getAllCampuses() {
 
 export async function getAllAdvisors() {
   await pool.query('USE LAUSMDB');
-  const [rows] = await pool.query('SELECT DISTINCT dlgAdv FROM DELEGATE');
+  const [rows] = await pool.query('SELECT DISTINCT advID FROM ADVISOR');
   return rows;
 }
 

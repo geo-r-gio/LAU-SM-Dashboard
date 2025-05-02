@@ -1,5 +1,5 @@
 
-import { getDlg, getOneDlg, getAllSchools, getAllPrograms, getAllLevels, getAllLanguages, getAllCampuses, getAllAdvisors, updateTs1attendance,editSchoolCampus, assignClassPGM,updateTs2attendance,getAttendanceTs1,getAttendanceTs2,getMCdelegates,addAdv,getAdv, getOneAdv,deleteOneAdv, getFCdelegates, addDlg,getTotalStudents, updateOneDlg, deleteOneDlg,checkAdvID,checkDlgID,getAttendanceTS,getAttendanceMC,getAttendanceFC, signin, getTotal } from '../database/database.js';
+import { getDlg, getOneDlg, getAllSchools, getAllPrograms, getAllLevels, getAllLanguages, getAllCampuses, getAllAdvisors, updateTs1attendance,editSchoolCampus, assignClassPGM,updateTs2attendance,getAttendanceTs1,getAttendanceTs2,getMCdelegates,addAdv,getAdv, getOneAdv,deleteOneAdv, getFCdelegates, addDlg,getTotalStudents, updateOneDlg, deleteOneDlg,checkAdvID,checkDlgID,getAttendanceTS,getAttendanceMC,getAttendanceFC, signin } from '../database/database.js';
 
 import express from "express";
 import cors from "cors";
@@ -7,6 +7,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 
+import { pool } from '../database/database.js';
 
 const app = express();
 
@@ -203,6 +204,16 @@ app.get("/levels", async (req, res) => {
   }
 });
 
+app.get("/languages", async (req, res) => {
+  try {
+    const languages = await getAllLanguages();
+    res.send(languages);
+  } catch (error) {
+    console.error("Error fetching languages:", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
 app.get("/campuses", async (req, res) => {
   try {
     const campuses = await getAllCampuses();
@@ -243,16 +254,51 @@ return dlgID;
 }
 
 
-app.post("/delegates", async (req,res) => {
-    const {fName,lName,dlgNB,dlgEmail,dlgSchool,dlgPGM,level,lang,dlgCampus,dlgAdv} = req.body
-    // create dlgId generator 
+// app.post("/delegates", async (req,res) => {
+//     const {fName,lName,dlgNB,dlgEmail,dlgSchool,dlgPGM,level,lang,dlgCampus,dlgAdv} = req.body
+//     // create dlgId generator 
+//     const dlgID = await dlgIdGen();
+//     const delegate = await 
+//     addDlg(dlgID,fName,lName,dlgNB,dlgEmail,dlgSchool,dlgPGM,level,lang,dlgCampus,dlgAdv)
+//     editSchoolCampus(dlgSchool,dlgCampus)
+//     await assignClassPGM(dlgPGM, level, lang, dlgCampus)
+//     res.status(201).send(delegate)
+// })
+
+app.post("/delegates", async (req, res) => {
+  const { fName, lName, dlgNB, dlgEmail, dlgSchool, dlgPGM, level, lang, dlgCampus, dlgAdv } = req.body;
+
+  try {
+    // Rule 1: Program-language validation
+    const programLanguageRules = {
+      MUN: ['EN'],
+      MAL: ['EN', 'AR'],
+      MEU: ['EN', 'FR'],
+      MGG: ['EN']
+    };
+    if (!programLanguageRules[dlgPGM]?.includes(lang)) {
+      return res.status(400).json({ message: `Invalid language '${lang}' for program '${dlgPGM}'` });
+    }
+
+    // Rule 2: Advisor-school match validation
+    const [advisorResult] = await pool.query('SELECT advSchool FROM ADVISOR WHERE advID = ?', [dlgAdv]);
+    if (!advisorResult.length || advisorResult[0].advSchool !== dlgSchool) {
+      return res.status(400).json({ message: `Advisor ${dlgAdv} is not registered with ${dlgSchool}` });
+    }
+
     const dlgID = await dlgIdGen();
-    const delegate = await 
-    addDlg(dlgID,fName,lName,dlgNB,dlgEmail,dlgSchool,dlgPGM,level,lang,dlgCampus,dlgAdv)
-    editSchoolCampus(dlgSchool,dlgCampus)
-    await assignClassPGM(dlgPGM, level, lang, dlgCampus)
-    res.status(201).send(delegate)
-})
+    const delegate = await addDlg(dlgID, fName, lName, dlgNB, dlgEmail, dlgSchool, dlgPGM, level, lang, dlgCampus, dlgAdv);
+    
+    await editSchoolCampus(dlgSchool, dlgCampus);
+    await assignClassPGM(dlgPGM, level, lang, dlgCampus);
+
+    return res.status(201).send(delegate);
+
+  } catch (err) {
+    console.error("Delegate insertion error:", err);
+    return res.status(500).json({ message: "Server error while creating delegate" });
+  }
+});
 
 app.post("/advisors", async (req,res) => {
   const {fName,lName,advNB,advEmail,advSchool,mainAdv} = req.body
