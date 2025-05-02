@@ -1,5 +1,5 @@
 
-import { getDlg, getOneDlg, getAllSchools, getAllPrograms, getAllLevels, getAllLanguages, getAllCampuses, getAllAdvisors, updateTs1attendance,editSchoolCampus, assignClassPGM,updateTs2attendance,getBeirutTs1,getBeirutTs2,getMCdelegates,addAdv,getAdv, getOneAdv,deleteOneAdv, getFCdelegates, addDlg,getTotalStudents, updateOneDlg, deleteOneDlg,checkAdvID,checkDlgID,getAttendanceTS,getAttendanceMC,getAttendanceFC, signin } from '../database/database.js';
+import { getDlg, getOneDlg, getAllSchools, getAllPrograms, getAllLevels, getAllLanguages, getAllCampuses, getAllAdvisors, updateTs1attendance,editSchoolCampus, assignClassPGM,updateTs2attendance,getAttendanceTs1,getAttendanceTs2,getMCdelegates,addAdv,getAdv, getOneAdv,deleteOneAdv, getFCdelegates, addDlg,getTotalStudents, updateOneDlg, deleteOneDlg,checkAdvID,checkDlgID,getAttendanceTS,getAttendanceMC,getAttendanceFC, signin, getTotal } from '../database/database.js';
 
 import express from "express";
 import cors from "cors";
@@ -203,26 +203,6 @@ app.get("/levels", async (req, res) => {
   }
 });
 
-app.get("/languages", async (req, res) => {
-  try {
-    const languages = await getAllLanguages();
-    res.send(languages);
-  } catch (error) {
-    console.error("Error fetching languages:", error);
-    res.status(500).send("Internal Server Error");
-  }
-});
-
-app.get("/campuses", async (req, res) => {
-  try {
-    const campuses = await getAllCampuses();
-    res.send(campuses);
-  } catch (error) {
-    console.error("Error fetching campuses:", error);
-    res.status(500).send("Internal Server Error");
-  }
-});
-
 app.get("/campuses", async (req, res) => {
   try {
     const campuses = await getAllCampuses();
@@ -312,48 +292,32 @@ app.get("/attendance/:classroom/delegates", async (req,res) => {
   res.send(list);
 })
 
-app.get("/beiruttxt", async (req,res) => {
-  const list = await getBeirutTs1();
+app.get("/attendance/:classroom/:campus/delegates1", async (req,res) => {
+  const list = await getAttendanceTs1(req.params.classroom, req.params.campus);
   res.send(list);
 })
 
-
-app.get("/BEIRUTTS1/delegates", async (req,res) => {
-  const list = await getAttendanceTS(req.params.classroom);
+app.get("/attendance/:classroom/:campus/delegates2", async (req,res) => {
+  const list = await getAttendanceTs2(req.params.classroom, req.params.campus);
   res.send(list);
 })
 
-app.get("/attendance/:classroom/delegates", async (req,res) => {
-  const list = await getAttendanceTS(req.params.classroom);
-  res.send(list);
-})
-
-app.get("/beiruttxt/:classroom/:campus/delegates1", async (req,res) => {
-  const list = await getBeirutTs1(req.params.classroom, req.params.campus);
-  res.send(list);
-})
-
-app.get("/beiruttxt/:classroom/:campus/delegates2", async (req,res) => {
-  const list = await getBeirutTs2(req.params.classroom, req.params.campus);
-  res.send(list);
-})
-
-app.get("/beiruttxt/:mCommittee/delegates", async (req,res) => {
+app.get("/attendance/:mCommittee/delegates", async (req,res) => {
   const list = await getMCdelegates(req.params.mcCommittee, req.params.campus);
   res.send(list);
 })
 
-app.get("/beiruttxt/:fCommittee/delegates", async (req,res) => {
+app.get("/attendance/:fCommittee/delegates", async (req,res) => {
   const list = await getFCdelegates(req.params.fcCommittee, req.params.campus);
   res.send(list);
 })
 
-app.put("/beiruttxt/:fName/:classroom/:campus/delegates1", async (req,res) => {
+app.put("/attendance/:fName/:classroom/:campus/delegates1", async (req,res) => {
   const list = await updateTs1attendance(req.body.attendanceTS1, req.params.fName, req.params.classroom, req.params.campus);
   res.send(list);
 })
 
-app.put("/beiruttxt/:fName/:classroom/:campus/delegates2", async (req,res) => {
+app.put("/attendance/:fName/:classroom/:campus/delegates2", async (req,res) => {
   const list = await updateTs2attendance(req.body.attendanceTS2, req.params.fName, req.params.classroom, req.params.campus);
   res.send(list);
 })
@@ -372,6 +336,16 @@ app.get("/dashboard/:level/:campus", async (req,res) => {
   console.error("Error in dashboard route:", error);
     res.status(500).send("Internal Server Error");
 }})
+
+// app.get("/api/delegates/program-summary", async (req, res) => {
+//   try {
+//     const [rows] = await getTotal();
+//     res.json(rows);
+//   } catch (err) {
+//     console.error("Error fetching program summary:", err);
+//     res.status(500).json({ message: "Server error" });
+//   }
+// });
 
 
 

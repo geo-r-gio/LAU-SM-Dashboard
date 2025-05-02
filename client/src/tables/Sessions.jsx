@@ -18,12 +18,12 @@ const Sessions = ({ classValue, tsValue, campusValue, mcValue, fcValue }) => {
         try {
           // Simulating data fetching
           if(tsValue === 'ts1'){
-            const response = await Axios.get(`http://localhost:3000/beiruttxt/${classValue}/${campusValue}/delegates1`);
+            const response = await Axios.get(`http://localhost:3000/attendance/${classValue}/${campusValue}/delegates1`);
             
             setRows(response.data);
             console.log('Fetched Data:', response.data);
           } else if(tsValue === 'ts2'){
-            const response = await Axios.get(`http://localhost:3000/beiruttxt/${classValue}/${campusValue}/delegates2`);
+            const response = await Axios.get(`http://localhost:3000/attendance/${classValue}/${campusValue}/delegates2`);
             setRows(response.data);
             console.log('Fetched Data:', response.data);
           }

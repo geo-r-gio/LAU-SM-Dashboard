@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import StatusCard from '../components/status-card/StatusCard'
 
 import Table from '../components/table/Table'
+import Axios from 'axios';
 
 import statusCards from '../assets/JsonData/status-card-data.json'
 import { Link } from 'react-router-dom'
@@ -182,6 +183,30 @@ const Dashboard = () => {
     { "icon": "bx bx-group", "title": "Total MS Students Byblos", "level": "MS", "campus": "Byblos" },
     { "icon": "bx bx-group", "title": "Total MS Students Beirut", "level": "MS", "campus": "Beirut" },
   ];
+
+  const [programData, setProgramData] = useState([])
+
+  useEffect(() => {
+    Axios.get("http://localhost:3000/api/delegates/program-summary")
+      .then(res => {
+        const grouped = {}
+        res.data.forEach(({ program, level, campus, count }) => {
+          const key = `${program}-${level}`
+          if (!grouped[key]) grouped[key] = { prog: `${program} ${level}`, bey: 0, byb: 0 }
+          if (campus === "Beirut") grouped[key].bey = count
+          if (campus === "Byblos") grouped[key].byb = count
+        })
+
+        const tableData = Object.values(grouped).map(row => ({
+          ...row,
+          beyav: 16, // you can fetch actual capacity if available
+          bybav: 16
+        }))
+
+        setProgramData(tableData)
+      })
+      .catch(err => console.error("Error fetching program data", err))
+  }, [])
   
   return (
     <div>
@@ -223,6 +248,20 @@ const Dashboard = () => {
                   bodyData={students.body}
                   renderBody={(item, index) => renderStudentBody(item, index)}
               />
+              {/* <Table
+                headData={["program", "beirut", "bey available seats", "byblos", "byb available seats"]}
+                renderHead={(item, index) => <th key={index}>{item}</th>}
+                bodyData={programData}
+                renderBody={(item, index) => (
+                  <tr key={index}>
+                    <td>{item.prog}</td>
+                    <td>{item.bey}</td>
+                    <td>{item.beyav}</td>
+                    <td>{item.byb}</td>
+                    <td>{item.bybav}</td>
+                  </tr>
+                )}
+              /> */}
             </div>
           </div>
         </div>

@@ -374,6 +374,12 @@ export async function getTotalStudents(level,campus){
   return rows;
 }
 
+// export async function getTotal(){
+//   await pool.query('USE LAUSMDB');
+//   const [rows] = await pool.query('SELECT dlgPGM AS program, level, dlgCampus AS campus, COUNT(*) AS count FROM DELEGATE GROUP BY dlgPGM, level, dlgCampus');
+//   return rows;
+// }
+
 
 
 //ASSIGNING COUNTRIES
@@ -394,14 +400,14 @@ export async function dlgNoRep() {
 }
 
 //USE FOR TS1 CLASSES
-export async function getBeirutTs1(classroom, campus){
+export async function getAttendanceTs1(classroom, campus){
   await pool.query('USE LAUSMDB');
   const [rows] = await pool.query(`SELECT dlgID,fName,lName,attendanceTS1 FROM DELEGATE WHERE tsCLASS = ? AND dlgCampus = ?`, [classroom, campus]);
   return rows;
 }
 
 //USE FOR TS2 CLASSES
-export async function getBeirutTs2(classroom, campus){
+export async function getAttendanceTs2(classroom, campus){
   await pool.query('USE LAUSMDB');
   const [rows] = await pool.query(`SELECT dlgID,fName,lName,attendanceTS2 FROM DELEGATE WHERE tsCLASS = ? AND dlgCampus = ?`, [classroom, campus]);
   return rows;
