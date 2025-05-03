@@ -205,22 +205,47 @@ export async function editSchoolCampus(dlgSchool,dlgCampus){
 }
 
 
-export async function addAdv(advID,fName,lName,advNB,advEmail,advSchool){
-  await pool.query('USE LAUSMDB')
-  const [schools] = await pool.query(`SELECT schoolName FROM SCHOOL WHERE schoolName=?`,[advSchool]);
-  if(schools.length==0){
-     await insertSchool(advSchool);
-    const result = await pool.query(
-      'INSERT INTO advisor (advID,fName,lName,advNB,advEmail,advSchool,mainAdv) VALUES(?,?,?,?,?,?,?)',
-      [advID,fName,lName,advNB,advEmail,advSchool,advID])
+// export async function addAdv(advID,fName,lName,advNB,advEmail,advSchool){
+//   await pool.query('USE LAUSMDB')
+//   const [schools] = await pool.query(`SELECT schoolName FROM SCHOOL WHERE schoolName=?`,[advSchool]);
+//   if(schools.length==0){
+//      await insertSchool(advSchool);
+//     const result = await pool.query(
+//       'INSERT INTO advisor (advID,fName,lName,advNB,advEmail,advSchool,mainAdv) VALUES(?,?,?,?,?,?,?)',
+//       [advID,fName,lName,advNB,advEmail,advSchool,advID])
+//   }
+//   else{
+//     const [getquery] = await pool.query(`SELECT mainAdv FROM ADVISOR WHERE advSchool=? `, [advSchool]);
+//     const mainAdv=(getquery[0].mainAdv);
+//     const result = await pool.query(
+//       'INSERT INTO advisor (advID,fName,lName,advNB,advEmail,advSchool,mainAdv) VALUES(?,?,?,?,?,?,?)',
+//       [advID,fName,lName,advNB,advEmail,advSchool,mainAdv])
+//   }
+// }
+
+export async function addAdv(advID, fName, lName, advNB, advEmail, advSchool) {
+  await pool.query('USE LAUSMDB');
+
+  const [schools] = await pool.query(`SELECT schoolName FROM SCHOOL WHERE schoolName=?`, [advSchool]);
+  if (schools.length === 0) {
+    await insertSchool(advSchool);
   }
-  else{
-    const [getquery] = await pool.query(`SELECT mainAdv FROM ADVISOR WHERE advSchool=? `, [advSchool]);
-    const mainAdv=(getquery[0].mainAdv);
-    const result = await pool.query(
-      'INSERT INTO advisor (advID,fName,lName,advNB,advEmail,advSchool,mainAdv) VALUES(?,?,?,?,?,?,?)',
-      [advID,fName,lName,advNB,advEmail,advSchool,mainAdv])
+
+  const [getquery] = await pool.query(`SELECT mainAdv FROM ADVISOR WHERE advSchool=?`, [advSchool]);
+
+  let mainAdv;
+  if (getquery.length === 0) {
+    // No advisor for that school → make this advisor the main advisor
+    mainAdv = advID;
+  } else {
+    // At least one advisor exists → use the same mainAdv
+    mainAdv = getquery[0].mainAdv;
   }
+
+  await pool.query(
+    'INSERT INTO advisor (advID, fName, lName, advNB, advEmail, advSchool, mainAdv) VALUES (?, ?, ?, ?, ?, ?, ?)',
+    [advID, fName, lName, advNB, advEmail, advSchool, mainAdv]
+  );
 }
 
 
